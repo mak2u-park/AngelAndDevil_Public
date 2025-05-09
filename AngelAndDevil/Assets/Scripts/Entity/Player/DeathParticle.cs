@@ -10,7 +10,10 @@ public class DeathParticle : MonoBehaviour
     public void DeathPariclePlay()
     {
         Instantiate(_deathParticle, transform.position, Quaternion.identity);
+    }
+
+    public void OnDestroy()
+    {
         Destroy(player);
-        
     }
 }

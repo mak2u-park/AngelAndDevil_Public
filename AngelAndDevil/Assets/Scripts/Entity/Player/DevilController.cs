@@ -17,5 +17,9 @@ public class DevilController : PlayerController
         base.Start();
     }
 
+    protected override void FixedUpdate()
+    {
+        base.FixedUpdate();
+    }
 
 }
