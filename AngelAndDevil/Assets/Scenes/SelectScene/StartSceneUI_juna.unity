@@ -2943,6 +2943,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sound
       objectReference: {fileID: 0}
+    - target: {fileID: 5030470993946758268, guid: 2a69c34cbbd5c01479d5cac5008d2fd9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6173597409864581578, guid: 2a69c34cbbd5c01479d5cac5008d2fd9, type: 3}
       propertyPath: m_Pivot.x
       value: 0

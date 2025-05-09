@@ -23,15 +23,16 @@ public class UIManager : MonoBehaviour
         {
             stageCanvas.gameObject.SetActive(true);
         }
+        soundCanvas.gameObject.SetActive(false);
     }
     void OnEsc()
     {
-        if (soundCanvas.gameObject.activeSelf)
-        {
-            CloseSound();
-        }
         if (SceneManager.GetActiveScene().name == "StartSceneUI_juna")//Scene매니저에서 씬 타입 나누기
         {
+            if (soundCanvas.gameObject.activeSelf)
+            {
+                CloseSound();
+            }
             if (stageCanvas.gameObject.activeSelf)
             {
                 CloseStage();
@@ -51,6 +52,24 @@ public class UIManager : MonoBehaviour
                 }
             }
         }
+        if (SceneManager.GetActiveScene().name == "Room1-1")
+        {
+            if (stageCanvas.gameObject.activeSelf)
+            {
+                if(soundCanvas.gameObject.activeSelf)
+                {
+                    CloseSound();
+                }
+                else
+                {
+                    CloseStage();
+                }
+            }
+            else
+            {
+                OpenStage();
+            }
+        }
     }
     public void OpenSound()
     {
@@ -60,6 +79,7 @@ public class UIManager : MonoBehaviour
     public void CloseSound()
     {
         soundCanvas.gameObject.SetActive(false);
+        return;
     }
 
     public void OpenStage()
@@ -85,6 +105,12 @@ public class UIManager : MonoBehaviour
 
     public void SelectRoom(Button button)
     {
+        isStart = true;
         SceneManager.LoadScene("Room" + button.name);//여기도 나중에 Scene매니저에 따라 수정
+    }
+    public void SelectStageInRoom()
+    {
+        isStart = false;
+        SceneManager.LoadScene("SelectStage1");
     }
 }
