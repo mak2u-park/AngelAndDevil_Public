@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8174150875766780444}
   - component: {fileID: 6039759437526547235}
   - component: {fileID: 2936406032799970476}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -117,7 +117,7 @@ GameObject:
   - component: {fileID: 2426337883107280202}
   - component: {fileID: 7676193841907004995}
   - component: {fileID: 4913141323555927386}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: PosionTrap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -154,6 +154,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _type: 2
+  _trapEffect: {fileID: 8310380497670457879, guid: cd17d4471c28810418a5e9e49da42cfb, type: 3}
 --- !u!61 &4913141323555927386
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -210,7 +211,7 @@ GameObject:
   - component: {fileID: 6747442246833385893}
   - component: {fileID: 5071516057631053393}
   - component: {fileID: 4611069344244448224}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
