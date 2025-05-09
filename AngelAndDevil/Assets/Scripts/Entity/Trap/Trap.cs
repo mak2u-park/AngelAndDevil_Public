@@ -11,7 +11,7 @@ public class Trap : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             _target = collision.gameObject;
-            var player = _target.GetComponent<PlayerContoller>();
+            var player = _target.GetComponent<PlayerController>();
             if(player is AngelController && _type == TrapType.Lava)
             {
                 player.Die();

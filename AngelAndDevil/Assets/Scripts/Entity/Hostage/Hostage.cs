@@ -15,7 +15,7 @@ public class Hostage : MonoBehaviour, IInteractable
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            var player = collision.gameObject.GetComponent<PlayerContoller>();
+            var player = collision.gameObject.GetComponent<PlayerController>();
             if(player is AngelController && _type == HostageType.Knight)
             {
                 Interact();
