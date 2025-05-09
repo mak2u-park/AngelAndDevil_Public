@@ -23,6 +23,7 @@ public class ScoreManager : MonoBehaviour
     private ScoreData scoredata;
     protected static ScoreManager instance;
     private string json = ".json";
+    private string hostagetag = "Hostage";
 
     public static ScoreManager Instance
     {
@@ -53,8 +54,8 @@ public class ScoreManager : MonoBehaviour
 
     private int CheckHostage()
     {
-        int hostagenum = 1; // 남은 인질들의 개수를 구함
-        if(hostagenum > 0)
+        GameObject hostage = GameObject.FindGameObjectWithTag(hostagetag);
+        if(hostage)
         {
             return 0;
         }
