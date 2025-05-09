@@ -11,11 +11,13 @@ public class PlayerController : MonoBehaviour
     public float JumpForce { get; protected set; } = 1f;
     public bool IsGrounded { get; protected set; } = false;
     public bool IsDie { get; protected set; } = false;
+    public bool IsLaund { get; protected set; } = false;
+
     protected Vector2 movementDirection = Vector2.zero;
     int groundLayerMask;
     private static readonly int IsRun = Animator.StringToHash("IsRun");
     private static readonly int IsDead = Animator.StringToHash("IsDead");
-
+    
     [SerializeField] protected Rigidbody2D rb;
     [SerializeField] Animator animator;
     [SerializeField] SpriteRenderer _renderer;
@@ -66,10 +68,10 @@ public class PlayerController : MonoBehaviour
     }
     
     public virtual void GroundCheck()
-    {
+    { 
         RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 0.8f,groundLayerMask);
         Debug.DrawRay(transform.position, Vector2.down * 0.8f,Color.red, 1f);
-        if (hit.collider!=null)
+        if (hit.collider!=null && rb.velocity.y > -0.1f)
         {
             IsGrounded = true;
         }
@@ -79,6 +81,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+   
 
 
     [ContextMenu("DieTest")]
@@ -87,14 +90,10 @@ public class PlayerController : MonoBehaviour
 
         IsDie = true;
         animator.SetTrigger(IsDead);
-        StartCoroutine(DestroyPlayer());
+        
     }
 
-    IEnumerator DestroyPlayer()
-    {
-        yield return new WaitForSeconds(1f);
-        Destroy(gameObject);
-    }
+
 
     protected virtual void FixedUpdate() 
     {
