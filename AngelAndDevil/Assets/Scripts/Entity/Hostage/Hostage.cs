@@ -7,7 +7,7 @@ public class Hostage : MonoBehaviour, IInteractable
 
     public void Interact()
     {
-        // ScoreManager.Instance.AddHostage();
+        ScoreManager.Instance.RemoveHostage(_type);
         Destroy(gameObject);
     }
 

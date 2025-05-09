@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using System.IO;
+using Unity.VisualScripting.Antlr3.Runtime.Tree;
 
 public class ScoreData
 {
@@ -24,6 +25,8 @@ public class ScoreManager : MonoBehaviour
     protected static ScoreManager instance;
     private string json = ".json";
     private string hostagetag = "Hostage";
+    private int angelhostage;
+    private int devilhostage;
 
     public static ScoreManager Instance
     {
@@ -34,12 +37,39 @@ public class ScoreManager : MonoBehaviour
     {
         return scoredata.scores[stage];
     }
+    public int AngelHostage
+    {
+        get { return angelhostage;}
+    }
+
+    public int DevilHostage
+    {
+        get { return devilhostage;}
+    }
 
     private void Start()
     {
         instance = this;
         LoadScore();
         DontDestroyOnLoad(gameObject);
+    }
+
+    public void SettingHostage(int angel, int devil)
+    {
+        angelhostage = angel;
+        devilhostage = devil; 
+    }
+
+    public void RemoveHostage(HostageType type)
+    {
+        if(type == HostageType.Knight)
+        {
+            angelhostage--;
+        }
+        else
+        {
+            devilhostage--;
+        }
     }
 
     private int EndStageScore(int stage)
@@ -54,8 +84,8 @@ public class ScoreManager : MonoBehaviour
 
     private int CheckHostage()
     {
-        GameObject hostage = GameObject.FindGameObjectWithTag(hostagetag);
-        if(hostage)
+        int lefthostage = angelhostage + devilhostage;
+        if(lefthostage == 0)
         {
             return 0;
         }
