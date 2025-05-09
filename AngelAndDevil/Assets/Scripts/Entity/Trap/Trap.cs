@@ -1,13 +1,30 @@
 // Trap.cs
 using UnityEngine;
 
-public class Trap : MonoBehaviour, IInteractable
+public class Trap : MonoBehaviour
 {
-    public TrapType type;
-    public GameObject Target;
+    [SerializeField] private TrapType _type;
+    private GameObject _target;
 
-    public void Interact()
+
+    void OnCollisionEnter2D(Collision2D collision)
     {
-        // 구현 예정
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            _target = collision.gameObject;
+            var player = _target.GetComponent<PlayerContoller>();
+            if(player is AngelController && _type == TrapType.Lava)
+            {
+                player.Die();
+            }
+            else if(player is DevilController && _type == TrapType.HolyWater)
+            {
+                player.Die();
+            }
+            else if(_type == TrapType.Poison)
+            {
+                player.Die();
+            }
+        }
     }
 }
