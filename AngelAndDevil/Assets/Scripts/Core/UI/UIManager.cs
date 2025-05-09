@@ -5,6 +5,14 @@ using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
+
+public enum UIState
+{
+    Main,
+    SellectStage,
+    Game,
+    Credit
+}
 public class UIManager : MonoBehaviour
 {
     private static bool isStart = true;
