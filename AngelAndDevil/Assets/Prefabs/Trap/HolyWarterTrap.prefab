@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2312367605571910601}
   - component: {fileID: 757865179407491915}
   - component: {fileID: 2253578959738640269}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -117,7 +117,7 @@ GameObject:
   - component: {fileID: 3178940126920513682}
   - component: {fileID: 7090898252309975100}
   - component: {fileID: 4632712098011558578}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: HolyWarterTrap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -154,6 +154,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _type: 0
+  _trapEffect: {fileID: 2742908771341950034, guid: 561bd3ad5c5f8474dbfd81e6a43eec75, type: 3}
 --- !u!61 &4632712098011558578
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -210,7 +211,7 @@ GameObject:
   - component: {fileID: 4118455348063708005}
   - component: {fileID: 3029974637165268216}
   - component: {fileID: 145338144162573675}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}

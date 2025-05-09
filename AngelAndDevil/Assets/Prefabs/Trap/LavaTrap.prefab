@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4805217937697806525}
   - component: {fileID: 5741470105742401576}
   - component: {fileID: 243003446429398910}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: LavaTrap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48,6 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _type: 1
+  _trapEffect: {fileID: 4542767658904205215, guid: 9acbd49242935e44e8104ace8dbd70b4, type: 3}
 --- !u!61 &243003446429398910
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -104,7 +105,7 @@ GameObject:
   - component: {fileID: 8226977024562464350}
   - component: {fileID: 2548388603541937323}
   - component: {fileID: 4988768276933881567}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -210,7 +211,7 @@ GameObject:
   - component: {fileID: 6148593015936211030}
   - component: {fileID: 4404747865129951133}
   - component: {fileID: 7358256201410392698}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
