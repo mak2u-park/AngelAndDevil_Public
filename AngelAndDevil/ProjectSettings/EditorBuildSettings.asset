@@ -8,4 +8,22 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SelectScene/StartSceneUI_juna.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/SelectScene/SelectStage1.unity
+    guid: 86fc42463aa5853479f523ef99810420
+  - enabled: 1
+    path: Assets/Scenes/SelectScene/SelectStage2.unity
+    guid: fb257ce4c4572214da8da840f27f5e0e
+  - enabled: 1
+    path: Assets/Scenes/SelectScene/SelectStage3.unity
+    guid: c4ee3a5a376772b4eb35514c09c7bfe1
+  - enabled: 1
+    path: Assets/Scenes/SelectScene/SelectStage4.unity
+    guid: 9413477e2e07bf040abcbd013c1a2d7d
+  - enabled: 1
+    path: Assets/Scenes/SelectScene/Room11.unity
+    guid: 9277d4075b2509844b4b7f430b0b6e95
+  - enabled: 1
+    path: Assets/Scenes/SelectScene/Room12.unity
+    guid: ca6b78333dc3bfb4299f9d3381dd1541
   m_configObjects: {}

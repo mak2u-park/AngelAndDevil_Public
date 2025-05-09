@@ -1,16 +1,86 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
-    void Start()
+    private static bool isStart = true;
+
+    [Header("Notice")]
+    public Canvas stageCanvas;
+    public Canvas soundCanvas;
+
+    private void Start()
     {
-        
+        if (isStart)
+        {
+            stageCanvas.gameObject.SetActive(false);
+        }
+    }
+    void OnEsc()
+    {
+        if (soundCanvas.gameObject.activeSelf)
+        {
+            CloseSound();
+        }
+        if (SceneManager.GetActiveScene().name == "StartSceneUI_juna")//Scene매니저에서 씬 타입 나누기
+        {
+            if (stageCanvas.gameObject.activeSelf)
+            {
+                CloseStage();
+            }
+            else
+            {
+                return;
+            }
+        }
+        else
+        {
+            for (int i = 1; i <= 4; i++)
+            {
+                if (SceneManager.GetActiveScene().name == "SelectStage"+i)//이것도 나중에 Scene매니저에서 씬 타입 나눠서 해주면 될듯
+                {
+                    BacktoMain();
+                }
+            }
+        }
+    }
+    public void OpenSound()
+    {
+        soundCanvas.gameObject.SetActive(true);
     }
 
-    void Update()
+    public void CloseSound()
     {
-        
+        soundCanvas.gameObject.SetActive(false);
+    }
+
+    public void OpenStage()
+    {
+        stageCanvas.gameObject.SetActive(true);
+    }
+
+    public void CloseStage()
+    {
+        stageCanvas.gameObject.SetActive(false);
+    }
+
+    public void SelectStage(Button button)
+    {
+        isStart = false;
+        SceneManager.LoadScene("Select" + button.name);//여기도 나중에 Scene매니저에 따라 수정
+    }
+    public void BacktoMain()
+    {
+        //if문 써서 Scenetype체크 후, 게임 진행 중이면 isStart = true;
+        SceneManager.LoadScene("StartSceneUI_juna");
+    }
+
+    public void SelectRoom(Button button)
+    {
+        SceneManager.LoadScene("Room" + button.name);//여기도 나중에 Scene매니저에 따라 수정
     }
 }
