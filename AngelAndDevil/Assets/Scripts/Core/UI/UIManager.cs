@@ -19,6 +19,10 @@ public class UIManager : MonoBehaviour
         {
             stageCanvas.gameObject.SetActive(false);
         }
+        else
+        {
+            stageCanvas.gameObject.SetActive(true);
+        }
     }
     void OnEsc()
     {

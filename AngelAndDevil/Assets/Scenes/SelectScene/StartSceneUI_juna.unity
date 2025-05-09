@@ -1969,7 +1969,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_TargetDisplay: 0
 --- !u!224 &1518673354
 RectTransform:
@@ -2900,7 +2900,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!224 &2092021178
 RectTransform:
@@ -2935,6 +2935,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2495313325058814907, guid: 2a69c34cbbd5c01479d5cac5008d2fd9, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5030470993946758268, guid: 2a69c34cbbd5c01479d5cac5008d2fd9, type: 3}
       propertyPath: m_Name
       value: Sound
@@ -3034,7 +3038,7 @@ SceneRoots:
   m_Roots:
   - {fileID: 519420032}
   - {fileID: 2092021178}
-  - {fileID: 4836359669742216305}
   - {fileID: 1518673354}
+  - {fileID: 4836359669742216305}
   - {fileID: 1490675397}
   - {fileID: 1800599270}
