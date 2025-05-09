@@ -87,14 +87,10 @@ public class PlayerController : MonoBehaviour
 
         IsDie = true;
         animator.SetTrigger(IsDead);
-        StartCoroutine(DestroyPlayer());
+        
     }
 
-    IEnumerator DestroyPlayer()
-    {
-        yield return new WaitForSeconds(1f);
-        Destroy(gameObject);
-    }
+
 
     protected virtual void FixedUpdate() 
     {

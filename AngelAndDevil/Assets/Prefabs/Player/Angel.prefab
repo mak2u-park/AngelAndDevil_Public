@@ -120,7 +120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _deathParticle: {fileID: 7314851100851473189, guid: a3555ce813958e1469e3d544da4ff3ee, type: 3}
-  Player: {fileID: 1227536443102896600}
+  player: {fileID: 1227536443102896600}
 --- !u!1 &1227536443102896600
 GameObject:
   m_ObjectHideFlags: 0
@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 6500710752915565449}
   - component: {fileID: 9219837893104124316}
   - component: {fileID: 7652725777116027680}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Angel
   m_TagString: Player
   m_Icon: {fileID: 0}
