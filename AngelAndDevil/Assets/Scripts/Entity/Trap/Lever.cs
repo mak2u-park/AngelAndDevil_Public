@@ -16,6 +16,13 @@ public class Lever : MonoBehaviour, IEnable
         _rigidbody2D = GetComponent<Rigidbody2D>();
         // Lever의 회전축을 설정
         _rigidbody2D.centerOfMass = new Vector2(0f, -0.25f);
+
+        // 오브젝트 이름이 Lever_Top인지 확인
+        if (gameObject.name != "Lever1_Top" && gameObject.name != "Lever2_Top")
+        {
+            Debug.LogError("잘못된 오브젝트입니다 - Lever_Top 전용");
+            return;
+        }
     }
 
     // 물리연산이기에 FixedUpdate에서 사용
@@ -28,25 +35,53 @@ public class Lever : MonoBehaviour, IEnable
         if ( gameObject.name == "Lever1_Top")
         {
              clampedZ = Mathf.Clamp(angleZ, -90f, 0f);
-            _rigidbody2D.MoveRotation(clampedZ); // 질량 중심(centerOfMass) 위치를 기준으로 회전
-        }
-        else if (gameObject.name == "Lever2_Top")
-        {
-            clampedZ = Mathf.Clamp(angleZ, 0f, 90f);
-            _rigidbody2D.MoveRotation(clampedZ); // 질량 중심(centerOfMass) 위치를 기준으로 회전
+            
+            // 레버가 한쪽으로 기울어졌을때 중력의 영향을 받는 것처럼 운동
+            if (clampedZ < -45f)
+            {
+                clampedZ = Mathf.Lerp(clampedZ, -90f, Time.fixedDeltaTime * 2f); // 부드럽게 회전
+            }
+            else if (clampedZ > -45f)
+            {
+                clampedZ = Mathf.Lerp(clampedZ, 0f, Time.fixedDeltaTime * 2f); // 부드럽게 회전
+            }
+            else
+            {
+                // 정확히 45도일때는 아무일도 일어나지 않음
+            }
+
+            // 질량 중심(centerOfMass) 위치를 기준으로 회전
+            _rigidbody2D.MoveRotation(clampedZ); 
         }
         else
         {
-            Debug.LogError("레버 이름 오류");
-            return;
+            clampedZ = Mathf.Clamp(angleZ, 0f, 90f);
+
+            // 레버가 한쪽으로 기울어졌을때 중력의 영향을 받는 것처럼 운동
+            if (clampedZ < 45f)
+            {
+                clampedZ = Mathf.Lerp(clampedZ, 0f, Time.fixedDeltaTime * 2f); // 부드럽게 회전
+            }
+            else if (clampedZ > 45f)
+            {
+                clampedZ = Mathf.Lerp(clampedZ, 90f, Time.fixedDeltaTime * 2f); // 부드럽게 회전
+            }
+            else
+            {
+                // 정확히 45도일때는 아무일도 일어나지 않음
+            }
+
+            // 질량 중심(centerOfMass) 위치를 기준으로 회전
+            _rigidbody2D.MoveRotation(clampedZ); 
         }
+        
 
         // 레버의 회전 각도를 절대값으로 변환
-        float clampedZabs = Mathf.Abs(clampedZ);
+        float clampedZAbs = Mathf.Abs(clampedZ);
 
         if (!isContact) return;
 
-        if (clampedZabs > 45f)
+        if (clampedZAbs > 45f)
         {
             Enable();
         }

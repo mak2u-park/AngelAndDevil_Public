@@ -15,11 +15,19 @@ public class Button : MonoBehaviour, IEnable
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
         SetY = transform.position.y;
+
+        // 오브젝트 이름이 Button_Top인지 확인
+        if (gameObject.name != "Button_Top")
+        {
+            Debug.LogError("잘못된 오브젝트입니다 - Button_Top 전용");
+            return;
+        }
     }
 
     void FixedUpdate()
     {
         float PosY = transform.position.y;
+
         
         PosY = Mathf.Clamp(PosY, SetY - 0.5f, SetY);
 
