@@ -5,6 +5,8 @@ public class Hostage : MonoBehaviour, IInteractable
 {
     [SerializeField] private HostageType _type;
 
+    public HostageType Type {get; private set;}
+
     public void Interact()
     {
         ScoreManager.Instance.RemoveHostage(_type);
