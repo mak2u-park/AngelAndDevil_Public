@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2940921680197810656}
   - component: {fileID: 8411744253168591771}
   - component: {fileID: 2122278432071226058}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Button_Top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -181,7 +181,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2265119423794217336}
   - component: {fileID: 6488930347796216658}
-  m_Layer: 3
+  - component: {fileID: 6938762566187476512}
+  m_Layer: 15
   m_Name: Button_Bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -255,6 +256,57 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!60 &6938762566187476512
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5376919141596317003}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.3087411, y: -0.30402404}
+      - {x: -0.43609953, y: -0.3989533}
+      - {x: -0.55262375, y: -0.49624115}
+      - {x: 0.5639, y: -0.5}
+      - {x: 0.42482328, y: -0.38155937}
+      - {x: 0.31485844, y: -0.304024}
+  m_UseDelaunayMesh: 0
 --- !u!1 &6408082825760277542
 GameObject:
   m_ObjectHideFlags: 0
@@ -264,7 +316,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6497101465685301499}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Position
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -297,7 +349,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6727814355712557106}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}

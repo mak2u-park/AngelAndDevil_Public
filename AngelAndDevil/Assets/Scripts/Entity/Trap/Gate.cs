@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Gate : MonoBehaviour
 {
-    [SerializeField] Lever lever; 
+    [SerializeField] Lever Lever_Top; 
 
     Animator[] animators;
 
@@ -12,7 +12,7 @@ public class Gate : MonoBehaviour
     {
         animators = GetComponentsInChildren<Animator>();
 
-        if (lever == null)
+        if (Lever_Top == null)
         {
             Debug.LogError("Lever 할당 오류");
             return;
@@ -27,7 +27,7 @@ public class Gate : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (lever.IsEnable)
+        if (Lever_Top.IsEnable)
         {
             OpenTrapDoor();
         }

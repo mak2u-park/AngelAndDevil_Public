@@ -121,4 +121,5 @@ public class Lever : MonoBehaviour, IEnable
             isContact = false;
         }
     }
+
 }
