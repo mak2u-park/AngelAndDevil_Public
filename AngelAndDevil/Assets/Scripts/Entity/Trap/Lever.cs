@@ -8,10 +8,10 @@ public class Lever : MonoBehaviour, IEnable
     private bool isEnable;
     private bool isContact = false;
 
-    // TrapDoor에서 사용할 수 있도록 public으로 설정
+    // Gate에서 사용할 수 있도록 public으로 설정
     public bool IsEnable => isEnable;
 
-    void Start()
+    private void Start()
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
         // Lever의 회전축을 설정
@@ -19,7 +19,7 @@ public class Lever : MonoBehaviour, IEnable
     }
 
     // 물리연산이기에 FixedUpdate에서 사용
-    void FixedUpdate()
+    private void FixedUpdate()
     {
         float rawZ = _rigidbody2D.transform.localEulerAngles.z;
         float angleZ = (rawZ > 180f) ? rawZ - 360f : rawZ;
