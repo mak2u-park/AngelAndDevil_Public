@@ -1,12 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class MainUIController : BaseUIController
 {
     public Canvas stageCanvas;
     public Canvas soundCanvas;
+
+    protected override void Awake()
+    {
+        base.Awake();
+    }
+    private void Start()
+    {
+        stageCanvas.gameObject.SetActive(!isStart);
+        soundCanvas.gameObject.SetActive(false);
+    }
     protected override UIState GetUIState()
     {
         return UIState.Main;
@@ -17,30 +28,15 @@ public class MainUIController : BaseUIController
         base.OnEsc();
         if (soundCanvas.gameObject.activeSelf)
         {
-            CloseCanvas(soundCanvas);
+            CloseUI(soundCanvas.gameObject);
         }
-        if (stageCanvas.gameObject.activeSelf)
+        else if (stageCanvas.gameObject.activeSelf)
         {
-            CloseCanvas(stageCanvas);
+            CloseUI(stageCanvas.gameObject);
         }
         else
         {
             return;
         }
     }
-
-    public void OpenSound()
-    {
-        soundCanvas.gameObject.SetActive(true);
-    }
-
-    public void OpenStage()
-    {
-        stageCanvas.gameObject.SetActive(true);
-    }
-    public void CloseCanvas(Canvas canvas)
-    {
-        canvas.gameObject.SetActive(false);
-    }
-
 }
