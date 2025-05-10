@@ -11,15 +11,22 @@ public class Gate : MonoBehaviour
     private void Start()
     {
         animators = GetComponentsInChildren<Animator>();
-    }
-    void Update()
-    {
+
         if (lever == null)
         {
             Debug.LogError("Lever 할당 오류");
             return;
         }
 
+        if (gameObject.name != "Gate")
+        {
+            Debug.LogError("잘못된 오브젝트입니다 - Gate 전용");
+            return;
+        }
+    }
+
+    private void FixedUpdate()
+    {
         if (lever.IsEnable)
         {
             OpenTrapDoor();
