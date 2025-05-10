@@ -27,9 +27,7 @@ public class Button : MonoBehaviour, IEnable
     void FixedUpdate()
     {
         float PosY = transform.position.y;
-
-        
-        PosY = Mathf.Clamp(PosY, SetY - 0.5f, SetY);
+        PosY = Mathf.Clamp(PosY, SetY - 1f, SetY);
 
         if (!isContact && PosY < SetY)
         {
@@ -37,7 +35,7 @@ public class Button : MonoBehaviour, IEnable
             PosY = Mathf.Min(PosY, SetY);
             Disable();
         }   
-        else if (isContact && PosY < SetY -0.1f)
+        else if (isContact && PosY < SetY - 0.1f)
         {
             Enable();
         }

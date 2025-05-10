@@ -40,7 +40,7 @@ public class Plate : MonoBehaviour
     {
         // 현재위치에서 EndY 좌표로 이동
         Vector2 currentPosition = transform.position;
-        currentPosition.y = Mathf.Lerp(currentPosition.y, EndY, Time.fixedDeltaTime);
+        currentPosition.y = Mathf.MoveTowards(currentPosition.y, EndY, Time.fixedDeltaTime * 2f);
         transform.position = currentPosition;
     }
 
@@ -48,7 +48,7 @@ public class Plate : MonoBehaviour
     {
         // 현재 위치에서 StartY 좌표로 이동
         Vector3 currentPosition = transform.position;
-        currentPosition.y = Mathf.Lerp(currentPosition.y, StartY, Time.fixedDeltaTime);
+        currentPosition.y = Mathf.MoveTowards(currentPosition.y, StartY, Time.fixedDeltaTime * 2f);
         transform.position = currentPosition;
     }
 }
