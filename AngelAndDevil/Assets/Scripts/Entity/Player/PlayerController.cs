@@ -7,10 +7,11 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float Speed { get; protected set; } = 0.1f;
+    public float Speed { get; protected set; } = 3f;
     public float JumpForce { get; protected set; } = 1f;
     public bool IsGrounded { get; protected set; } = false;
     public bool IsDie { get; protected set; } = false;
+    
     public bool IsLaund { get; protected set; } = false;
 
     protected Vector2 movementDirection = Vector2.zero;
@@ -19,7 +20,7 @@ public class PlayerController : MonoBehaviour
     private static readonly int IsDead = Animator.StringToHash("IsDead");
     
     [SerializeField] protected Rigidbody2D rb;
-    [SerializeField] Animator animator;
+    [SerializeField] public Animator animator;
     [SerializeField] SpriteRenderer _renderer;
   
 
@@ -35,7 +36,7 @@ public class PlayerController : MonoBehaviour
     {
         
         Vector2 movePos = new Vector2(_direction.x * Speed, 0);
-        transform.Translate(movePos);
+        transform.Translate(movePos * Time.deltaTime);
         if(_direction.x > 0)
         {
             _renderer.flipX = false;
@@ -93,12 +94,14 @@ public class PlayerController : MonoBehaviour
         
     }
 
-
+    protected virtual void Update()
+    {
+        GroundCheck();
+    }
 
     protected virtual void FixedUpdate() 
     {
-        if (IsDie) return;
-        GroundCheck();
+        if (IsDie ) return;
         Movement(movementDirection);
 
     }
