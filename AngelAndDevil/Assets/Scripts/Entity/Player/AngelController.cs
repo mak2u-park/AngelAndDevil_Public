@@ -33,6 +33,11 @@ public class AngelController : PlayerController
         base.Start();
     }
 
+    protected override void Update()
+    {
+        base.Update();
+        
+    }
 
 
     protected override void FixedUpdate()

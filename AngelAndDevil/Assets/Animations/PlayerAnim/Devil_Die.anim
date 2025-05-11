@@ -642,7 +642,7 @@ AnimationClip:
   - time: 0.33333334
     functionName: DeathPariclePlay
     data: 
-    objectReferenceParameter: {fileID: 0}
+    objectReferenceParameter: {fileID: 7314851100851473189, guid: cd4be6a905641ff48827bc5c585f7d2b, type: 3}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0

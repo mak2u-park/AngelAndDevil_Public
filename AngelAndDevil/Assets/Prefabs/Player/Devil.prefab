@@ -252,7 +252,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 4f20538fb98df5e498675f526d1c7da7, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_WarningMessage: 
@@ -272,5 +272,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad4c496b736d91144b24f3fd7243e93e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _deathParticle: {fileID: 7314851100851473189, guid: cd4be6a905641ff48827bc5c585f7d2b, type: 3}
   player: {fileID: 203187087585466070}
