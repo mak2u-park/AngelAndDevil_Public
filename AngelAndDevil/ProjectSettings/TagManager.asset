@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Hostage
+  - Block
   layers:
   - Default
   - TransparentFX

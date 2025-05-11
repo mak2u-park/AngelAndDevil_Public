@@ -6,13 +6,18 @@ public class Plate : MonoBehaviour
 {
     [SerializeField] Button button;
     // 엘리베이터가 올라갈 높이
+    [Range(0, 20), SerializeField] float width = 0f;
     [Range(0, 20), SerializeField] float height = 2f;
 
+    private float StartX; // 엘리베이터의 시작 X 좌표
+    private float EndX; // 엘리베이터의 끝 X 좌표
     private float StartY; // 엘리베이터의 시작 높이
     private float EndY; // 엘리베이터의 끝 높이
 
     private void Start()
     {
+        StartX = transform.position.x;
+        EndX = StartX + width;
         StartY = transform.position.y;
         EndY = StartY + height;
 
@@ -40,6 +45,7 @@ public class Plate : MonoBehaviour
     {
         // 현재위치에서 EndY 좌표로 이동
         Vector2 currentPosition = transform.position;
+        currentPosition.x = Mathf.MoveTowards(currentPosition.x, EndX, Time.fixedDeltaTime * 2f);
         currentPosition.y = Mathf.MoveTowards(currentPosition.y, EndY, Time.fixedDeltaTime * 2f);
         transform.position = currentPosition;
     }
@@ -48,6 +54,7 @@ public class Plate : MonoBehaviour
     {
         // 현재 위치에서 StartY 좌표로 이동
         Vector3 currentPosition = transform.position;
+        currentPosition.x = Mathf.MoveTowards(currentPosition.x, StartX, Time.fixedDeltaTime * 2f);
         currentPosition.y = Mathf.MoveTowards(currentPosition.y, StartY, Time.fixedDeltaTime * 2f);
         transform.position = currentPosition;
     }

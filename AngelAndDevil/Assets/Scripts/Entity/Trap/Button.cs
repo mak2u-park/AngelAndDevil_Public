@@ -57,7 +57,7 @@ public class Button : MonoBehaviour, IEnable
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Block"))
         {
             isContact = true;
             Debug.Log("πˆ∆∞ ¡¢√À");
@@ -66,7 +66,7 @@ public class Button : MonoBehaviour, IEnable
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Block"))
         {
             isContact = false;
             Debug.Log("πˆ∆∞ ∫Ò¡¢√À");
