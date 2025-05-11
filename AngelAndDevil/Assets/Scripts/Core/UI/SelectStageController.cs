@@ -4,13 +4,20 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using static UnityEngine.GraphicsBuffer;
+using TMPro;
 
 public class SelectStageController : BaseUIController
 {
     public Button[] roomButtons;
     public GameObject AgDv;
+    public TMP_Text Percent;
+    public TMP_Text StarNum;
+
     [SerializeField]private Button clickbutton;
+
+    [SerializeField] private float percent = 0f;//test용
+    [SerializeField] private int currentStarNum = 3;//test용
+    [SerializeField] private int maxStarNum = 15;//test용
 
     protected override void Awake()
     {
@@ -25,6 +32,10 @@ public class SelectStageController : BaseUIController
             int index = i;
             roomButtons[i].onClick.AddListener(() => ClickRoom(index + 1, roomButtons[index]));
         }
+
+        percent = (float)currentStarNum / maxStarNum * 100f;
+        Percent.text = $"{percent:N0}%";
+        StarNum.text = $"( {currentStarNum} / {maxStarNum} )";
     }
 
     private void Update()//여기도 GameManager
