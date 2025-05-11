@@ -10,6 +10,7 @@ public abstract class BaseUIController : MonoBehaviour
     protected UIManager uiManager;
 
     public static bool isStart = true;
+    protected static int roomNum = 0; //GameManager에서 관리해주는 것이 좋을듯?
 
     protected virtual void Awake()
     {
@@ -39,6 +40,7 @@ public abstract class BaseUIController : MonoBehaviour
 
     public void GoMainScene(bool isRestart)
     {
+        roomNum = 0;
         isStart = isRestart;
         SceneManager.LoadScene("StartSceneUI_juna");
     }
