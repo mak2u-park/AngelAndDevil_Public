@@ -133,7 +133,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _type: 1
   _doorPair: {fileID: 0}
-  DoorMatched: 0
 --- !u!61 &1721400286446787627
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -274,7 +273,7 @@ Animator:
   m_GameObject: {fileID: 6941461903621357612}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: e6ce1b05075d92348837e61c7585aa58, type: 2}
+  m_Controller: {fileID: 9100000, guid: e780085e42401064cb56902e8b59c9a3, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
