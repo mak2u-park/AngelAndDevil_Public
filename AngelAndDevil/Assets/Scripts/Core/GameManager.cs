@@ -91,6 +91,11 @@ public class GameManager : Singleton<GameManager>
         return gameData.GetIntime(stage);
     }
 
+    public bool TrySelectStage(int stage)
+    {
+        return gameData.CanSelectStage(stage);
+    }
+
     public bool ShowOutcome(ref EndingType ending)
     {
         if(gameData.GetScore(12) == 0)
@@ -137,7 +142,7 @@ public class GameManager : Singleton<GameManager>
         gameData = new GameData();
     }
 
-    private void SaveScore(int slot)
+    private void SaveData(int slot)
     {
         string scordatatojson = JsonUtility.ToJson(gameData);
         string Filpath = Path.Combine(Application.dataPath + "/Data/", slot.ToString() + "slot" + json);
