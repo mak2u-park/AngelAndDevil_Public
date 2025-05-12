@@ -11,7 +11,7 @@ public class Door : MonoBehaviour
     [SerializeField] private Door _doorPair;
     
     // Door와 플레이어 타입이 일치하는지를 나타내는 변수
-    public bool DoorMatched = false;
+    private bool DoorMatched = false;
 
     Animator Animator;
 
@@ -48,8 +48,17 @@ public class Door : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        DoorMatched = false;
-        CheckDoorMatched();
+        if (_type == DoorType.Angel && collision.gameObject.name == "Angel") // 이 오브젝트가 Angel Door일때
+        {
+            DoorMatched = false;
+            CheckDoorMatched();
+        }
+        else if (_type == DoorType.Devil && collision.gameObject.name == "Devil") // 이 오브젝트가 Devil Door일때
+        {
+            DoorMatched = false;
+            CheckDoorMatched();
+        }
+        
     }
 
     private void CheckDoorMatched()
