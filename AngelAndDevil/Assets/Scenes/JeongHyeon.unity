@@ -839,6 +839,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2019047897473117152, guid: e9a0cab750ebb5e409931fa23a8f02a1, type: 3}
+      propertyPath: _doorPair
+      value: 
+      objectReference: {fileID: 657313098}
     - target: {fileID: 4551049373495030718, guid: e9a0cab750ebb5e409931fa23a8f02a1, type: 3}
       propertyPath: m_Name
       value: AngelDoor_Chapter3
@@ -888,6 +892,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9a0cab750ebb5e409931fa23a8f02a1, type: 3}
+--- !u!114 &657313098 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1926684144301471464, guid: 02b6dd91ce2c3c7469ab646c61c7457e, type: 3}
+  m_PrefabInstance: {fileID: 1478755403}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebd9dd9bfad12dc4da31120ad0d681dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &803279235 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3758634089114487413, guid: a6d9294de691d484890f50f48fbfe3f7, type: 3}
@@ -1178,6 +1193,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1926684144301471464, guid: 02b6dd91ce2c3c7469ab646c61c7457e, type: 3}
+      propertyPath: _doorPair
+      value: 
+      objectReference: {fileID: 1802775280}
     - target: {fileID: 5203376404476655918, guid: 02b6dd91ce2c3c7469ab646c61c7457e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 12.86
@@ -1885,6 +1904,17 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &1802775280 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2019047897473117152, guid: e9a0cab750ebb5e409931fa23a8f02a1, type: 3}
+  m_PrefabInstance: {fileID: 526370038}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebd9dd9bfad12dc4da31120ad0d681dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1665680641769678491
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2421,6 +2451,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5553608022462134830, guid: c9e8bc289c44c1e44b325905d5b7d063, type: 3}
+      propertyPath: Lever_Top
+      value: 
+      objectReference: {fileID: 463705387}
     - target: {fileID: 6731250068000282678, guid: c9e8bc289c44c1e44b325905d5b7d063, type: 3}
       propertyPath: m_Name
       value: Gate
