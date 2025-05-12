@@ -8,6 +8,7 @@ using Unity.VisualScripting.Antlr3.Runtime.Tree;
 
 public class ScoreManager : Singleton<ScoreManager> 
 {
+    private string json = ".json";
     private int angelhostage;
     private int devilhostage;
 
@@ -27,10 +28,15 @@ public class ScoreManager : Singleton<ScoreManager>
         
     }
 
-    public void SettingHostage() // 처음에 인질 개수를 세팅
+    public void SettingHostage(int angel, int devil) // 처음에 인질 개수를 세팅
     {
         angelhostage = GameManager.Instance.getHostageCount(HostageType.Knight);
         devilhostage = GameManager.Instance.getHostageCount(HostageType.DarkMage);
+    }
+
+    public void SettingTime()
+    {
+
     }
 
     public void RemoveHostage(HostageType type)
@@ -45,25 +51,14 @@ public class ScoreManager : Singleton<ScoreManager>
         }
     }
 
-    private void EndStageScore(int stage)
+    private int EndStageScore(int stage)
     {
         int newscore = 1 + CheckHostage() + CheckTime();
-        if (GameManager.Instance.GetStageScore(GameManager.Instance._Stage) > newscore)
+        if (GameManager.Instance.GetStageScore(stage) < newscore)
         {
-            GameManager.Instance.SaveStageScore(GameManager.Instance._Stage, newscore);
+            GameManager.Instance.SaveStageScore(stage, newscore);
         }
-        if(GameManager.Instance.GetStageLeftAngel(GameManager.Instance._Stage) > angelhostage)
-        {
-            GameManager.Instance.SaveStageLeftAngel(GameManager.Instance._Stage, angelhostage);
-        }
-        if(GameManager.Instance.GetStageLeftDevil(GameManager.Instance._Stage) > devilhostage)
-        {
-            GameManager.Instance.SaveStageLeftDevil(GameManager.Instance._Stage, devilhostage);
-        }
-        if(CheckTime() == 1)
-        {
-            GameManager.Instance.SaveStageIntime(GameManager.Instance._Stage, true);
-        }
+        return newscore;
     }
 
     private int CheckHostage()
@@ -78,8 +73,8 @@ public class ScoreManager : Singleton<ScoreManager>
 
     private int CheckTime()
     {
-        float checktime = GameManager.Instance._Time; // 남은 time을 구함
-        if (checktime > SettingData.limitTime[GameManager.Instance._Stage - 1])
+        float time = 1.0f; // 남은 time을 구함
+        if(time == 0)
         {
             return 0;
         }

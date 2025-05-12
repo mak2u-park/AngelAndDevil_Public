@@ -1,114 +1,25 @@
 using UnityEditor.Build.Player;
 using UnityEngine;
-public class SettingData
-{
-    public static float[] limitTime = { 300f, 300f, 300f, 300f, 300f, 300f, 300f, 300f, 300f, 300f, 300f, 300f };
-}
-
-public enum EndingType
-{
-    normal,
-    devil,
-    angel,
-    perfect
-}
-
-
-public class Data
-{
-    private int score;
-    private int leftAngel;
-    private int leftDevil;
-    private bool intime;
-    public int Score
-    {
-        get { return score; }
-        set { score = value; }
-    }
-    public int LeftAngel
-    {
-        get { return leftAngel; }
-        set {  leftAngel = value; }
-    }
-    public int LeftDevil
-    {
-        get { return leftDevil; }
-        set { leftDevil = value; }
-    }
-    public bool Intime
-    {
-        get { return  intime; }
-        set { intime = value; }
-    }
-
-    public Data()
-    {
-        score = 0;
-        leftAngel = 1;
-        leftDevil = 1;
-        intime = false;
-    }
-}
 
 public class GameData
 {
-    private Data[] data;
+    private int[] scores;
 
     public GameData()
     {
-        data = new Data[12];
-        for (int i = 0; i < data.Length; i++)
+        scores = new int[5];
+        for (int i = 0; i < scores.Length; i++)
         {
-            data[i] = new Data();
+            scores[i] = 0;
         }
     }
     public void SetScore(int num, int _score)
     {
-        data[num-1].Score = _score;
+        scores[num - 1] = _score;
     }
 
     public int GetScore(int num)
     {
-        return data[num - 1].Score;
-    }
-
-    public void SetLeftAngel(int num, int _leftangel)
-    {
-        data[num-1].LeftAngel = _leftangel;
-    }
-    public int GetLeftAngel(int num)
-    {
-        return data[num - 1].LeftAngel;
-    }
-    public void SetLeftDevil(int num, int _leftdevil)
-    {
-        data[num-1].LeftDevil = _leftdevil;
-    }
-    public int GetLeftDevil(int num)
-    {
-        return data[num - 1].LeftDevil;
-    }
-
-    public void SetIntime(int num, bool _intime)
-    {
-        data[num - 1].Intime = _intime;
-    }
-
-    public bool GetIntime(int num)
-    {
-        return data[num - 1].Intime;
-    }
-    public bool CanSelectStage(int stage)
-    {
-        int index = stage - 1;
-        if(index == 0)
-        {
-            return true;
-        }
-        if (data[index-1].Score == 0)
-        {
-            return false;
-        }
-        return true;
+        return scores[num - 1];
     }
 }
