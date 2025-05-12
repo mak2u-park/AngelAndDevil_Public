@@ -10,6 +10,7 @@ public class Hostage : MonoBehaviour, IInteractable
     public void Interact()
     {
         ScoreManager.Instance.RemoveHostage(_type);
+        SoundManager.Instance.PlaySFX("Hostage");
         Destroy(gameObject);
     }
 
