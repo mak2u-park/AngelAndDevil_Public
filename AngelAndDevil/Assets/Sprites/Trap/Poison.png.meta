@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3e1d2141585974a458b7f241cf7327c8
+guid: c2dc570d0adcff1429adf6107bcc652e
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,7 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Lava_0
+      name: Poison_0
       rect:
         serializedVersion: 2
         x: 0
@@ -124,14 +124,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 920d68f88d2035141b1635249b2bf784
-      internalID: 125790529
+      spriteID: 74b6b2a4e8b189441a50ff81578ec770
+      internalID: 2059348101
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lava_1
+      name: Poison_1
       rect:
         serializedVersion: 2
         x: 48
@@ -145,14 +145,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f9dfa1f9943ae1d4b9b4c4998aadc43e
-      internalID: -1026011171
+      spriteID: 1d19bff7b2026f7449aa8bd2771f9e16
+      internalID: 1860104789
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lava_2
+      name: Poison_2
       rect:
         serializedVersion: 2
         x: 0
@@ -166,14 +166,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3c2ac6824474ff043b41eebc92f24953
-      internalID: -2126279603
+      spriteID: 49c7527974946f946b84b5d1f5be648d
+      internalID: 934023490
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lava_3
+      name: Poison_3
       rect:
         serializedVersion: 2
         x: 0
@@ -187,14 +187,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 79f0d2589890e37439f46d9a1ba8f86a
-      internalID: -1425077084
+      spriteID: 9c72be8d23134244d9ad1d1958541ff3
+      internalID: 769566859
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lava_4
+      name: Poison_4
       rect:
         serializedVersion: 2
         x: 48
@@ -208,14 +208,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 49a2292291b06c84bbe8939ffc3c125c
-      internalID: -1744864747
+      spriteID: cf03fa0b756834a48b2d118dccc6c4f5
+      internalID: 1072454903
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lava_5
+      name: Poison_5
       rect:
         serializedVersion: 2
         x: 0
@@ -229,8 +229,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 59434cfac7dbcbe49a4a0fbf07135978
-      internalID: 305229392
+      spriteID: 46ce458aaacf75f43b5ab6d97c6557ce
+      internalID: 1403864662
       vertices: []
       indices: 
       edges: []
@@ -239,19 +239,19 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
-    internalID: 1537655665
+    internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Lava_0: 125790529
-      Lava_1: -1026011171
-      Lava_2: -2126279603
-      Lava_3: -1425077084
-      Lava_4: -1744864747
-      Lava_5: 305229392
+      Poison_0: 2059348101
+      Poison_1: 1860104789
+      Poison_2: 934023490
+      Poison_3: 769566859
+      Poison_4: 1072454903
+      Poison_5: 1403864662
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
