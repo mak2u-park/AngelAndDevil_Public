@@ -18,11 +18,6 @@ public class Gate : MonoBehaviour
             return;
         }
 
-        if (gameObject.name != "Gate")
-        {
-            Debug.LogError("잘못된 오브젝트입니다 - Gate 전용");
-            return;
-        }
     }
 
     private void FixedUpdate()

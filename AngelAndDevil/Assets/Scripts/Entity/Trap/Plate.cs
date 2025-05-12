@@ -15,13 +15,6 @@ public class Plate : MonoBehaviour, IEnable
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
         SetY = transform.position.y;
-
-        // 오브젝트 이름이 Plate_Top인지 확인
-        if (gameObject.name != "Plate_Top")
-        {
-            Debug.LogError("잘못된 오브젝트입니다 - Plate_Top 전용");
-            return;
-        }
     }
 
     void FixedUpdate()
