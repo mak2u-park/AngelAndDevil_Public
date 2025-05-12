@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Plate : MonoBehaviour
+public class Elevator : MonoBehaviour
 {
-    [SerializeField] Button button;
+    [SerializeField] Plate elevatorPlate;
     // 엘리베이터가 올라갈 높이
     [Range(0, 20), SerializeField] float width = 0f;
     [Range(0, 20), SerializeField] float height = 2f;
@@ -31,7 +31,7 @@ public class Plate : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (button.IsEnable)
+        if (elevatorPlate.IsEnable)
         {
             UpPlate();
         }

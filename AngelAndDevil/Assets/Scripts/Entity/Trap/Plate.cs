@@ -2,8 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+<<<<<<< HEAD:AngelAndDevil/Assets/Scripts/Entity/Trap/Button.cs
 
 public class Button : MonoBehaviour, IEnable
+=======
+public class Plate : MonoBehaviour, IEnable
+>>>>>>> 33c33d0cf12aa2d9b9a5fbf8241e4ab96c86cd61:AngelAndDevil/Assets/Scripts/Entity/Trap/Plate.cs
 {
     Rigidbody2D _rigidbody2D;
     private bool isEnable;
