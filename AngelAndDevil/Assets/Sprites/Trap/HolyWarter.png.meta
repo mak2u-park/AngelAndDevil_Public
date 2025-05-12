@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 42f70f941a1a1e140b90bb7b46bbfc6a
+guid: ad3f07bfd8aaf914ab1a4ff0e3d3b687
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -113,27 +113,6 @@ TextureImporter:
       name: HolyWarter_0
       rect:
         serializedVersion: 2
-        x: 48
-        y: 64
-        width: 48
-        height: 16
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b12ec2b4d39da9141bca20ca5e0dfd73
-      internalID: 1261803050
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: HolyWarter_1
-      rect:
-        serializedVersion: 2
         x: 0
         y: 64
         width: 48
@@ -145,8 +124,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3163d0495c283a644819dfd2edd98b52
-      internalID: -2094900760
+      spriteID: 3d6e6f935c243aa44b18b1361f3b65b1
+      internalID: -355533669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HolyWarter_1
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 64
+        width: 48
+        height: 16
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c055f6fdb77780498a1d20410ccb929
+      internalID: 788212964
       vertices: []
       indices: 
       edges: []
@@ -166,8 +166,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0ab08c016aed5d549b345b8185acfa8e
-      internalID: 1449044435
+      spriteID: 211a154a9fbdecb4cb317e7a90ea27b5
+      internalID: 1223572422
       vertices: []
       indices: 
       edges: []
@@ -187,8 +187,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 551de3ad4ba352b4bbc264a6ad87e43c
-      internalID: 1967454856
+      spriteID: dba1a27e90c446645bc74abb3377c141
+      internalID: 1680047250
       vertices: []
       indices: 
       edges: []
@@ -208,8 +208,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 625f572b97f007d43ab45104f7a8969d
-      internalID: -222738025
+      spriteID: fc4b51d449121464c9cddac6f9768914
+      internalID: 1053151828
       vertices: []
       indices: 
       edges: []
@@ -229,8 +229,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f2aaca662751aa84182acf16cba5ea58
-      internalID: -247394032
+      spriteID: 569c02385e7365c4f8e8c8a3c028c345
+      internalID: 664586291
       vertices: []
       indices: 
       edges: []
@@ -246,12 +246,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      HolyWarter_0: 1261803050
-      HolyWarter_1: -2094900760
-      HolyWarter_2: 1449044435
-      HolyWarter_3: 1967454856
-      HolyWarter_4: -222738025
-      HolyWarter_5: -247394032
+      HolyWarter_0: -355533669
+      HolyWarter_1: 788212964
+      HolyWarter_2: 1223572422
+      HolyWarter_3: 1680047250
+      HolyWarter_4: 1053151828
+      HolyWarter_5: 664586291
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
