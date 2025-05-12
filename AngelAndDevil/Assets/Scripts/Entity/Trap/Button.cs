@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Button : MonoBehaviour, IEnable
 {
     Rigidbody2D _rigidbody2D;
@@ -34,7 +35,7 @@ public class Button : MonoBehaviour, IEnable
             PosY += 0.5f * Time.fixedDeltaTime;
             PosY = Mathf.Min(PosY, SetY);
             Disable();
-        }   
+        }
         else if (isContact && PosY < SetY - 0.1f)
         {
             Enable();
@@ -74,3 +75,6 @@ public class Button : MonoBehaviour, IEnable
 
     }
 }
+
+
+

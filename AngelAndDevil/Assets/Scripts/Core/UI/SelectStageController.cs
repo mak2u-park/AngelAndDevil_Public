@@ -1,9 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
-using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine;
 using TMPro;
 
 public class SelectStageController : BaseUIController
@@ -26,6 +24,7 @@ public class SelectStageController : BaseUIController
 
     private void Start()
     {
+        
         AgDv.transform.position = new Vector3(-6, -1, 0);
         for (int i = 0; i < roomButtons.Length; i++)
         {
