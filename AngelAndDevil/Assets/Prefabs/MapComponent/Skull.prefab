@@ -79,6 +79,9 @@ MonoBehaviour:
   _levelColliderLayer:
     serializedVersion: 2
     m_Bits: 8
+  _targetLayer:
+    serializedVersion: 2
+    m_Bits: 196608
 --- !u!58 &3299905988564541376
 CircleCollider2D:
   m_ObjectHideFlags: 0
