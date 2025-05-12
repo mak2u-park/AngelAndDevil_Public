@@ -257,6 +257,58 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 43877792}
   m_CullTransparentMesh: 1
+--- !u!1 &160165633
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 160165635}
+  - component: {fileID: 160165634}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &160165634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 160165633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66bfda30b045c6b448c82357bd689137, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tema: 0
+  isClear: 0
+  isGameOver: 0
+  AgDvPosition:
+  - {x: -6, y: -1, z: 0}
+  - {x: -6, y: -1, z: 0}
+  - {x: -6, y: -1, z: 0}
+  - {x: -6, y: -1, z: 0}
+--- !u!4 &160165635
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 160165633}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &164822502
 GameObject:
   m_ObjectHideFlags: 0
@@ -493,11 +545,11 @@ MonoBehaviour:
       - m_Target: {fileID: 960736014}
         m_TargetAssemblyTypeName: BaseUIController, Assembly-CSharp
         m_MethodName: ChangeScene
-        m_Mode: 2
+        m_Mode: 3
         m_Arguments:
-          m_ObjectArgument: {fileID: 262748106}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
-          m_IntArgument: 0
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -1374,11 +1426,11 @@ MonoBehaviour:
       - m_Target: {fileID: 960736014}
         m_TargetAssemblyTypeName: BaseUIController, Assembly-CSharp
         m_MethodName: ChangeScene
-        m_Mode: 2
+        m_Mode: 3
         m_Arguments:
-          m_ObjectArgument: {fileID: 985998695}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
-          m_IntArgument: 0
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -1689,6 +1741,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1098057837}
   m_CullTransparentMesh: 1
+--- !u!1 &1114919424
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1114919426}
+  - component: {fileID: 1114919425}
+  m_Layer: 0
+  m_Name: ScoreManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1114919425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1114919424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad82401f2962cba48a9ae3b4d03ba904, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1114919426
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1114919424}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1356461610 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5030470993946758268, guid: 2a69c34cbbd5c01479d5cac5008d2fd9, type: 3}
@@ -2303,10 +2399,10 @@ MonoBehaviour:
       - m_Target: {fileID: 960736014}
         m_TargetAssemblyTypeName: BaseUIController, Assembly-CSharp
         m_MethodName: ChangeScene
-        m_Mode: 2
+        m_Mode: 3
         m_Arguments:
-          m_ObjectArgument: {fileID: 1918074110}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2644,11 +2740,11 @@ MonoBehaviour:
       - m_Target: {fileID: 960736014}
         m_TargetAssemblyTypeName: BaseUIController, Assembly-CSharp
         m_MethodName: ChangeScene
-        m_Mode: 2
+        m_Mode: 3
         m_Arguments:
-          m_ObjectArgument: {fileID: 2028564306}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
-          m_IntArgument: 0
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -3112,3 +3208,5 @@ SceneRoots:
   - {fileID: 1490675397}
   - {fileID: 960736016}
   - {fileID: 2142633228}
+  - {fileID: 160165635}
+  - {fileID: 1114919426}
