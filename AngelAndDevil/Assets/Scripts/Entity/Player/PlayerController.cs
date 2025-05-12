@@ -14,11 +14,12 @@ public class PlayerController : MonoBehaviour
     
     public bool IsLaund { get; protected set; } = false;
 
-    protected Vector2 movementDirection = Vector2.zero;
+    [SerializeField]protected Vector2 movementDirection = Vector2.zero;
     int groundLayerMask;
     private static readonly int IsRun = Animator.StringToHash("IsRun");
     private static readonly int IsDead = Animator.StringToHash("IsDead");
-    
+    private static readonly int IsJump = Animator.StringToHash("IsJump");
+
     [SerializeField] protected Rigidbody2D rb;
     [SerializeField] public Animator animator;
     [SerializeField] SpriteRenderer _renderer;
@@ -75,10 +76,12 @@ public class PlayerController : MonoBehaviour
         if (hit.collider!=null && rb.velocity.y > -0.1f)
         {
             IsGrounded = true;
+            animator.SetBool(IsJump, false);
         }
         else
         {
             IsGrounded = false;
+            animator.SetBool(IsJump, true);
         }
     }
 

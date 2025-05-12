@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
 public class DevilController : PlayerController
@@ -10,12 +11,12 @@ public class DevilController : PlayerController
     Vector2 desirePos;
     static readonly int Vent = Animator.StringToHash("IsVent");
     bool isVenting = false;
-    float VentingDelayTime = 1.083f;
+    float VentingDelayTime = 1.08f;
     float VentingTime = 0f;
+    
     public void OnMove(InputValue input)
     {
         Vector2 direction = input.Get<Vector2>();
-        direction.Normalize();
         movementDirection = direction;
         if ( direction.y < 0 && !isVenting)
         {
