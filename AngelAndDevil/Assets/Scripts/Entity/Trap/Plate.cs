@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Button : MonoBehaviour, IEnable
+public class Plate : MonoBehaviour, IEnable
 {
     Rigidbody2D _rigidbody2D;
     private bool isEnable;
