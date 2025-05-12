@@ -16,9 +16,9 @@ public class AngelController : PlayerController
 
     public void Gliding()
     {
-        if(rb.velocity.y < 0f && movementDirection.y > 0f)
+        if(rb.velocity.y < -0.05f && movementDirection.y > 0f)
         {
-            rb.gravityScale = 0.2f;
+            rb.gravityScale = 0.4f;
             animator.SetBool(IsGlide, true);
 
         }

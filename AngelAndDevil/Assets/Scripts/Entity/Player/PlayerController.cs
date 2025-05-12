@@ -8,7 +8,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float Speed { get; protected set; } = 3f;
-    public float JumpForce { get; protected set; } = 5f;
+    public float JumpForce { get; protected set; } = 1f;
     public bool IsGrounded { get; protected set; } = false;
     public bool IsDie { get; protected set; } = false;
     
@@ -65,8 +65,8 @@ public class PlayerController : MonoBehaviour
 
     public virtual void Jump()
     {
-        rb.velocity = new Vector2(rb.velocity.x, JumpForce);
-
+        rb.AddForce(Vector2.up * JumpForce,ForceMode2D.Impulse);
+        
     }
     
     public virtual void GroundCheck()
@@ -99,7 +99,6 @@ public class PlayerController : MonoBehaviour
 
     protected virtual void Update()
     {
-        
         GroundCheck();
     }
 
