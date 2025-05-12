@@ -19,7 +19,7 @@ public class Door : MonoBehaviour
     {
         if (_doorPair == null)
         {
-            Debug.LogError("잘못된 오브젝트입니다 - Door 전용");
+            Debug.LogError("Door를 연결해 주세요");
         }
         if (_type == _doorPair._type)
         {
