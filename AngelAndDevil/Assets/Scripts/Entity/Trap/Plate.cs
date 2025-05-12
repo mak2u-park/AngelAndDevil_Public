@@ -16,10 +16,10 @@ public class Plate : MonoBehaviour, IEnable
         _rigidbody2D = GetComponent<Rigidbody2D>();
         SetY = transform.position.y;
 
-        // 오브젝트 이름이 Button_Top인지 확인
-        if (gameObject.name != "Button_Top")
+        // 오브젝트 이름이 Plate_Top인지 확인
+        if (gameObject.name != "Plate_Top")
         {
-            Debug.LogError("잘못된 오브젝트입니다 - Button_Top 전용");
+            Debug.LogError("잘못된 오브젝트입니다 - Plate_Top 전용");
             return;
         }
     }
@@ -46,13 +46,13 @@ public class Plate : MonoBehaviour, IEnable
     public void Enable()
     {
         isEnable = true;
-        Debug.Log("버튼 활성화");
+        Debug.Log("플레이트 활성화");
     }
 
     public void Disable()
     {
         isEnable = false;
-        Debug.Log("버튼 비활성화");
+        Debug.Log("플레이트 비활성화");
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -60,7 +60,7 @@ public class Plate : MonoBehaviour, IEnable
         if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Block"))
         {
             isContact = true;
-            Debug.Log("버튼 접촉");
+            Debug.Log("플레이트 접촉");
         }
     }
 
@@ -69,7 +69,7 @@ public class Plate : MonoBehaviour, IEnable
         if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Block"))
         {
             isContact = false;
-            Debug.Log("버튼 비접촉");
+            Debug.Log("플레이트 비접촉");
         }
 
     }

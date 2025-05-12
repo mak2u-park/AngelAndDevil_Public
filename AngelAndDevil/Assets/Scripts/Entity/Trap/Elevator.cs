@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Elevator : MonoBehaviour
 {
-    [SerializeField] Plate elevatorPlate;
+    [SerializeField] Plate plateTop;
     // 엘리베이터가 올라갈 높이
     [Range(0, 20), SerializeField] float width = 0f;
     [Range(0, 20), SerializeField] float height = 2f;
@@ -31,7 +31,7 @@ public class Elevator : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (elevatorPlate.IsEnable)
+        if (plateTop.IsEnable)
         {
             UpPlate();
         }
