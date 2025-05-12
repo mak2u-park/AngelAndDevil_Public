@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8411744253168591771}
   - component: {fileID: 2122278432071226058}
   m_Layer: 0
-  m_Name: Plate_Top
+  m_Name: Button_Top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -183,7 +183,7 @@ GameObject:
   - component: {fileID: 6488930347796216658}
   - component: {fileID: 6938762566187476512}
   m_Layer: 15
-  m_Name: Plate_Bottom
+  m_Name: Button_Bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -317,7 +317,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6727814355712557106}
   m_Layer: 15
-  m_Name: Plate
+  m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
