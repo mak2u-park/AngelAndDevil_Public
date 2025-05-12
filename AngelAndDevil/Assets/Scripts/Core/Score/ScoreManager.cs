@@ -6,9 +6,8 @@ using System.IO;
 using Unity.VisualScripting.Antlr3.Runtime.Tree;
 
 
-public class ScoreManager : Singleton<ScoreManager> { 
+public class ScoreManager : Singleton<ScoreManager> 
 {
-    private ScoreData scoredata;
     private string json = ".json";
     private int angelhostage;
     private int devilhostage;
