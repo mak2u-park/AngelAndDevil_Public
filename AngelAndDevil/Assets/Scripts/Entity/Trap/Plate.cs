@@ -39,13 +39,11 @@ public class Plate : MonoBehaviour, IEnable
     public void Enable()
     {
         isEnable = true;
-        Debug.Log("플레이트 활성화");
     }
 
     public void Disable()
     {
         isEnable = false;
-        Debug.Log("플레이트 비활성화");
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -53,7 +51,6 @@ public class Plate : MonoBehaviour, IEnable
         if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Block"))
         {
             isContact = true;
-            Debug.Log("플레이트 접촉");
         }
     }
 
@@ -62,7 +59,6 @@ public class Plate : MonoBehaviour, IEnable
         if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Block"))
         {
             isContact = false;
-            Debug.Log("플레이트 비접촉");
         }
 
     }
