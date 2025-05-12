@@ -150,6 +150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24bb70e632ec1ac4e9162aa5b4b73a75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  movementDirection: {x: 0, y: 0}
   rb: {fileID: 3995824973582707066}
   animator: {fileID: 3718841087676356527}
   _renderer: {fileID: 8627237813592318582}
@@ -252,7 +253,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 4f20538fb98df5e498675f526d1c7da7, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_WarningMessage: 
