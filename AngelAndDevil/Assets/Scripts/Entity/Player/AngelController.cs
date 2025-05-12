@@ -6,24 +6,26 @@ using UnityEngine.InputSystem;
 
 public class AngelController : PlayerController
 {
-    
+    private static readonly int IsGlide = Animator.StringToHash("IsGlide");
+
     public void OnMove(InputValue input)
     {
         Vector2 direction = input.Get<Vector2>();
-        direction.Normalize();  
         movementDirection = direction;
     }
 
     public void Gliding()
     {
-        if(rb.velocity.y < -0.1f)
+        if(rb.velocity.y < -0.05f && movementDirection.y > 0f)
         {
-            rb.gravityScale = 0.6f;
-            
+            rb.gravityScale = 0.4f;
+            animator.SetBool(IsGlide, true);
+
         }
         else
         {
             rb.gravityScale = 1f;
+            animator.SetBool(IsGlide, false);
         }
     }
 
