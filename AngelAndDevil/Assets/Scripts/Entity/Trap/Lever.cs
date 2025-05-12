@@ -95,14 +95,12 @@ public class Lever : MonoBehaviour, IEnable
     {
         isEnable = true;
         // 추가 활성화 로직
-        Debug.Log("레버 활성화");
     }
 
     public void Disable()
     {
         isEnable = false;
         // 추가 비활성화 로직
-        Debug.Log("레버 비활성화");
     }
 
 

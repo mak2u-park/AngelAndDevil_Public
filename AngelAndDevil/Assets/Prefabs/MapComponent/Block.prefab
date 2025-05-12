@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4006665698799580259}
   - component: {fileID: 2153038598044185939}
   - component: {fileID: 8867715413418083522}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Block
   m_TagString: Block
   m_Icon: {fileID: 0}
@@ -116,7 +116,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4824064275928644326}
   - component: {fileID: 7467098554376779135}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: MainSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
