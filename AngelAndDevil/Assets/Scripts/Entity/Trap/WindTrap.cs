@@ -26,7 +26,6 @@ public class WindTrap : MonoBehaviour
     {
         if(_targetLayer == (_targetLayer | (1 << other.gameObject.layer)))
         {
-            Debug.Log("WindTrap");
             Rigidbody2D rb = other.GetComponent<Rigidbody2D>();
             if(rb != null)
             {
