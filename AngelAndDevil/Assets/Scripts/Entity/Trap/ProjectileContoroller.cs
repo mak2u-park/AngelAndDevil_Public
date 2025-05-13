@@ -11,18 +11,16 @@ public class ProjectileContoroller : MonoBehaviour
     [SerializeField] private LayerMask _targetLayer;
 
     private Rigidbody2D _rigidbody;
-    public GameObject _pivot;
 
     private void Start()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
         StartCoroutine(ShootProjectile());
-        _pivot = transform.GetChild(0).gameObject;
     }
 
     public void Init(bool isRight)
     {
-        transform.localRotation = Quaternion.Euler(0, 0, isRight ? 0 : 180);
+        transform.localRotation = Quaternion.Euler(0, isRight ? 0 : 180, 0);
     }
 
     private IEnumerator ShootProjectile()
