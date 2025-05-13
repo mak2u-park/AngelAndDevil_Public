@@ -3,5 +3,13 @@ public enum TrapType
 {
     HolyWater,
     Lava,
-    Poison
+    Poison,
+
+}
+
+public enum TurretType
+{
+    Green,
+    Red,
+    Blue,
 }

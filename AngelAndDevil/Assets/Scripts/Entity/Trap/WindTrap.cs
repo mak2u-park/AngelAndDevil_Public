@@ -9,6 +9,8 @@ public class WindTrap : MonoBehaviour
 
     [SerializeField] private Lever _lever;
 
+    [SerializeField] private LayerMask _targetLayer;
+
     private Animator _animator;
 
     private float _applyForce = 0f;
@@ -22,7 +24,7 @@ public class WindTrap : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        if(other.gameObject.CompareTag("Player"))
+        if(_targetLayer == (_targetLayer | (1 << other.gameObject.layer)))
         {
             Debug.Log("WindTrap");
             Rigidbody2D rb = other.GetComponent<Rigidbody2D>();
@@ -39,6 +41,8 @@ public class WindTrap : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if(_lever == null) return;
+
         if(_lever.IsEnable)
         {
             _applyForce = 0f;
