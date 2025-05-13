@@ -7,24 +7,27 @@ using UnityEngine.SceneManagement;
 
 public class GameUIController : BaseUIController
 {
+    [Header("Canvas")]
     public Canvas menuCanvas;
     public Canvas soundCanvas;
     public Canvas clearCanvas;
     public Canvas gameOverCanvas;
+    [Header("Text")]
     public TMP_Text timeText;
     public TMP_Text angelHostageText;
     public TMP_Text devilHostageText;
     public TMP_Text FinaltimeText;
+    [Header("Image")]
+    public Image doorStarImage;
+    public Image hostageStarImage;
+    public Image timeStarImage;
+    public Image[] bigStarImages;
+    [Header("Num")]
+    [SerializeField] private int maxAngelHostage;
+    [SerializeField] private int maxDevilHostage;
+    private float delayBetweenStars = 1.2f;
 
-    private float time = 0f;//건우님하고 조율하기
 
-    private int maxAngelHostage = 3;//test용 ->그냥 여기서 선언해주고 serializeField로 inspector에서 조정해도 좋을 듯
-    private int maxDevilHostage = 3;//test용
-    [SerializeField]private int angelHostage = 1;//test용
-    [SerializeField]private int devilHostage = 2;//test용
-
-    [SerializeField]private bool clear = false;//test용
-    [SerializeField]private bool isGameOver = false;//test용
     protected override void Awake()
     {
         base.Awake();
@@ -35,19 +38,29 @@ public class GameUIController : BaseUIController
         soundCanvas.gameObject.SetActive(false);
         clearCanvas.gameObject.SetActive(false);
         gameOverCanvas.gameObject.SetActive(false);
+        doorStarImage.gameObject.SetActive(false);
+        hostageStarImage.gameObject.SetActive(false);
+        timeStarImage.gameObject.SetActive(false);
+        for (int i = 0; i < bigStarImages.Length; i++)
+        {
+            bigStarImages[i].gameObject.SetActive(false);
+        }
+        maxAngelHostage = ScoreManager.Instance.AngelHostage;
+        maxDevilHostage = ScoreManager.Instance.DevilHostage;
     }
 
     private void Update()
     {
-        if (clear)
+        if (GameManager.Instance.isClear)//여기에 별 획득 추가, 코루틴
         {
-            Time.timeScale = 0f;
+            GameManager.Instance.Pause(true);
             FinaltimeText.text = timeText.text;
             clearCanvas.gameObject.SetActive(true);
+            StartCoroutine(ShowStars());
         }
-        else if (isGameOver)
+        else if (GameManager.Instance.isGameOver)
         {
-            Time.timeScale = 0f;
+            GameManager.Instance.Pause(true);
             gameOverCanvas.gameObject.SetActive(true);
         }
         else
@@ -56,6 +69,34 @@ public class GameUIController : BaseUIController
             UpdateHostageNumber();
         }
     }
+
+    IEnumerator ShowStars()
+    {
+        bool inTime = GameManager.Instance.GetStageIntime(GameManager.Instance._Stage);//아마 Set을 안해줘서 문제 발생
+        int score = 0;
+        yield return new WaitForSecondsRealtime(delayBetweenStars);
+        doorStarImage.gameObject.SetActive(true);
+        score++;
+        if (GameManager.Instance.GetStageLeftAngel(GameManager.Instance._Stage) == 0
+            && GameManager.Instance.GetStageLeftDevil(GameManager.Instance._Stage) == 0)
+        {
+            yield return new WaitForSecondsRealtime(delayBetweenStars);
+            hostageStarImage.gameObject.SetActive(true);
+            score++;
+        }
+        if (inTime)
+        {
+            yield return new WaitForSecondsRealtime(delayBetweenStars);
+            timeStarImage.gameObject.SetActive(true);
+            score++;
+        }
+        for (int i = 0; i < score; i++)
+        {
+            yield return new WaitForSecondsRealtime(delayBetweenStars);
+            bigStarImages[i].gameObject.SetActive(true);
+        }
+    }
+
     protected override UIState GetUIState()
     {
         return UIState.Game;
@@ -70,48 +111,47 @@ public class GameUIController : BaseUIController
             }
             else
             {
-                ManageTime(false);
+                OpenSetting(false);
             }
         }
         else
         {
-            ManageTime(true);
+            OpenSetting(true);
         }
     }
-    public void ManageTime(bool isStop)
+
+    public void OpenSetting(bool isStop)
     {
         if(isStop)
         {
             OpenUI(menuCanvas.gameObject);
-            Time.timeScale = 0f;
+            GameManager.Instance.Pause(true);
         }
         else
         {
             CloseUI(menuCanvas.gameObject);
-            Time.timeScale = 1f;
+            GameManager.Instance.Pause(false);
         }
     }
 
-    public void Retry(Button button)
+    public void Retry()
     {
-        isGameOver = false;
-        Time.timeScale = 1f;
-        SceneManager.LoadScene(button.name);
+        string currentScene = SceneManager.GetActiveScene().name;
+        GameManager.Instance.StartGame(GameManager.Instance._Stage);
+        SceneManager.LoadScene(currentScene);
     }
 
     private void UpdateTimeText()
     {
-        time += Time.deltaTime;
-
-        int minutes = Mathf.FloorToInt(time / 60f);
-        int seconds = Mathf.FloorToInt(time % 60f);
+        int minutes = Mathf.FloorToInt(GameManager.Instance._Time / 60f);
+        int seconds = Mathf.FloorToInt(GameManager.Instance._Time % 60f);
 
         timeText.text = $"{minutes:D2} : {seconds:D2}";
     }
 
     private void UpdateHostageNumber()
     {
-        angelHostageText.text = $"{maxAngelHostage - angelHostage}/{maxAngelHostage}";
-        devilHostageText.text = $"{maxDevilHostage - devilHostage}/{maxDevilHostage}";
+        angelHostageText.text = $"{maxAngelHostage - ScoreManager.Instance.AngelHostage}/{maxAngelHostage}";
+        devilHostageText.text = $"{maxDevilHostage - ScoreManager.Instance.DevilHostage}/{maxDevilHostage}";
     }
 }

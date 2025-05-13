@@ -2,7 +2,6 @@ using UnityEngine;
 using System;
 using System.IO;
 using UnityEditor.SceneManagement;
-using UnityEditor.Search;
 
 public class GameManager : Singleton<GameManager>
 {
@@ -10,6 +9,17 @@ public class GameManager : Singleton<GameManager>
     private string json = ".json";
     private float _time = 0;
     private int _stage = 0;
+
+    public int tema;//나중에 프로퍼티 넣어주기
+    public bool isClear;
+    public bool isGameOver;
+    public Vector3[] AgDvPosition =
+    {
+        new Vector3(-6, -1, 0),
+        new Vector3(-6, -1, 0),
+        new Vector3(-6, -1, 0),
+        new Vector3(-6, -1, 0)
+    };
 
     public float _Time
     {
@@ -20,6 +30,8 @@ public class GameManager : Singleton<GameManager>
     {
         get { return _stage; }
     }
+
+
     public int getHostageCount(HostageType type)
     {
         Hostage[] hostages = FindObjectsOfType<Hostage>();
@@ -46,9 +58,34 @@ public class GameManager : Singleton<GameManager>
 
     public void StartGame(int stage)
     {
+        isClear = false;
+        isGameOver = false;
         _time = 0f;
         _stage = stage;
+        Time.timeScale = 1.0f;
         ScoreManager.Instance.SettingHostage();
+    }
+
+    public void Pause(bool isPause)
+    {
+        if (isPause)
+        {
+            Time.timeScale = 0f;
+        }
+        else
+        {
+            Time.timeScale = 1.0f;
+        }
+    }
+
+    public void Clear()
+    {
+        isClear = true;
+    }
+
+    public void IsGameOver()
+    {
+        isGameOver = true;
     }
 
     public void SaveStageScore(int stage, int score)
@@ -56,7 +93,7 @@ public class GameManager : Singleton<GameManager>
         gameData.SetScore(stage, score);
     }
 
-    public int GetStageScore(int stage)
+    public int GetStageScore(int stage)//스테이지 클리어 시 점수
     {
         return gameData.GetScore(stage);
     }
@@ -66,7 +103,7 @@ public class GameManager : Singleton<GameManager>
         gameData.SetLeftAngel(stage, leftangel);
     }
 
-    public int GetStageLeftAngel(int stage)
+    public int GetStageLeftAngel(int stage)//스테이지 클리어 시 남은 천사 수
     {
         return gameData.GetLeftAngel(stage);
     }
@@ -76,7 +113,7 @@ public class GameManager : Singleton<GameManager>
         gameData.SetLeftDevil(stage, leftdevil);
     }
 
-    public int GetStageLeftDevil(int stage)
+    public int GetStageLeftDevil(int stage)//스테이지 클리어 시 남은 악마 수
     {
         return gameData.GetLeftDevil(stage);
     }
@@ -86,12 +123,12 @@ public class GameManager : Singleton<GameManager>
         gameData.SetIntime(stage, intime);
     }
 
-    public bool GetStageIntime(int stage)
+    public bool GetStageIntime(int stage)//시간 안에 스테이지 클리어 여부
     {
         return gameData.GetIntime(stage);
     }
 
-    public bool TrySelectStage(int stage)
+    public bool TrySelectStage(int stage)//스테이지 출입 가능 여부
     {
         return gameData.CanSelectStage(stage);
     }
