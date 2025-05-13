@@ -77,6 +77,19 @@ public class Plate2 : MonoBehaviour, IEnable
             Disable();
         }
     }
+
+    private IEnumerator RestorePositionCoroutine()
+    {
+        float time = 0.2f;
+        float posY = transform.position.y;
+        if (!_isContact && posY < _SetY)
+        {
+            posY += 0.5f * time;
+            posY = Mathf.Min(posY, _SetY);
+            transform.position = new Vector2(transform.position.x, posY);
+        }
+        yield return new WaitForSeconds(time);
+    }
 }
 
 
