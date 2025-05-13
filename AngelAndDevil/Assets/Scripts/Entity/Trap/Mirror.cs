@@ -21,6 +21,7 @@ public class Mirror : MonoBehaviour
     private Beam _currentBeam = null;
     private float _laserRange;
 
+
     // 빔이 거울과 충돌했을 때의 충돌 지점을 구하는 메서드
     private Vector2 collisionPosition(Beam beam)
     {
@@ -34,6 +35,7 @@ public class Mirror : MonoBehaviour
 
         if (_reflectedbeam != null && _currentBeam != null)
         {
+            
             Vector2 CollisionPoint = collisionPosition(_currentBeam);
             Vector2 normalVector = (Vector2.up + Vector2.left).normalized; // 거울의 법선 벡터
             Vector2 reflectedDirection = Vector2.Reflect(_currentBeam.transform.right, normalVector); // 반사된 방향

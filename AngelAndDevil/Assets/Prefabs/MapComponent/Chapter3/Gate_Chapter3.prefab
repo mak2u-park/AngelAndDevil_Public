@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8989891383641412436}
   - component: {fileID: 4720594223577430384}
   - component: {fileID: 7613640754947615679}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: TopSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -164,7 +164,7 @@ GameObject:
   - component: {fileID: 7182848327390023495}
   - component: {fileID: 8764452898848654207}
   - component: {fileID: 2444973777397531839}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: BottomSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -314,7 +314,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6314673737026173630}
   - component: {fileID: 3377640749781652222}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Gate_Chapter3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
