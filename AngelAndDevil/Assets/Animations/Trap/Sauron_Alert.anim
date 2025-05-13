@@ -158,9 +158,16 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 1.0833334
-    functionName: SearchPlayer
+    functionName: Enable
     data: 
     objectReferenceParameter: {fileID: 2592221425717746035, guid: a8ec903dbb4958148a51eeaa8ac892e8, type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 2.5
+    functionName: Disable
+    data: 
+    objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0

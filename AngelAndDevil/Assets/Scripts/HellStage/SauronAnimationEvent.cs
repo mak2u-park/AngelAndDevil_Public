@@ -20,20 +20,27 @@ public class SauronAnimationEvent : MonoBehaviour
     private void Start()
     {
         sauron.SetBeamPivot(beamPivot);
+        dr = sauron.detectRange;
     }
 
-
-
-    public void SearchPlayer(GameObject detectRange)
+    public void Enable()
     {
-        dr = sauron.detectRange;
-        if(dr != null)
+        BoxCollider2D boxCollider;
+        boxCollider = dr.GetComponent<BoxCollider2D>();
+        if (boxCollider != null)
         {
-        Detecting Detect = dr.GetComponent<Detecting>();
-        Detect.SetSauron(sauron);
+            boxCollider.enabled = true;
         }
+    }
 
-        
+    public void Disable()
+    {
+        BoxCollider2D boxCollider;
+        boxCollider = dr.GetComponent <BoxCollider2D>();
+        if (boxCollider != null) 
+        {
+            boxCollider.enabled = false;
+        }
     }
 
     public void AttackAngel(GameObject sauronBeam)

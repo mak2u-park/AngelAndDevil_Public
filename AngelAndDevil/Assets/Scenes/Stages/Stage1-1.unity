@@ -367,7 +367,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 187045191349849764, guid: ede08142d565d864bbf6da483b47abf8, type: 3}
       propertyPath: m_Name
-      value: AngelTrapTutorialTrigger
+      value: DoorTutorialTrigger
       objectReference: {fileID: 0}
     - target: {fileID: 332450779493695930, guid: ede08142d565d864bbf6da483b47abf8, type: 3}
       propertyPath: m_Name
@@ -376,7 +376,7 @@ PrefabInstance:
     - target: {fileID: 786456834399195395, guid: ede08142d565d864bbf6da483b47abf8, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 13bb11a4e67fa04488f8c40a195e9b21, type: 3}
+      objectReference: {fileID: 21300000, guid: ccf4add6785122a4081ca8944843e9f0, type: 3}
     - target: {fileID: 1012334256056704953, guid: ede08142d565d864bbf6da483b47abf8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6.69
@@ -433,6 +433,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -0.87
       objectReference: {fileID: 0}
+    - target: {fileID: 3233428726291856358, guid: ede08142d565d864bbf6da483b47abf8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4392128587522739526, guid: ede08142d565d864bbf6da483b47abf8, type: 3}
       propertyPath: m_Controller
       value: 
@@ -447,11 +451,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6869209103513762269, guid: ede08142d565d864bbf6da483b47abf8, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 2.47
+      value: 2.44
       objectReference: {fileID: 0}
     - target: {fileID: 6869209103513762269, guid: ede08142d565d864bbf6da483b47abf8, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.57
+      value: 0.33
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -486,7 +490,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5235581742424805624, guid: 3b649ea033872594a83055999e504996, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6.7899337
+      value: -6.64
       objectReference: {fileID: 0}
     - target: {fileID: 5235581742424805624, guid: 3b649ea033872594a83055999e504996, type: 3}
       propertyPath: m_LocalPosition.z

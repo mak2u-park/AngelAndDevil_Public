@@ -6,9 +6,10 @@ public class MagamInstantiate : MonoBehaviour
 {
     [SerializeField] GameObject magamPrefab;
     float magmaMinGenerateTime = 5f;
-    float magmaMaxGenerateTime = 10f;
+    float magmaMaxGenerateTime = 13f;
     float magmaGenerateTime = 0f;
-    float randomTime = 0f;
+    float randomTime;
+
     public void GenerateMagma()
     {
         GameObject magma = Instantiate(magamPrefab, transform.position, Quaternion.identity);
