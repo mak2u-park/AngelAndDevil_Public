@@ -55,7 +55,7 @@ public class SelectStageController : BaseUIController
                     anim.SetBool("IsClick", false);
                 }
                 GameManager.Instance.AgDvPosition[GameManager.Instance.tema]= new Vector3(clickbutton.transform.position.x - 0.1f, -1, 0);
-                GameManager.Instance.StartGame(GameManager.Instance.tema * 3 + indexnum);//3은 한 테마당 스테이 수
+                GameManager.Instance.StartGame(GameManager.Instance.tema * 3 + indexnum + 1);//3은 한 테마당 스테이 수
                 ChangeScene(GameManager.Instance.tema * 3 + indexnum + 4);//4는 테마 수 -> 나중에 확장성 챙길려면 변수로 바꿔야할 듯
             }
         }
@@ -75,31 +75,40 @@ public class SelectStageController : BaseUIController
 
     public void ClickRoom(Button button,int index)
     {
-        indexnum = index;
-        clickbutton = button;
-        foreach (Animator anim in AgDv.GetComponentsInChildren<Animator>())
+        bool tryClick = GameManager.Instance.TrySelectStage(GameManager.Instance.tema * 3 + index + 1);
+        if (tryClick)
         {
-            anim.SetBool("IsClick", true);
-        }
-        if (AgDv.transform.position.x < button.transform.position.x)
-        {
-            foreach (SpriteRenderer sr in AgDv.GetComponentsInChildren<SpriteRenderer>())
+            indexnum = index;
+            clickbutton = button;
+            foreach (Animator anim in AgDv.GetComponentsInChildren<Animator>())
             {
-                sr.flipX = false;
+                anim.SetBool("IsClick", true);
             }
-            AgDv.GetComponent<Rigidbody2D>().velocity = Vector2.right;
-        }
-        else if (AgDv.transform.position.x > button.transform.position.x)
-        {
-            foreach (SpriteRenderer sr in AgDv.GetComponentsInChildren<SpriteRenderer>())
+            if (AgDv.transform.position.x < button.transform.position.x)
             {
-                sr.flipX = true;
+                foreach (SpriteRenderer sr in AgDv.GetComponentsInChildren<SpriteRenderer>())
+                {
+                    sr.flipX = false;
+                }
+                AgDv.GetComponent<Rigidbody2D>().velocity = Vector2.right;
             }
-            AgDv.GetComponent<Rigidbody2D>().velocity = Vector2.left;
+            else if (AgDv.transform.position.x > button.transform.position.x)
+            {
+                foreach (SpriteRenderer sr in AgDv.GetComponentsInChildren<SpriteRenderer>())
+                {
+                    sr.flipX = true;
+                }
+                AgDv.GetComponent<Rigidbody2D>().velocity = Vector2.left;
+            }
+            else
+            {
+                Debug.Log("같은 위치");
+            }
         }
         else
         {
-            Debug.Log("같은 위치");
+            Debug.Log("실패");
         }
+        
     }
 }
