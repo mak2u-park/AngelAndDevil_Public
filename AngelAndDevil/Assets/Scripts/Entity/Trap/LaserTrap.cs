@@ -11,8 +11,8 @@ public class LaserTrap : MonoBehaviour
     [SerializeField] private GameObject _beamPivot;
 
     [SerializeField] private LayerMask _levelLayerMask;
-    private float _laserRange = 0f;
 
+    private float _laserRange = 0f;
     private Transform _beamPivotTransform;
 
     public void Start()
@@ -36,8 +36,7 @@ public class LaserTrap : MonoBehaviour
             newScale.x = _laserRange;
             _beamPrefab.transform.localScale = newScale;
             _beamPrefab.transform.rotation = transform.rotation;
-            
-        }
+        }        
         else
         {
             Debug.DrawRay(_beamPivotTransform.position, transform.right * _maxLaserRange, Color.green);
