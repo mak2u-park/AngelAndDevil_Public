@@ -32,7 +32,7 @@ public class GameUIController : BaseUIController
     {
         base.Awake();
     }
-    private void Start()
+    protected override void Start()
     {
         menuCanvas.gameObject.SetActive(false);
         soundCanvas.gameObject.SetActive(false);

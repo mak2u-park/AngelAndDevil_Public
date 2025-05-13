@@ -25,6 +25,10 @@ public abstract class BaseUIController : MonoBehaviour
     {
         uiManager = UIManager.Instance;
     }
+    protected virtual void Start()
+    {
+        GameManager.Instance.Pause(false);
+    }
 
     protected abstract UIState GetUIState();
 

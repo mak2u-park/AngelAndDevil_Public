@@ -24,8 +24,9 @@ public class SelectStageController : BaseUIController
         base.Awake();
     }
 
-    private void Start()
+    protected override void Start()
     {
+        base.Start();
         AgDv.transform.position = GameManager.Instance.AgDvPosition[GameManager.Instance.tema];
 
         for (int i = 0; i < roomButtons.Length; i++)
@@ -78,6 +79,7 @@ public class SelectStageController : BaseUIController
         bool tryClick = GameManager.Instance.TrySelectStage(GameManager.Instance.tema * 3 + index + 1);
         if (tryClick)
         {
+            Debug.Log("ÁøÀÔ");
             indexnum = index;
             clickbutton = button;
             foreach (Animator anim in AgDv.GetComponentsInChildren<Animator>())
