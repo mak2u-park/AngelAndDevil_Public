@@ -69,12 +69,14 @@ public class Door : MonoBehaviour
             Debug.Log("Door Opened");
             Animator.SetBool("IsOpen", true);
             _doorPair.Animator.SetBool("IsOpen", true);
+            GameManager.Instance.Clear();
         }
         else
         {
             Debug.Log("Door Closed");
             Animator.SetBool("IsOpen", false);
             _doorPair.Animator.SetBool("IsOpen", false);
+            GameManager.Instance.Clear();
         }
     }
 
