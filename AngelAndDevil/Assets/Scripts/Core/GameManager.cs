@@ -80,6 +80,7 @@ public class GameManager : Singleton<GameManager>
 
     public void Clear()
     {
+        ScoreManager.Instance.EndStageScore(_stage);
         isClear = true;
     }
 
