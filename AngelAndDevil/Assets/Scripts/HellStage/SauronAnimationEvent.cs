@@ -26,10 +26,13 @@ public class SauronAnimationEvent : MonoBehaviour
 
     public void SearchPlayer(GameObject detectRange)
     {
-        Quaternion rotate = sauron.transform.rotation;
-        dr = Instantiate(detectRange, transform.position, rotate);
+        dr = sauron.detectRange;
+        if(dr != null)
+        {
         Detecting Detect = dr.GetComponent<Detecting>();
         Detect.SetSauron(sauron);
+        }
+
         
     }
 
@@ -45,11 +48,5 @@ public class SauronAnimationEvent : MonoBehaviour
     }
     
 
-    public void RemoveDetectObject()
-    {
-       Destroy(dr);
-    }
-
-   
 
 }

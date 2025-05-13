@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7036706170163059027}
   - component: {fileID: 5569770280904117044}
   - component: {fileID: 6601007402943783843}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: MagmaDropSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
