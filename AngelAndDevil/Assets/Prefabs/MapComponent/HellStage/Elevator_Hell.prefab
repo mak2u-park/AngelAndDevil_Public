@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &8123067169193299
+--- !u!1 &2624347459884416674
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,10 +8,10 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2614280371108041337}
-  - component: {fileID: 1805615477038486114}
-  - component: {fileID: 3413570321264334743}
-  - component: {fileID: 7028439547749062230}
+  - component: {fileID: 2283248731312076147}
+  - component: {fileID: 4851739608404483921}
+  - component: {fileID: 4592964877574167441}
+  - component: {fileID: 6678218937316691630}
   m_Layer: 3
   m_Name: ElevatorFloor
   m_TagString: Untagged
@@ -19,28 +19,28 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2614280371108041337
+--- !u!4 &2283248731312076147
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8123067169193299}
+  m_GameObject: {fileID: 2624347459884416674}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 3633397960272561007}
+  m_Father: {fileID: 386014516858189993}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &1805615477038486114
+--- !u!212 &4851739608404483921
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8123067169193299}
+  m_GameObject: {fileID: 2624347459884416674}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -86,13 +86,13 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3413570321264334743
+--- !u!114 &4592964877574167441
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8123067169193299}
+  m_GameObject: {fileID: 2624347459884416674}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5e5a83103760f6f40b647ae31712011e, type: 3}
@@ -102,13 +102,13 @@ MonoBehaviour:
   elevatorPosition: {fileID: 0}
   width: 0
   height: 2
---- !u!61 &7028439547749062230
+--- !u!61 &6678218937316691630
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8123067169193299}
+  m_GameObject: {fileID: 2624347459884416674}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -134,10 +134,10 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.33306086}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    border: {x: 0, y: 0, z: 0, w: 0.6875}
+    pivot: {x: 0.5, y: 0.16}
     oldSize: {x: 2, y: 1}
     newSize: {x: 2, y: 1}
     adaptiveTilingThreshold: 0.5
@@ -147,7 +147,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2, y: 0.33387828}
   m_EdgeRadius: 0
---- !u!1 &6601382301657408678
+--- !u!1 &4462581779666002242
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -155,7 +155,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3633397960272561007}
+  - component: {fileID: 386014516858189993}
   m_Layer: 0
   m_Name: Elevator_Hell
   m_TagString: Untagged
@@ -163,19 +163,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3633397960272561007
+--- !u!4 &386014516858189993
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6601382301657408678}
+  m_GameObject: {fileID: 4462581779666002242}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -27.01164, y: -0.5440343, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2614280371108041337}
+  - {fileID: 2283248731312076147}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
