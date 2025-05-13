@@ -165,7 +165,7 @@ public class GameManager : Singleton<GameManager>
         return true;
     }
 
-    private void LoadData(int slot)
+    public bool LoadData(int slot)
     {
         string Filepath = Path.Combine(Application.dataPath + "/Data/", slot.ToString() + "slot" + json);
         if (File.Exists(Filepath))
@@ -173,13 +173,13 @@ public class GameManager : Singleton<GameManager>
             Debug.Log("파일 불러오기");
             string loadedData = File.ReadAllText(Filepath);
             gameData = JsonUtility.FromJson<GameData>(loadedData);
-            return;
+            return true;
         }
-        Debug.Log("파일이 없음, 새로 파일 생성...");
-        gameData = new GameData();
+        Debug.Log("파일이 없음");
+        return false;
     }
 
-    private void SaveData(int slot)
+    public void SaveData(int slot)
     {
         string scordatatojson = JsonUtility.ToJson(gameData);
         string Filpath = Path.Combine(Application.dataPath + "/Data/", slot.ToString() + "slot" + json);
