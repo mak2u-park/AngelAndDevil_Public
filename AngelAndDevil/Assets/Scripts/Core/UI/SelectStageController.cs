@@ -13,10 +13,12 @@ public class SelectStageController : BaseUIController
 
     [SerializeField]private Button clickbutton;
 
-    [SerializeField] private float percent = 0f;//test용
+    [SerializeField] private float percent = 0f;
     [SerializeField] private int currentStarNum = 3;//test용
     [SerializeField] private int maxStarNum = 15;//test용
 
+    [SerializeField] private int indexnum;
+    
     protected override void Awake()
     {
         base.Awake();
@@ -24,12 +26,12 @@ public class SelectStageController : BaseUIController
 
     private void Start()
     {
-        
-        AgDv.transform.position = new Vector3(-6, -1, 0);
+        AgDv.transform.position = GameManager.Instance.AgDvPosition[GameManager.Instance.tema];
+
         for (int i = 0; i < roomButtons.Length; i++)
         {
             int index = i;
-            roomButtons[i].onClick.AddListener(() => ClickRoom(index + 1, roomButtons[index]));
+            roomButtons[i].onClick.AddListener(() => ClickRoom(roomButtons[index], index));
         }
 
         percent = (float)currentStarNum / maxStarNum * 100f;
@@ -52,8 +54,9 @@ public class SelectStageController : BaseUIController
                 {
                     anim.SetBool("IsClick", false);
                 }
-                //여기 사이에 시간 1초정도 딜레이 넣기
-                ChangeScene(clickbutton);
+                GameManager.Instance.AgDvPosition[GameManager.Instance.tema]= new Vector3(clickbutton.transform.position.x - 0.1f, -1, 0);
+                GameManager.Instance.StartGame(GameManager.Instance.tema * 3 + indexnum + 1);//3은 한 테마당 스테이 수
+                ChangeScene(GameManager.Instance.tema * 3 + indexnum + 4);//4는 테마 수 -> 나중에 확장성 챙길려면 변수로 바꿔야할 듯
             }
         }
     }
@@ -70,34 +73,42 @@ public class SelectStageController : BaseUIController
 
 
 
-    public void ClickRoom(int num,Button button)
+    public void ClickRoom(Button button,int index)
     {
-        //여기 다 GameManager로 넘겨야함
-        roomNum = num;
-        clickbutton = button;
-        foreach (Animator anim in AgDv.GetComponentsInChildren<Animator>())
+        bool tryClick = GameManager.Instance.TrySelectStage(GameManager.Instance.tema * 3 + index + 1);
+        if (tryClick)
         {
-            anim.SetBool("IsClick", true);
-        }
-        if (AgDv.transform.position.x < button.transform.position.x)
-        {
-            foreach (SpriteRenderer sr in AgDv.GetComponentsInChildren<SpriteRenderer>())
+            indexnum = index;
+            clickbutton = button;
+            foreach (Animator anim in AgDv.GetComponentsInChildren<Animator>())
             {
-                sr.flipX = false;
+                anim.SetBool("IsClick", true);
             }
-            AgDv.GetComponent<Rigidbody2D>().velocity = Vector2.right;
-        }
-        else if (AgDv.transform.position.x > button.transform.position.x)
-        {
-            foreach (SpriteRenderer sr in AgDv.GetComponentsInChildren<SpriteRenderer>())
+            if (AgDv.transform.position.x < button.transform.position.x)
             {
-                sr.flipX = true;
+                foreach (SpriteRenderer sr in AgDv.GetComponentsInChildren<SpriteRenderer>())
+                {
+                    sr.flipX = false;
+                }
+                AgDv.GetComponent<Rigidbody2D>().velocity = Vector2.right;
             }
-            AgDv.GetComponent<Rigidbody2D>().velocity = Vector2.left;
+            else if (AgDv.transform.position.x > button.transform.position.x)
+            {
+                foreach (SpriteRenderer sr in AgDv.GetComponentsInChildren<SpriteRenderer>())
+                {
+                    sr.flipX = true;
+                }
+                AgDv.GetComponent<Rigidbody2D>().velocity = Vector2.left;
+            }
+            else
+            {
+                Debug.Log("같은 위치");
+            }
         }
         else
         {
-            Debug.Log("같은 위치");
+            Debug.Log("실패");
         }
+        
     }
 }
