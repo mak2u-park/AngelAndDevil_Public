@@ -13,7 +13,7 @@ public class MainUIController : BaseUIController
     {
         base.Awake();
     }
-    private void Start()
+    protected override void Start()
     {
         stageCanvas.gameObject.SetActive(!isStart);
         soundCanvas.gameObject.SetActive(false);

@@ -48,7 +48,7 @@ public class ScoreManager : Singleton<ScoreManager>
     public void EndStageScore(int stage)
     {
         int newscore = 1 + CheckHostage() + CheckTime();
-        if (GameManager.Instance.GetStageScore(GameManager.Instance._Stage) >= newscore)
+        if (GameManager.Instance.GetStageScore(GameManager.Instance._Stage) <= newscore)
         {
             GameManager.Instance.SaveStageScore(GameManager.Instance._Stage, newscore);
         }
