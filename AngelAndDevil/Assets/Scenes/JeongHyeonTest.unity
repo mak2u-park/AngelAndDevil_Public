@@ -1752,7 +1752,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2821190561563419510, guid: 21e8fb6888186d5448a8928d10e2fe5d, type: 3}
       propertyPath: height
-      value: 8
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2821190561563419510, guid: 21e8fb6888186d5448a8928d10e2fe5d, type: 3}
       propertyPath: plateTop
