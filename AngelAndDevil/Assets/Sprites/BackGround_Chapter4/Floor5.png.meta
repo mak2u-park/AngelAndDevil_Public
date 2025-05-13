@@ -114,11 +114,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
+        y: 8
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 8
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -139,7 +139,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -147,6 +147,27 @@ TextureImporter:
       bones: []
       spriteID: a23f79408b8af974396b54f580e467a7
       internalID: -1551572283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floor5_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 16
+        height: 8
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efe21914d48d390419c1f0d5dab82e40
+      internalID: 1944925451
       vertices: []
       indices: 
       edges: []
@@ -164,6 +185,7 @@ TextureImporter:
     nameFileIdTable:
       Floor5_0: 1479110043
       Floor5_1: -1551572283
+      Floor5_2: 1944925451
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

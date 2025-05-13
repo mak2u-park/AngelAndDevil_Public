@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -188257350793344581}
   - component: {fileID: 4208509021010383564}
   m_Layer: 0
-  m_Name: TurretProjectile_Devel
+  m_Name: TurretProjectile_Blue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -78,10 +78,10 @@ MonoBehaviour:
   _duration: 3
   _levelColliderLayer:
     serializedVersion: 2
-    m_Bits: 131080
+    m_Bits: 65544
   _targetLayer:
     serializedVersion: 2
-    m_Bits: 65536
+    m_Bits: 131072
 --- !u!61 &4208509021010383564
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -232,7 +232,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 2823c3220b967524db71cb844a618e89, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5ae4fbeb490fa0548aa35378cbb37618, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
