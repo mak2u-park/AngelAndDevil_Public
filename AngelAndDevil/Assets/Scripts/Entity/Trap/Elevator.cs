@@ -58,12 +58,6 @@ public class Elevator : MonoBehaviour
         StartY = transform.position.y;
         EndY = StartY + height;
 
-        // 오브젝트 이름이 ElevatorFloor인지 확인
-        if (gameObject.name != "ElevatorFloor")
-        {
-            Debug.LogError("잘못된 오브젝트입니다 - ElevatorFloor 전용");
-            return;
-        }
     }
 
     private void FixedUpdate()

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3942059045923817790}
   - component: {fileID: 4154469366783221769}
   - component: {fileID: 8230406973344739242}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Beam
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,9 +27,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3474347417516005673}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.00004841492, w: 1}
   m_LocalPosition: {x: 0.34, y: -0.73899984, z: 0}
-  m_LocalScale: {x: 2.9520004, y: 1, z: 1}
+  m_LocalScale: {x: 20, y: 1, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
