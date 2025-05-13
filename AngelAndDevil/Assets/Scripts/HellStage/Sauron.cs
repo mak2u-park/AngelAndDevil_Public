@@ -14,6 +14,7 @@ public class Sauron : MonoBehaviour
     bool isDetected = false;
     bool isFliped = false;
     SpriteRenderer _renderer;
+    [SerializeField] public GameObject detectRange;
     private GameObject beam;
     private GameObject beamPivot;
     private GameObject angel; 
