@@ -45,7 +45,7 @@ public class ScoreManager : Singleton<ScoreManager>
         }
     }
 
-    private void EndStageScore(int stage)//이거 어디서 호출해주나요?
+    private void EndStageScore(int stage)
     {
         int newscore = 1 + CheckHostage() + CheckTime();
         if (GameManager.Instance.GetStageScore(GameManager.Instance._Stage) > newscore)

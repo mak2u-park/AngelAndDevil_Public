@@ -15,7 +15,7 @@ public abstract class BaseUIController : MonoBehaviour
 
     protected string[] sceneName ={
         "Stage1","Stage2","Stage3","Stage4",
-        "Room1-1","Room1-2"
+        "Stage1-1","Room1-2"
 
         //√÷¡æ æ¿ ¿Ã∏ß
     };
