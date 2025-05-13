@@ -21,8 +21,8 @@ EditorBuildSettings:
     path: Assets/Scenes/SelectScene/Stage4.unity
     guid: 9413477e2e07bf040abcbd013c1a2d7d
   - enabled: 1
-    path: Assets/Scenes/SelectScene/Room1-1.unity
-    guid: 9277d4075b2509844b4b7f430b0b6e95
+    path: Assets/Scenes/Stages/Stage1-1.unity
+    guid: 08d72d2396e8a8848972c7f6b62490db
   - enabled: 1
     path: Assets/Scenes/SelectScene/Room1-2.unity
     guid: ca6b78333dc3bfb4299f9d3381dd1541

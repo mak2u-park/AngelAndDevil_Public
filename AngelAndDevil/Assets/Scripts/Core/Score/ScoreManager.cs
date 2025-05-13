@@ -45,18 +45,18 @@ public class ScoreManager : Singleton<ScoreManager>
         }
     }
 
-    private void EndStageScore(int stage)//이거 어디서 호출해주나요?
+    public void EndStageScore(int stage)
     {
         int newscore = 1 + CheckHostage() + CheckTime();
-        if (GameManager.Instance.GetStageScore(GameManager.Instance._Stage) > newscore)
+        if (GameManager.Instance.GetStageScore(GameManager.Instance._Stage) >= newscore)
         {
             GameManager.Instance.SaveStageScore(GameManager.Instance._Stage, newscore);
         }
-        if(GameManager.Instance.GetStageLeftAngel(GameManager.Instance._Stage) > angelhostage)
+        if(GameManager.Instance.GetStageLeftAngel(GameManager.Instance._Stage) >= angelhostage)
         {
             GameManager.Instance.SaveStageLeftAngel(GameManager.Instance._Stage, angelhostage);
         }
-        if(GameManager.Instance.GetStageLeftDevil(GameManager.Instance._Stage) > devilhostage)
+        if(GameManager.Instance.GetStageLeftDevil(GameManager.Instance._Stage) >= devilhostage)
         {
             GameManager.Instance.SaveStageLeftDevil(GameManager.Instance._Stage, devilhostage);
         }
@@ -69,7 +69,7 @@ public class ScoreManager : Singleton<ScoreManager>
     private int CheckHostage()
     {
         int lefthostage = angelhostage + devilhostage;
-        if(lefthostage >= 0)
+        if(lefthostage > 0)
         {
             return 0;
         }

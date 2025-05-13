@@ -44,8 +44,8 @@ public class Data
     public Data()
     {
         score = 0;
-        leftAngel = 1;
-        leftDevil = 1;
+        leftAngel = 3;
+        leftDevil = 3;
         intime = false;
     }
 }
