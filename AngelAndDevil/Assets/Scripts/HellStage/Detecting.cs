@@ -6,18 +6,16 @@ using UnityEngine.UIElements;
 public class Detecting : MonoBehaviour
 {
     BoxCollider2D boxCollider;
-    Sauron sauron;
+    [SerializeField]Sauron sauron;
 
     private void Awake()
     {
         boxCollider = GetComponent<BoxCollider2D>();
+        boxCollider.enabled = false;
     }
 
 
-    public void SetSauron(Sauron sauron)
-    {
-        this.sauron = sauron;
-    }
+
 
 
     public void OnTriggerEnter2D(Collider2D collision)
@@ -35,6 +33,8 @@ public class Detecting : MonoBehaviour
 
 
 
-   
+
+
+
 
 }
