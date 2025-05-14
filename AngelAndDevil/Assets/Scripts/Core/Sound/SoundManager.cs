@@ -34,7 +34,6 @@ public class SoundManager : Singleton<SoundManager>
     void Start()
     {
         InitAudioDictionary();
-        SoundManager.Instance.PlayBGM("MainMusic");
     }
 
     private void InitAudioDictionary()
