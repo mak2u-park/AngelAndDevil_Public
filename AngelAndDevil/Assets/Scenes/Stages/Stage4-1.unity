@@ -2565,7 +2565,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 976544482}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2576,7 +2576,7 @@ Transform:
   - {fileID: 1601659291}
   - {fileID: 974895678}
   - {fileID: 1511586664}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1346793661}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1004093854
 GameObject:
@@ -3319,6 +3319,8 @@ Transform:
   - {fileID: 411699503}
   - {fileID: 2049694069}
   - {fileID: 1575217098}
+  - {fileID: 1829067901}
+  - {fileID: 976544483}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1378321568
@@ -3333,7 +3335,7 @@ GameObject:
   - component: {fileID: 1378321569}
   - component: {fileID: 1378321571}
   m_Layer: 0
-  m_Name: SoundManager
+  m_Name: AudioManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11410,7 +11412,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1829067901}
   m_Layer: 0
-  m_Name: Trap
+  m_Name: Interactive
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11424,7 +11426,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1829067900}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -11450,7 +11452,7 @@ Transform:
   - {fileID: 2129421927}
   - {fileID: 1785399018}
   - {fileID: 321296182}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1346793661}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1876833770
 PrefabInstance:
@@ -15050,8 +15052,6 @@ SceneRoots:
   - {fileID: 1378321570}
   - {fileID: 1004093856}
   - {fileID: 1346793661}
-  - {fileID: 1634766768}
-  - {fileID: 1829067901}
-  - {fileID: 976544483}
   - {fileID: 1550003205}
+  - {fileID: 1634766768}
   - {fileID: 2045641825}
