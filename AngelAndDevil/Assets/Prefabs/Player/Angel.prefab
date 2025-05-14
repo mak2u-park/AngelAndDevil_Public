@@ -244,6 +244,7 @@ MonoBehaviour:
   rb: {fileID: 6475385464244120135}
   animator: {fileID: 3163517833362503728}
   _renderer: {fileID: 1131143613678220908}
+  colider: {fileID: 6500710752915565449}
 --- !u!114 &7652725777116027680
 MonoBehaviour:
   m_ObjectHideFlags: 0

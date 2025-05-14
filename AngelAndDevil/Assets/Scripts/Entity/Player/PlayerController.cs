@@ -23,13 +23,14 @@ public class PlayerController : MonoBehaviour
     [SerializeField] protected Rigidbody2D rb;
     [SerializeField] public Animator animator;
     [SerializeField] SpriteRenderer _renderer;
-  
+    [SerializeField] BoxCollider2D colider;
 
 
 
     protected virtual void Start()
     {
         groundLayerMask = 1 << LayerMask.NameToLayer("Ground");
+
     }
 
 
@@ -65,15 +66,18 @@ public class PlayerController : MonoBehaviour
 
     public virtual void Jump()
     {
+        if(rb.velocity.y > 0) return;
         rb.velocity = new Vector2(rb.velocity.x, JumpForce);
         
     }
     
     public virtual void GroundCheck()
     { 
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 0.8f,groundLayerMask);
-        Debug.DrawRay(transform.position, Vector2.down * 0.8f,Color.red, 1f);
-        if (hit.collider!=null && rb.velocity.y > -0.1f)
+        Vector2 left = new Vector2(transform.position.x - colider.size.x/2, transform.position.y);
+        Vector2 right = new Vector2(transform.position.x + colider.size.x / 2, transform.position.y);
+        RaycastHit2D Lefthit = Physics2D.Raycast(left, Vector2.down, 0.8f,groundLayerMask);
+        RaycastHit2D Righthit = Physics2D.Raycast(right, Vector2.down, 0.8f,groundLayerMask);
+        if ((Lefthit.collider!=null|| Righthit.collider!=null) && rb.velocity.y > -0.1f)
         {
             IsGrounded = true;
             animator.SetBool(IsJump, false);
