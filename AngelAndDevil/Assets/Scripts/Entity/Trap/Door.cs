@@ -69,7 +69,8 @@ public class Door : MonoBehaviour
             Debug.Log("Door Opened");
             Animator.SetBool("IsOpen", true);
             _doorPair.Animator.SetBool("IsOpen", true);
-            GameManager.Instance.Clear();
+            
+            GameManager.Instance.InvokeClear();
         }
         else
         {
@@ -78,5 +79,6 @@ public class Door : MonoBehaviour
             _doorPair.Animator.SetBool("IsOpen", false);
         }
     }
+
 
 }

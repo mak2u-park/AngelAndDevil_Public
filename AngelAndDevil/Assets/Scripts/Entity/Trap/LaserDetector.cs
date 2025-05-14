@@ -35,6 +35,8 @@ public class LaserDetector : MonoBehaviour, IEnable
             if (changeCoroutine != null)
                 StopCoroutine(changeCoroutine);
             changeCoroutine = StartCoroutine(ChangeSpriteUp());
+
+            
         }
 
     }
@@ -49,6 +51,7 @@ public class LaserDetector : MonoBehaviour, IEnable
                 StopCoroutine(changeCoroutine);
             changeCoroutine = StartCoroutine(ChangeSpriteDown());
         }
+        
     }
 
     // 충돌 시 순차적으로 다음 스프라이트로 이동
@@ -59,6 +62,10 @@ public class LaserDetector : MonoBehaviour, IEnable
             yield return new WaitForSeconds(intervalTime);
             currentIndex++;
             spriteRenderer.sprite = sprites[currentIndex];
+            if (currentIndex == sprites.Length - 1)
+            {
+                Enable();
+            }
         }
     }
 
@@ -70,7 +77,12 @@ public class LaserDetector : MonoBehaviour, IEnable
             yield return new WaitForSeconds(intervalTime);
             currentIndex--;
             spriteRenderer.sprite = sprites[currentIndex];
+            if (currentIndex != sprites.Length - 1)
+            {
+                Disable();
+            }
         }
+
     }
     public void Enable()
     {

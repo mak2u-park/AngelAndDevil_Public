@@ -83,10 +83,20 @@ public class GameManager : Singleton<GameManager>
         ScoreManager.Instance.EndStageScore(_stage);
         isClear = true;
     }
+    
+    public void InvokeClear()
+    {
+        Invoke("Clear", 1.5f);
+    }
 
     public void IsGameOver()
     {
         isGameOver = true;
+    }
+
+    public void invokeGameOver()
+    {
+        Invoke("IsGameOver", 1.5f);
     }
 
     public void SaveStageScore(int stage, int score)
