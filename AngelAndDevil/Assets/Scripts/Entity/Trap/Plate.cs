@@ -10,6 +10,7 @@ public class Plate : MonoBehaviour, IEnable
     private float SetY;
     // Elevator에서 사용할 수 있도록 public으로 설정
     public bool IsEnable => isEnable;
+    private int _contectCount = 0;
 
     void Start()
     {
@@ -50,7 +51,11 @@ public class Plate : MonoBehaviour, IEnable
     {
         if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Block"))
         {
-            isContact = true;
+            _contectCount++;
+            if(_contectCount == 1)
+            {
+                isContact = true;
+            }
         }
     }
 
@@ -58,7 +63,11 @@ public class Plate : MonoBehaviour, IEnable
     {
         if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Block"))
         {
-            isContact = false;
+            _contectCount--;
+            if(_contectCount == 0)
+            {
+                isContact = false;
+            }
         }
 
     }
