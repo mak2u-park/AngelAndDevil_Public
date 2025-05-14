@@ -9095,6 +9095,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3213614070240504670, guid: 9f73822a46279cb48b15888dda842289, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3343441487313459661, guid: 9f73822a46279cb48b15888dda842289, type: 3}
       propertyPath: m_Name
       value: GameUIController 1 1
