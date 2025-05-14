@@ -6,18 +6,6 @@ public class DisappearingFloorTrap : MonoBehaviour
 {
     [SerializeField] private float _disappearTime = 1f;
 
-    
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     IEnumerator Disappear()
     {
         yield return new WaitForSeconds(_disappearTime);
