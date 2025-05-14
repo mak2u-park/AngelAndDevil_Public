@@ -5,6 +5,7 @@ using UnityEngine;
 public class DisappearingFloorTrap : MonoBehaviour
 {
     [SerializeField] private float _disappearTime = 1f;
+    private bool isDisappearing = false;
 
     IEnumerator Disappear()
     {
@@ -12,11 +13,15 @@ public class DisappearingFloorTrap : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    public void OnCollisionEnter2D(Collision2D other)
+    private void OnCollisionEnter2D(Collision2D other)
     {
-        if(other.gameObject.CompareTag("Player"))
+        if(other.gameObject.CompareTag("Player") && !isDisappearing)
         {
-            StartCoroutine(Disappear());
+            if(this.gameObject.activeSelf)
+            {
+                isDisappearing = true;
+                StartCoroutine(Disappear());
+            }
         }
     }
 }

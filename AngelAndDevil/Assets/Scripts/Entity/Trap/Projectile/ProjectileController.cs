@@ -1,7 +1,7 @@
 // Trap.cs
 using UnityEngine;
 using System.Collections;
-public class ProjectileContoroller : MonoBehaviour
+public class ProjectileController : MonoBehaviour
 {
     [SerializeField] private float _speed;
     [SerializeField] private float _duration;
