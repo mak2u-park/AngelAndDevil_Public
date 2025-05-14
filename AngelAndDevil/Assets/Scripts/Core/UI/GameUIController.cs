@@ -25,7 +25,7 @@ public class GameUIController : BaseUIController
     [Header("Num")]
     [SerializeField] private int maxAngelHostage;
     [SerializeField] private int maxDevilHostage;
-    private float delayBetweenStars = 1.2f;
+    private float delayBetweenStars = 1.0f;
 
 
     protected override void Awake()
@@ -90,9 +90,9 @@ public class GameUIController : BaseUIController
             timeStarImage.gameObject.SetActive(true);
             score++;
         }
+        yield return new WaitForSecondsRealtime(delayBetweenStars);
         for (int i = 0; i < score; i++)
         {
-            yield return new WaitForSecondsRealtime(delayBetweenStars);
             bigStarImages[i].gameObject.SetActive(true);
         }
     }
