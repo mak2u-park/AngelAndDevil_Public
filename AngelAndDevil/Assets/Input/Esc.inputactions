@@ -9,7 +9,7 @@
                     "name": "Esc",
                     "type": "Button",
                     "id": "02f67c11-8f22-4dea-b25e-a8f2515dd5ce",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false

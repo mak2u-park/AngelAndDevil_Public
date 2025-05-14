@@ -12,7 +12,7 @@ public class ProjectileTrap : MonoBehaviour
     [SerializeField] private float _moveDistance;
     [SerializeField] private int _projectileIndex = 0;
     [SerializeField] private bool _isRight;
-    [SerializeField] private Plate2[] _plate;
+    [SerializeField] private ReversePlate[] _plate;
 
     private SpriteRenderer _renderer;
 
@@ -47,8 +47,7 @@ public class ProjectileTrap : MonoBehaviour
         _shootTime += Time.deltaTime;
         if(_shootTime >= _shootInterval)
         {
-            GameObject projectile = Instantiate(_projectiles[_projectileIndex], transform.position, Quaternion.identity);
-            ProjectileContoroller projectileContoroller = projectile.GetComponent<ProjectileContoroller>();
+            ProjectileContoroller projectileContoroller = ProjectilePool.Instance.GetProjectile(_projectileIndex, transform.position, Quaternion.identity);
             projectileContoroller.Init(_isRight);
 
             _shootTime = 0;
