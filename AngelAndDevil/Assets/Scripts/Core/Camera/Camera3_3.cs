@@ -29,7 +29,6 @@ public class Camera3_3 : MonoBehaviour
 
     void FixedUpdate()
     {
-
         float PosY = (_angel.transform.position.y + _devil.transform.position.y) * 0.5f; // 중간 위치
         if (PosY < MinPosY)
         {
