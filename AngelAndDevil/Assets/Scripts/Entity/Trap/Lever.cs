@@ -93,12 +93,20 @@ public class Lever : MonoBehaviour, IEnable
 
     public void Enable()
     {
+        if(isEnable == false)
+        {
+            SoundManager.Instance.PlaySFX("Lever");
+        }
         isEnable = true;
         // 추가 활성화 로직
     }
 
     public void Disable()
     {
+        if(isEnable == true)
+        {
+            SoundManager.Instance.PlaySFX("Lever");
+        }
         isEnable = false;
         // 추가 비활성화 로직
     }
