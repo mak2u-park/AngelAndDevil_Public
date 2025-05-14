@@ -154,7 +154,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _type: 0
-  _trapEffect: {fileID: 2742908771341950034, guid: 561bd3ad5c5f8474dbfd81e6a43eec75, type: 3}
+  _trapEffect: {fileID: 0}
 --- !u!61 &4632712098011558578
 BoxCollider2D:
   m_ObjectHideFlags: 0

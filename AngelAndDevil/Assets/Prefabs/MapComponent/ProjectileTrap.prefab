@@ -129,10 +129,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d13fcfa481e181b4fb01529174d2350f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _type: 0
+  _type: 2
   _projectiles:
   - {fileID: 2664567514547711456, guid: 102001a6d75a4a24c83ecf4ffa8d7303, type: 3}
   - {fileID: 780570058404027086, guid: 9124181809234694cb92718b31ce726e, type: 3}
+  _renderers: []
   _shootInterval: 1
   _moveDistance: 2.1
   _projectileIndex: 0
+  _isRight: 0
+  _plate: []

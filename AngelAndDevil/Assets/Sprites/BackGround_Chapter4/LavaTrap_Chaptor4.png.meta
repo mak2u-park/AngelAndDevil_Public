@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1879f41b9623d964bbefb292a92a2f39
+guid: 9313d3b128559274b873bbb2acd7afe8
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -106,54 +106,15 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: iPhone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Lava_0
+      name: LavaTrap_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 64
+        y: 61
         width: 48
         height: 16
       alignment: 7
@@ -163,18 +124,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 920d68f88d2035141b1635249b2bf784
-      internalID: 125790529
+      spriteID: a6576b7e088d48b449e5681b94e339b0
+      internalID: -395442081
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lava_1
+      name: LavaTrap_1
       rect:
         serializedVersion: 2
         x: 48
-        y: 64
+        y: 61
         width: 48
         height: 16
       alignment: 7
@@ -184,18 +145,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f9dfa1f9943ae1d4b9b4c4998aadc43e
-      internalID: -1026011171
+      spriteID: 85f02800f1678de4080e18524c4e2b9f
+      internalID: -1477101637
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lava_2
+      name: LavaTrap_2
       rect:
         serializedVersion: 2
         x: 0
-        y: 16
+        y: 13
         width: 48
         height: 16
       alignment: 7
@@ -205,20 +166,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3c2ac6824474ff043b41eebc92f24953
-      internalID: -2126279603
+      spriteID: 4ebcf990aa977094b84d91cea0f711ac
+      internalID: -806050237
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lava_3
+      name: LavaTrap_3
       rect:
         serializedVersion: 2
         x: 0
         y: 48
         width: 48
-        height: 16
+        height: 13
       alignment: 2
       pivot: {x: 0.5, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -226,20 +187,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 79f0d2589890e37439f46d9a1ba8f86a
-      internalID: -1425077084
+      spriteID: 83b71caf87c320845be98894328d328e
+      internalID: -1649965518
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lava_4
+      name: LavaTrap_4
       rect:
         serializedVersion: 2
         x: 48
         y: 48
         width: 48
-        height: 16
+        height: 13
       alignment: 2
       pivot: {x: 0.5, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -247,20 +208,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 49a2292291b06c84bbe8939ffc3c125c
-      internalID: -1744864747
+      spriteID: 2c456340c7823404dbaff1fcd70eaf4f
+      internalID: 1285721674
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lava_5
+      name: LavaTrap_5
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 48
-        height: 16
+        height: 13
       alignment: 2
       pivot: {x: 0.5, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -268,8 +229,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 59434cfac7dbcbe49a4a0fbf07135978
-      internalID: 305229392
+      spriteID: 8ee312c12f7aae0409301dbc988a716b
+      internalID: 410584947
       vertices: []
       indices: 
       edges: []
@@ -278,19 +239,19 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
-    internalID: 1537655665
+    internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Lava_0: 125790529
-      Lava_1: -1026011171
-      Lava_2: -2126279603
-      Lava_3: -1425077084
-      Lava_4: -1744864747
-      Lava_5: 305229392
+      LavaTrap_0: -395442081
+      LavaTrap_1: -1477101637
+      LavaTrap_2: -806050237
+      LavaTrap_3: -1649965518
+      LavaTrap_4: 1285721674
+      LavaTrap_5: 410584947
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

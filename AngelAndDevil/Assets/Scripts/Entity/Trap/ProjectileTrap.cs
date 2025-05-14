@@ -29,12 +29,15 @@ public class ProjectileTrap : MonoBehaviour
         _renderer = GetComponentInChildren<SpriteRenderer>();
         SetType(_type);
         
-        if(_plate != null)
+        if(_plate.Length > 0)
         {
             foreach(var plate in _plate)
             {
-                plate.AddEnableEvent(ReverseType);
-                plate.AddDisableEvent(ReverseType);
+                if(plate != null)
+                {
+                    plate.AddEnableEvent(ReverseType);
+                    plate.AddDisableEvent(ReverseType);
+                }
             }
         }
     }
@@ -106,6 +109,20 @@ public class ProjectileTrap : MonoBehaviour
         {
             _type = TurretType.Red;
             SetType(_type);
+        }
+    }
+    private void OnDestroy()
+    {
+        if (_plate != null && _plate.Length > 0)
+        {
+            foreach (var plate in _plate)
+            {
+                if (plate != null)
+                {
+                    plate.RemoveEnableEvent(ReverseType);
+                    plate.RemoveDisableEvent(ReverseType);
+                }
+            }
         }
     }
 }

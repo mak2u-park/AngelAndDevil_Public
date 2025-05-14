@@ -7,7 +7,6 @@ public class Trap : MonoBehaviour
     [SerializeField] private GameObject _trapEffect;
     private GameObject _target;
 
-
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
@@ -15,8 +14,11 @@ public class Trap : MonoBehaviour
             _target = collision.gameObject;
             var player = _target.GetComponent<PlayerController>();
 
-            Vector3 trapEffectPosition = new Vector3(_target.transform.position.x -0.1f, _target.transform.position.y + 0.3f, _target.transform.position.z);
-            StartCoroutine(CreateTrapEffect(trapEffectPosition, Quaternion.identity));
+            if (_trapEffect != null)
+            {
+                Vector3 trapEffectPosition = new Vector3(_target.transform.position.x -0.1f, _target.transform.position.y + 0.3f, _target.transform.position.z);
+                StartCoroutine(CreateTrapEffect(trapEffectPosition, Quaternion.identity));
+            }
 
             if(player is AngelController && _type == TrapType.Lava)
             {
