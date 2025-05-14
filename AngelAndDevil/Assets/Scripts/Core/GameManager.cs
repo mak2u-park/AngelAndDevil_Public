@@ -74,7 +74,6 @@ public class GameManager : Singleton<GameManager>
 
     private void Start()
     {
-        PlayerPrefs.DeleteAll();
         gameData= new GameData();
         Debug.Log("게임데이터 새로 생성");
     }
@@ -254,7 +253,12 @@ public class GameManager : Singleton<GameManager>
 
     public void SaveDataOnNewSlot()
     {
-        if(PlayerPrefs.HasKey(slotnumberkey))
+        for (int i = 0; i < 4; i++)
+        {
+            gameData.LastPosition[i] = AgDvPosition[i];
+            Debug.Log($"GameData {i} : {gameData.LastPosition[i].x} {gameData.LastPosition[i].y}");
+        }
+        if (PlayerPrefs.HasKey(slotnumberkey))
         {
             int slot = PlayerPrefs.GetInt(slotnumberkey);
             SaveData(slot);

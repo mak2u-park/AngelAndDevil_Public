@@ -60,6 +60,7 @@ public class SelectStageController : BaseUIController
                     anim.SetBool("IsClick", false);
                 }
                 GameManager.Instance.AgDvPosition[GameManager.Instance.tema]= new Vector3(clickbutton.transform.position.x - 0.1f, -1, 0);
+                Debug.Log(GameManager.Instance.AgDvPosition[GameManager.Instance.tema].x + " " + GameManager.Instance.AgDvPosition[GameManager.Instance.tema].y + " " + GameManager.Instance.AgDvPosition[GameManager.Instance.tema].z);
                 GameManager.Instance.StartGame(GameManager.Instance.tema * 3 + indexnum + 1);//3은 한 테마당 스테이 수
                 ChangeScene(GameManager.Instance.tema * 3 + indexnum + 4);//4는 테마 수 -> 나중에 확장성 챙길려면 변수로 바꿔야할 듯
                 
