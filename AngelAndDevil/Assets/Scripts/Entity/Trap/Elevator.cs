@@ -20,13 +20,13 @@ public class Elevator : MonoBehaviour
     // ******************************************************************
     // Gizmos를 사용하여 시각적으로 표시하기 위한 변수(차후 삭제 예정)
     private Vector3 GizmoPosition; // Gizmo의 위치
+    private Quaternion GizmoRotation; // Gizmo의 회전
 
     [ExecuteAlways]
 
     private void OnDrawGizmos()
     {
         var elevatorFloor = GetComponent<BoxCollider2D>();
-        
 
         if (elevatorFloor != null)
         {
@@ -36,14 +36,21 @@ public class Elevator : MonoBehaviour
             EndX = StartX + width;
             EndY = StartY + height;
             GizmoPosition = new Vector3(StartX + width, StartY + height, 0);
+            GizmoRotation = elevatorPosition.transform.rotation;
 
             Gizmos.color = Color.red;
             Gizmos.DrawLine(new Vector3(StartX, StartY, 0), new Vector3(EndX, EndY, 0));
             Vector3 center = GizmoPosition;
             Vector3 size = new Vector3(elevatorFloor.size.x, elevatorFloor.size.y, 0);
-            Gizmos.DrawWireCube(center, size);
+
+            Matrix4x4 _gizmoMatrix = Gizmos.matrix;
+            Gizmos.matrix = Matrix4x4.TRS(center, GizmoRotation, Vector3.one);
+
+            Gizmos.DrawWireCube(Vector2.zero, size);
+
+            Gizmos.matrix = _gizmoMatrix; // 원래의 행렬로 복원( Gizmos.matrix는 static이므로)
         }
-        
+
     }
     private void OnValidate()
     {
