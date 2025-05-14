@@ -30,6 +30,16 @@ public class Plate2 : MonoBehaviour, IEnable
         OnDisable += action;
     }
 
+    public void RemoveEnableEvent(Action action)
+    {
+        OnEnable -= action;
+    }
+
+    public void RemoveDisableEvent(Action action)
+    {
+        OnDisable -= action;
+    }
+
     public void Enable()
     {
         _isEnable = true;
@@ -76,19 +86,6 @@ public class Plate2 : MonoBehaviour, IEnable
             _isContact = false;
             Disable();
         }
-    }
-
-    private IEnumerator RestorePositionCoroutine()
-    {
-        float time = 0.2f;
-        float posY = transform.position.y;
-        if (!_isContact && posY < _SetY)
-        {
-            posY += 0.5f * time;
-            posY = Mathf.Min(posY, _SetY);
-            transform.position = new Vector2(transform.position.x, posY);
-        }
-        yield return new WaitForSeconds(time);
     }
 }
 

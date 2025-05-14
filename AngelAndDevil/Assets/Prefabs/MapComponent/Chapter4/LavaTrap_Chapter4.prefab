@@ -48,7 +48,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _type: 1
-  _trapEffect: {fileID: 4542767658904205215, guid: 9acbd49242935e44e8104ace8dbd70b4, type: 3}
+  _trapEffect: {fileID: 0}
+  _lava: {fileID: 2334940739892793039}
+  _holyWater: {fileID: 8197776703862166826, guid: f0df8aecea4596248acdd9f13fc797b9, type: 3}
 --- !u!61 &243003446429398910
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -81,7 +83,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.65}
+  m_Offset: {x: 0, y: -0.25}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 1}
@@ -104,7 +106,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8226977024562464350}
   - component: {fileID: 2548388603541937323}
-  - component: {fileID: 4988768276933881567}
+  - component: {fileID: 9075220446005691230}
   m_Layer: 3
   m_Name: Bottom
   m_TagString: Untagged
@@ -167,8 +169,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 120
-  m_Sprite: {fileID: -1425077084, guid: 3e1d2141585974a458b7f241cf7327c8, type: 3}
+  m_SortingOrder: 0
+  m_Sprite: {fileID: -1649965518, guid: 9313d3b128559274b873bbb2acd7afe8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -179,7 +181,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &4988768276933881567
+--- !u!95 &9075220446005691230
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
@@ -189,7 +191,7 @@ Animator:
   m_GameObject: {fileID: 3462419019796176299}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 12b6936cc17220645a30c0f1f8571e95, type: 2}
+  m_Controller: {fileID: 9100000, guid: 9445c014c153776469dfd570a0ec18ca, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -210,7 +212,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6148593015936211030}
   - component: {fileID: 4404747865129951133}
-  - component: {fileID: 7358256201410392698}
+  - component: {fileID: 8602869828947231625}
   m_Layer: 3
   m_Name: Top
   m_TagString: Untagged
@@ -274,7 +276,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 125790529, guid: 3e1d2141585974a458b7f241cf7327c8, type: 3}
+  m_Sprite: {fileID: -395442081, guid: 9313d3b128559274b873bbb2acd7afe8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -285,7 +287,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &7358256201410392698
+--- !u!95 &8602869828947231625
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
@@ -295,7 +297,7 @@ Animator:
   m_GameObject: {fileID: 8536443100797631107}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 7d144ec4303f560418feddd0a1b28494, type: 2}
+  m_Controller: {fileID: 9100000, guid: e14f87a2ea6d7974b8d93cf735f7adc7, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

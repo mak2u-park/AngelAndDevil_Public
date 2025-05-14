@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 544230735845299524}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.08, y: -0.3, z: 0}
+  m_LocalPosition: {x: 0, y: -0.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -129,12 +129,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d13fcfa481e181b4fb01529174d2350f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _type: 0
+  _type: 2
   _projectiles:
   - {fileID: 780570058404027086, guid: e1b3a20419c49a04493e7950441694d9, type: 3}
   - {fileID: 780570058404027086, guid: bdda5f8e431562849818d5f2026daf8e, type: 3}
   - {fileID: 780570058404027086, guid: e393648e71a7cd249b6f2279678e7eea, type: 3}
+  _renderers:
+  - {fileID: 1886694964, guid: 73f383cd1edd45b44a51d3a5b7809d15, type: 3}
+  - {fileID: 719141881, guid: 73f383cd1edd45b44a51d3a5b7809d15, type: 3}
+  - {fileID: -309218493, guid: 73f383cd1edd45b44a51d3a5b7809d15, type: 3}
   _shootInterval: 1
-  _moveDistance: 2.1
+  _moveDistance: 0
   _projectileIndex: 0
-  _isRight: 0
+  _isRight: 1
+  _plate:
+  - {fileID: 0}
+  - {fileID: 0}
