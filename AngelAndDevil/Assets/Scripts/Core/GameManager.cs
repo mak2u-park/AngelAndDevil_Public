@@ -79,6 +79,7 @@ public class GameManager : Singleton<GameManager>
         _stage = stage;
         Time.timeScale = 1.0f;
         ScoreManager.Instance.SettingHostage();
+        SoundManager.Instance.PlayBGM("MainMusic");
         Debug.Log("현재 스테이지 : " + _stage);
     }
 

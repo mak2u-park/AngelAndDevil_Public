@@ -52,6 +52,7 @@ public abstract class BaseUIController : MonoBehaviour
         GameManager.Instance.Pause(false);
         if (stage < 4)
         {
+            SoundManager.Instance.StopBGM();
             GameManager.Instance.tema = stage;
         }
         SceneManager.LoadScene(sceneName[stage]);
@@ -63,5 +64,6 @@ public abstract class BaseUIController : MonoBehaviour
         GameManager.Instance.Pause(false);
         isStart = isRestart;
         SceneManager.LoadScene("StartSceneUI_juna");
+        SoundManager.Instance.StopBGM();
     }
 }
