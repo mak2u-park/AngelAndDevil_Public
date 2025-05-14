@@ -8,8 +8,8 @@ using Unity.VisualScripting.Antlr3.Runtime.Tree;
 
 public class ScoreManager : Singleton<ScoreManager> 
 {
-    private int angelhostage;
-    private int devilhostage;
+    private int angelhostage = 0;
+    private int devilhostage = 0;
 
     
     public int AngelHostage
@@ -27,10 +27,21 @@ public class ScoreManager : Singleton<ScoreManager>
         
     }
 
-    public void SettingHostage() // 처음에 인질 개수를 세팅
+    public void IncreaseOneAngelHostage()
     {
-        angelhostage = GameManager.Instance.getHostageCount(HostageType.Knight);
-        devilhostage = GameManager.Instance.getHostageCount(HostageType.DarkMage);
+        angelhostage++;
+    }
+
+    public void IncreaseOneDevilHostage()
+    {
+        devilhostage++;
+    }
+
+    public void ResetHostage()
+    {
+        angelhostage = 0;
+        devilhostage = 0;
+
     }
 
     public void RemoveHostage(HostageType type)
@@ -74,6 +85,7 @@ public class ScoreManager : Singleton<ScoreManager>
     private int CheckHostage()
     {
         int lefthostage = angelhostage + devilhostage;
+        Debug.Log("LeftHostage" + lefthostage);
         if(lefthostage > 0)
         {
             return 0;

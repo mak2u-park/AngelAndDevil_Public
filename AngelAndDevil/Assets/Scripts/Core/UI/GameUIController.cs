@@ -36,15 +36,16 @@ public class GameUIController : BaseUIController
     {
         menuCanvas.gameObject.SetActive(false);
         soundCanvas.gameObject.SetActive(false);
+        for (int i = 0; i < bigStarImages.Length; i++)
+        {
+            Debug.Log("false " +  i);
+            bigStarImages[i].gameObject.SetActive(false);
+        }
         clearCanvas.gameObject.SetActive(false);
         gameOverCanvas.gameObject.SetActive(false);
         doorStarImage.gameObject.SetActive(false);
         hostageStarImage.gameObject.SetActive(false);
         timeStarImage.gameObject.SetActive(false);
-        for (int i = 0; i < bigStarImages.Length; i++)
-        {
-            bigStarImages[i].gameObject.SetActive(false);
-        }
         maxAngelHostage = ScoreManager.Instance.AngelHostage;
         maxDevilHostage = ScoreManager.Instance.DevilHostage;
     }
@@ -72,17 +73,19 @@ public class GameUIController : BaseUIController
 
     IEnumerator ShowStars()
     {
+        GameManager.Instance.isClear = false;
         bool inTime = GameManager.Instance.GetStageIntime(GameManager.Instance._Stage);//아마 Set을 안해줘서 문제 발생
         int score = 0;
         yield return new WaitForSecondsRealtime(delayBetweenStars);
         doorStarImage.gameObject.SetActive(true);
         score++;
-        if (GameManager.Instance.GetStageLeftAngel(GameManager.Instance._Stage) == 0
-            && GameManager.Instance.GetStageLeftDevil(GameManager.Instance._Stage) == 0)
+        if (ScoreManager.Instance.AngelHostage== 0
+            && ScoreManager.Instance.DevilHostage== 0)
         {
             yield return new WaitForSecondsRealtime(delayBetweenStars);
             hostageStarImage.gameObject.SetActive(true);
             score++;
+            Debug.Log("Hostage 0");
         }
         if (inTime)
         {

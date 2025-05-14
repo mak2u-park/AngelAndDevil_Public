@@ -13,13 +13,7 @@ public abstract class BaseUIController : MonoBehaviour
     public static bool isStart = true;
     //protected static int roomNum = 0; //GameManager에서 관리해주는 것이 좋을듯?
 
-    protected string[] sceneName ={
-        "Stage1","Stage2","Stage3","Stage4",
-        "Stage1-1","Stage1-2","Stage1-3",
-        "Stage2-1", "Stage2-2", "Stage2-3",
-        "Stage3-1", "Stage3-2", "Stage3-3",
-        "Stage4-1", "Stage4-1", "Stage4-1"
-    };
+
 
 
     protected virtual void Awake()
@@ -49,14 +43,7 @@ public abstract class BaseUIController : MonoBehaviour
 
     public void ChangeScene(int stage)
     {
-        GameManager.Instance.isGameOver = false;
-        GameManager.Instance.Pause(false);
-        if (stage < 4)
-        {
-            SoundManager.Instance.StopBGM();
-            GameManager.Instance.tema = stage;
-        }
-        SceneManager.LoadScene(sceneName[stage]);
+        GameManager.Instance.LoadScene(stage);
     }
 
     public void GoMainScene(bool isRestart)

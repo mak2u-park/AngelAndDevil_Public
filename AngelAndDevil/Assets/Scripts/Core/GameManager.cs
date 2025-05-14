@@ -2,6 +2,8 @@ using UnityEngine;
 using System;
 using System.IO;
 using UnityEditor.SceneManagement;
+using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class GameManager : Singleton<GameManager>
 {
@@ -22,6 +24,17 @@ public class GameManager : Singleton<GameManager>
         new Vector3(-6, -1, 0),
         new Vector3(-6, -1, 0)
     };
+
+
+
+    protected string[] sceneName ={
+        "Stage1","Stage2","Stage3","Stage4",
+        "Stage1-1","Stage1-2","Stage1-3",
+        "Stage2-1", "Stage2-2", "Stage2-3",
+        "Stage3-1", "Stage3-2", "Stage3-3",
+        "Stage4-1", "Stage4-1", "Stage4-1"
+    };
+
 
     public int ChoicedSlot
     {
@@ -45,18 +58,18 @@ public class GameManager : Singleton<GameManager>
     }
 
 
-    public int getHostageCount(HostageType type)
+
+    public void LoadScene(int stage)
     {
-        Hostage[] hostages = FindObjectsOfType<Hostage>();
-        int count = 0;
-        foreach(Hostage hostage in hostages)
+        isGameOver = false;
+        Pause(false);
+        if (stage < 4)
         {
-            if(hostage.Type == type)
-            {
-                count++;
-            }
+            SoundManager.Instance.StopBGM();
+            GameManager.Instance.tema = stage;
         }
-        return count;
+        ScoreManager.Instance.ResetHostage();
+        SceneManager.LoadScene(sceneName[stage]);
     }
 
     private void Start()
@@ -79,8 +92,10 @@ public class GameManager : Singleton<GameManager>
         _stage = stage;
         Time.timeScale = 1.0f;
         SoundManager.Instance.PlayBGM("MainMusic");
-        ScoreManager.Instance.SettingHostage();
+        Debug.Log(ScoreManager.Instance.AngelHostage);
+        Debug.Log(ScoreManager.Instance.DevilHostage);
         Debug.Log("현재 스테이지 : " + _stage);
+
     }
 
     public void Pause(bool isPause)

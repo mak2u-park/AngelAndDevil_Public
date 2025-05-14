@@ -7,6 +7,19 @@ public class Hostage : MonoBehaviour, IInteractable
 
     public HostageType Type {get; private set;}
 
+    private void Awake()
+    {
+        if(_type == HostageType.Knight)
+        {
+            ScoreManager.Instance.IncreaseOneAngelHostage();
+        }
+        else
+        {
+            Type = HostageType.DarkMage;
+            ScoreManager.Instance.IncreaseOneDevilHostage();
+        }
+    }
+
     public void Interact()
     {
         ScoreManager.Instance.RemoveHostage(_type);
