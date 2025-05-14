@@ -213,6 +213,10 @@ public class GameManager : Singleton<GameManager>
             Debug.Log("파일 불러오기");
             string loadedData = File.ReadAllText(Filepath);
             gameData = JsonUtility.FromJson<GameData>(loadedData);
+            for(int i = 0; i < 4; i++)
+            {
+                AgDvPosition[i] = gameData.LastPosition[i];
+            }
             Debug.Log($"MaxStage : {gameData.MaxStage}");
             return true;
         }
