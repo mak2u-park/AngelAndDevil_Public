@@ -11,13 +11,13 @@ public class SelectStageController : BaseUIController
     public TMP_Text Percent;
     public TMP_Text StarNum;
 
-    [SerializeField]private Button clickbutton;
+    private Button clickbutton;
 
-    [SerializeField] private float percent = 0f;
-    [SerializeField] private int currentStarNum = 3;//test용
-    [SerializeField] private int maxStarNum = 15;//test용
+    private float percent = 0f;
+    private int currentStarNum;//test용
+    private int maxStarNum = 9;//test용
 
-    [SerializeField] private int indexnum;
+    private int indexnum;
     
     protected override void Awake()
     {
@@ -28,6 +28,10 @@ public class SelectStageController : BaseUIController
     {
         base.Start();
         AgDv.transform.position = GameManager.Instance.AgDvPosition[GameManager.Instance.tema];
+        currentStarNum = GameManager.Instance.GetStageScore(GameManager.Instance.tema + 1)
+                + GameManager.Instance.GetStageScore(GameManager.Instance.tema + 2)
+                + GameManager.Instance.GetStageScore(GameManager.Instance.tema + 3);
+
 
         for (int i = 0; i < roomButtons.Length; i++)
         {
