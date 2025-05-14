@@ -28,6 +28,34 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Retry",
+            "id": "adc4a6cd-60b8-42d8-87df-96d89ab63e51",
+            "actions": [
+                {
+                    "name": "Retry",
+                    "type": "Button",
+                    "id": "a4753896-d07c-419b-84ab-e54bba6cea55",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "ec688d5c-5148-4350-911f-c23ba1ab8abb",
+                    "path": "<Keyboard>/r",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Retry",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []
