@@ -20,7 +20,6 @@ public class MoonStone : MonoBehaviour
     {
         if (laserDetector != null)
         {
-            bool isEnable = laserDetector.IsEnable;
             _collider.enabled = laserDetector.IsEnable;
             _renderer.enabled = laserDetector.IsEnable;
         }

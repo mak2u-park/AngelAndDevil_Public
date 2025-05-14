@@ -8,6 +8,9 @@ public class Lever : MonoBehaviour, IEnable
     private bool isEnable;
     private bool isContact = false;
 
+    private const float AngleThreshold = 45f; // 레버 활성화 임계 각도
+    private const float LerpSpeed = 2f;      // 레버 회전 보간 속도
+
     // Gate에서 사용할 수 있도록 public으로 설정
     public bool IsEnable => isEnable;
 
@@ -37,13 +40,13 @@ public class Lever : MonoBehaviour, IEnable
              clampedZ = Mathf.Clamp(angleZ, -90f, 0f);
             
             // 레버가 한쪽으로 기울어졌을때 중력의 영향을 받는 것처럼 운동
-            if (clampedZ < -45f)
+            if (clampedZ < -AngleThreshold)
             {
-                clampedZ = Mathf.Lerp(clampedZ, -90f, Time.fixedDeltaTime * 2f); // 부드럽게 회전
+                clampedZ = Mathf.Lerp(clampedZ, -90f, Time.fixedDeltaTime * LerpSpeed); // 부드럽게 회전
             }
-            else if (clampedZ > -45f)
+            else if (clampedZ > -AngleThreshold)
             {
-                clampedZ = Mathf.Lerp(clampedZ, 0f, Time.fixedDeltaTime * 2f); // 부드럽게 회전
+                clampedZ = Mathf.Lerp(clampedZ, 0f, Time.fixedDeltaTime * LerpSpeed); // 부드럽게 회전
             }
             else
             {
@@ -58,13 +61,13 @@ public class Lever : MonoBehaviour, IEnable
             clampedZ = Mathf.Clamp(angleZ, 0f, 90f);
 
             // 레버가 한쪽으로 기울어졌을때 중력의 영향을 받는 것처럼 운동
-            if (clampedZ < 45f)
+            if (clampedZ < AngleThreshold)
             {
-                clampedZ = Mathf.Lerp(clampedZ, 0f, Time.fixedDeltaTime * 2f); // 부드럽게 회전
+                clampedZ = Mathf.Lerp(clampedZ, 0f, Time.fixedDeltaTime * LerpSpeed); // 부드럽게 회전
             }
-            else if (clampedZ > 45f)
+            else if (clampedZ > AngleThreshold)
             {
-                clampedZ = Mathf.Lerp(clampedZ, 90f, Time.fixedDeltaTime * 2f); // 부드럽게 회전
+                clampedZ = Mathf.Lerp(clampedZ, 90f, Time.fixedDeltaTime * LerpSpeed); // 부드럽게 회전
             }
             else
             {
@@ -81,7 +84,7 @@ public class Lever : MonoBehaviour, IEnable
 
         if (!isContact) return;
 
-        if (clampedZAbs > 45f)
+        if (clampedZAbs > AngleThreshold)
         {
             Enable();
         }

@@ -5,12 +5,16 @@ using UnityEngine;
 public class Plate : MonoBehaviour, IEnable
 {
     Rigidbody2D _rigidbody2D;
-    private bool isEnable;
+    private bool _isEnable;
     private bool isContact = false;
     private float SetY;
     // Elevator에서 사용할 수 있도록 public으로 설정
-    public bool IsEnable => isEnable;
+    public bool IsEnable => _isEnable;
     private int _contectCount = 0;
+
+    private const float PlateRiseSpeed = 0.5f;
+    private const float PlateLimitY = 1f;
+    private const float EnableY = 0.1f;
 
     void Start()
     {
@@ -21,15 +25,15 @@ public class Plate : MonoBehaviour, IEnable
     void FixedUpdate()
     {
         float PosY = transform.position.y;
-        PosY = Mathf.Clamp(PosY, SetY - 1f, SetY);
+        PosY = Mathf.Clamp(PosY, SetY - PlateLimitY, SetY);
 
         if (!isContact && PosY < SetY)
         {
-            PosY += 0.5f * Time.fixedDeltaTime;
+            PosY += PlateRiseSpeed * Time.fixedDeltaTime;
             PosY = Mathf.Min(PosY, SetY);
             Disable();
         }
-        else if (isContact && PosY < SetY - 0.1f)
+        else if (isContact && PosY < SetY - EnableY)
         {
             Enable();
         }
@@ -39,20 +43,20 @@ public class Plate : MonoBehaviour, IEnable
 
     public void Enable()
     {
-        if(isEnable == false)
+        if(_isEnable == false)
         {
             SoundManager.Instance.PlaySFX("Plate");
         }
-        isEnable = true;
+        _isEnable = true;
     }
 
     public void Disable()
     {
-        if(isEnable == true)
+        if(_isEnable == true)
         {
             SoundManager.Instance.PlaySFX("Plate");
         }
-        isEnable = false;
+        _isEnable = false;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

@@ -15,14 +15,10 @@ public class ProjectileTrap : MonoBehaviour
     [SerializeField] private ReversePlate[] _plate;
 
     private SpriteRenderer _renderer;
-
     private int _currentRendererIndex = 0;
-
     private float _position;
-
     private float _shootTime;
-
-    private int _direction = 1;
+    private int _upDownDirection = 1;
 
     public void Start()
     {
@@ -59,15 +55,15 @@ public class ProjectileTrap : MonoBehaviour
     {
         if(_moveDistance == 0) return;
         
-        transform.position += transform.up * Time.fixedDeltaTime * _direction;
+        transform.position += transform.up * Time.fixedDeltaTime * _upDownDirection;
         
         if(transform.position.y >= _position + _moveDistance)
         {
-            _direction = -1;
+            _upDownDirection = -1;
         }
         else if(transform.position.y <= _position - _moveDistance)
         {
-            _direction = 1;
+            _upDownDirection = 1;
         }
     }
 
