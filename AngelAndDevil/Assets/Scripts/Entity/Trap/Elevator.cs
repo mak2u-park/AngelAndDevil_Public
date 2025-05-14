@@ -47,7 +47,6 @@ public class Elevator : MonoBehaviour
 
             Matrix4x4 _gizmoMatrix = Gizmos.matrix;
             Gizmos.matrix = Matrix4x4.TRS(center, GizmoRotation, Vector3.one);
-
             Gizmos.DrawWireCube(Vector2.zero, size);
 
             Gizmos.matrix = _gizmoMatrix; // 원래의 행렬로 복원( Gizmos.matrix는 static이므로)
