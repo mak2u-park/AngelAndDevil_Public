@@ -1,7 +1,9 @@
 using UnityEngine;
 using System;
 using System.IO;
+#if UNITY_EDITOR
 using UnityEditor.SceneManagement;
+#endif
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 
