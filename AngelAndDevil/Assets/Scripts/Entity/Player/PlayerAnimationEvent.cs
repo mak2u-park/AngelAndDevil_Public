@@ -43,4 +43,9 @@ public class PlayerAnimationEvent : MonoBehaviour
     {
         SoundManager.Instance.PlaySFX("JumpSound");
     }
+
+    public void WalkSound()
+    {
+        SoundManager.Instance.PlaySFX("WalkSound");
+    }
 }
