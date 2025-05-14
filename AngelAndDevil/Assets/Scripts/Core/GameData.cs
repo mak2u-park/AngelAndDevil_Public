@@ -1,3 +1,4 @@
+using System.Runtime.CompilerServices;
 using UnityEditor.Build.Player;
 using UnityEngine;
 public class SettingData
@@ -13,13 +14,13 @@ public enum EndingType
     perfect
 }
 
-
+[System.Serializable]
 public class Data
 {
-    private int score;
-    private int leftAngel;
-    private int leftDevil;
-    private bool intime;
+    [SerializeField] private int score;
+    [SerializeField] private int leftAngel;
+    [SerializeField] private int leftDevil;
+    [SerializeField] private bool intime;
     public int Score
     {
         get { return score; }
@@ -50,9 +51,11 @@ public class Data
     }
 }
 
+[System.Serializable]
 public class GameData
 {
-    private Data[] data;
+    [SerializeField] private Data[] data;
+    [SerializeField] private int maxStage;
 
     public GameData()
     {
@@ -61,7 +64,14 @@ public class GameData
         {
             data[i] = new Data();
         }
+        MaxStage = 0;
     }
+    public int MaxStage
+    {
+        get { return maxStage; }
+        set { maxStage = value; }
+    }
+
     public void SetScore(int num, int _score)
     {
         data[num-1].Score = _score;
