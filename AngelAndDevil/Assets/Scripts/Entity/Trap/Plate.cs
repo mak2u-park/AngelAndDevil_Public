@@ -39,11 +39,19 @@ public class Plate : MonoBehaviour, IEnable
 
     public void Enable()
     {
+        if(isEnable == false)
+        {
+            SoundManager.Instance.PlaySFX("Plate");
+        }
         isEnable = true;
     }
 
     public void Disable()
     {
+        if(isEnable == true)
+        {
+            SoundManager.Instance.PlaySFX("Plate");
+        }
         isEnable = false;
     }
 
@@ -55,6 +63,7 @@ public class Plate : MonoBehaviour, IEnable
             if(_contectCount == 1)
             {
                 isContact = true;
+                SoundManager.Instance.PlaySFX("Plate");
             }
         }
     }
