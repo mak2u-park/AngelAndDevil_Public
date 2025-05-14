@@ -25,8 +25,16 @@ public class Mirror : MonoBehaviour
     // 빔이 거울과 충돌했을 때의 충돌 지점을 구하는 메서드
     private Vector2 collisionPosition(Beam beam)
     {
+        Vector2 vector2 = beam.transform.position;
+        vector2.y += 0.2f; // 빔의 위치를 약간 위로 이동시킴(레이캐스트와 콜라이더의 크기 차이로 인한 오차 보정)
+        
         // 빔이 거울과 충돌하는 것을 감지하기 위한 레이캐스트
-        RaycastHit2D hit = Physics2D.Raycast(beam.transform.position, beam.transform.right, 50f, _mirrorLayerMask);
+        RaycastHit2D hit = Physics2D.Raycast(vector2, beam.transform.right, 50f, _mirrorLayerMask);
+
+        vector2 = hit.point;
+        vector2.x -= 0.1f; // 빔의 위치를 약간 왼쪽으로 이동시킴(레이캐스트와 콜라이더의 크기 차이로 인한 오차 보정)
+        vector2.y -= 0.1f; // 빔의 위치를 약간 아래로 이동시킴(레이캐스트와 콜라이더의 크기 차이로 인한 오차 보정)
+        hit.point = vector2; // 충돌 지점의 y좌표를 보정된 값으로 설정
         return hit.point;
     }
 
@@ -46,7 +54,7 @@ public class Mirror : MonoBehaviour
 
             Vector2 newscale = _reflectedbeam.transform.localScale;
             newscale.x = _maxLaserRange;                           // 반사된 빔의 길이 설정
-            _reflectedbeam.transform.localScale = newscale;
+            _reflectedbeam.transform.localScale = newscale; 
 
             // 빔이 Ground와 Mirror에 닿는지 확인하기 위한 레이캐스트
             RaycastHit2D hit2 = Physics2D.Raycast(CollisionPoint, reflectedDirection, _maxLaserRange, _groundLayerMask);

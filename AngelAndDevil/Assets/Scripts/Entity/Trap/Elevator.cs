@@ -9,8 +9,8 @@ public class Elevator : MonoBehaviour
     [SerializeField] GameObject elevatorPosition; // 엘리베이터 바닥 오브젝트
     BoxCollider2D colider;
     // 엘리베이터가 올라갈 높이
-    [Range(-20, 20), SerializeField] float width = 0f;
-    [Range(-20, 20), SerializeField] float height = 2f;
+    [Range(-30, 30), SerializeField] float width = 0f;
+    [Range(-30, 30), SerializeField] float height = 2f;
 
     private float StartX; // 엘리베이터의 시작 X 좌표
     private float EndX; // 엘리베이터의 끝 X 좌표

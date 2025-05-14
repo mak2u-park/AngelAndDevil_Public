@@ -98,7 +98,7 @@ public class PlayerController : MonoBehaviour
 
         IsDie = true;
         animator.SetTrigger(IsDead);
-        GameManager.Instance.IsGameOver();
+        GameManager.Instance.invokeGameOver();
     }
 
     protected virtual void Update()
