@@ -68,6 +68,7 @@ public class PlayerController : MonoBehaviour
     {
         if(rb.velocity.y > 0) return;
         rb.velocity = new Vector2(rb.velocity.x, JumpForce);
+        SoundManager.Instance.PlaySFX("JumpSound");
         
     }
     

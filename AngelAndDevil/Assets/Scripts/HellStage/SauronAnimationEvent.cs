@@ -53,6 +53,11 @@ public class SauronAnimationEvent : MonoBehaviour
         sauron.KillAngel();
         sauron.EndDetect(); 
     }
+
+    public void BeamSound()
+    {
+        SoundManager.Instance.PlaySFX("BeamSound");
+    }
     
 
 

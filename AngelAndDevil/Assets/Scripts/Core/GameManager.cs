@@ -68,7 +68,7 @@ public class GameManager : Singleton<GameManager>
             SoundManager.Instance.StopBGM();
             GameManager.Instance.tema = stage;
         }
-        ScoreManager.Instance.ResetHostage();
+        
         SceneManager.LoadScene(sceneName[stage]);
     }
 
@@ -91,6 +91,7 @@ public class GameManager : Singleton<GameManager>
         _stage = stage;
         Time.timeScale = 1.0f;
         SoundManager.Instance.PlayBGM("MainMusic");
+        ScoreManager.Instance.ResetHostage();
         Debug.Log(ScoreManager.Instance.AngelHostage);
         Debug.Log(ScoreManager.Instance.DevilHostage);
         Debug.Log("현재 스테이지 : " + _stage);
