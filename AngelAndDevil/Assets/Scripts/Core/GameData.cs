@@ -56,6 +56,13 @@ public class GameData
 {
     [SerializeField] private Data[] data;
     [SerializeField] private int maxStage;
+    public Vector3[] LastPosition =
+    {
+        new Vector3(-6, -1, 0),
+        new Vector3(-6, -1, 0),
+        new Vector3(-6, -1, 0),
+        new Vector3(-6, -1, 0)
+    };
 
     public GameData()
     {
@@ -65,6 +72,7 @@ public class GameData
             data[i] = new Data();
         }
         MaxStage = 0;
+        
     }
     public int MaxStage
     {
