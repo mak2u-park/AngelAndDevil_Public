@@ -13,7 +13,7 @@ public class Plate : MonoBehaviour, IEnable
     private int _contectCount = 0;
 
     private const float PlateRiseSpeed = 0.5f;
-    private const float PlateLimitY = 1f;
+    private const float PlateLimitY = 0.5f;
     private const float EnableY = 0.1f;
 
     void Start()
@@ -27,13 +27,17 @@ public class Plate : MonoBehaviour, IEnable
         float PosY = transform.position.y;
         PosY = Mathf.Clamp(PosY, SetY - PlateLimitY, SetY);
 
+        if (PosY < SetY - PlateLimitY)
+        {
+            PosY = Mathf.Lerp(PosY, SetY - PlateLimitY, Time.fixedDeltaTime * 2f);
+        }
         if (!isContact && PosY < SetY)
         {
             PosY += PlateRiseSpeed * Time.fixedDeltaTime;
             PosY = Mathf.Min(PosY, SetY);
             Disable();
         }
-        else if (isContact && PosY < SetY - EnableY)
+        else if (isContact && PosY < SetY)
         {
             Enable();
         }
@@ -52,10 +56,6 @@ public class Plate : MonoBehaviour, IEnable
 
     public void Disable()
     {
-        if(_isEnable == true)
-        {
-            SoundManager.Instance.PlaySFX("Plate");
-        }
         _isEnable = false;
     }
 
@@ -67,7 +67,6 @@ public class Plate : MonoBehaviour, IEnable
             if(_contectCount == 1)
             {
                 isContact = true;
-                SoundManager.Instance.PlaySFX("Plate");
             }
         }
     }
