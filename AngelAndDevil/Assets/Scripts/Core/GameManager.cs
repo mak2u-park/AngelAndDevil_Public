@@ -5,10 +5,12 @@ using UnityEditor.SceneManagement;
 
 public class GameManager : Singleton<GameManager>
 {
-    private GameData gameData;
+    [SerializeField] private GameData gameData;
+    private string slotnumberkey = "slotnumber";
     private string json = ".json";
     private float _time = 0;
     private int _stage = 0;
+    private int choicedSlot;
 
     public int tema;//나중에 프로퍼티 넣어주기
     public bool isClear;
@@ -20,6 +22,17 @@ public class GameManager : Singleton<GameManager>
         new Vector3(-6, -1, 0),
         new Vector3(-6, -1, 0)
     };
+
+    public int ChoicedSlot
+    {
+        set {choicedSlot = value;} 
+        get { return choicedSlot; }
+    }
+
+    public string Slotnumberkey
+    {
+        get { return slotnumberkey; }
+    }
 
     public float _Time
     {
@@ -48,7 +61,9 @@ public class GameManager : Singleton<GameManager>
 
     private void Start()
     {
+        PlayerPrefs.DeleteAll();
         gameData= new GameData();
+        Debug.Log("게임데이터 새로 생성");
     }
 
     private void Update()
@@ -64,6 +79,7 @@ public class GameManager : Singleton<GameManager>
         _stage = stage;
         Time.timeScale = 1.0f;
         ScoreManager.Instance.SettingHostage();
+        Debug.Log("현재 스테이지 : " + _stage);
     }
 
     public void Pause(bool isPause)
@@ -80,8 +96,9 @@ public class GameManager : Singleton<GameManager>
 
     public void Clear()
     {
-        ScoreManager.Instance.EndStageScore(_stage);
+        ScoreManager.Instance.EndStageScore();
         isClear = true;
+        Debug.Log("clear 호출");
     }
     
     public void InvokeClear()
@@ -144,6 +161,17 @@ public class GameManager : Singleton<GameManager>
         return gameData.CanSelectStage(stage);
     }
 
+    public void SaveMaxStage(int stage)
+    {
+        gameData.MaxStage = stage;
+    }
+
+    public int GetMaxStage()
+    {
+        return gameData.MaxStage;
+    }
+
+
     public bool ShowOutcome(ref EndingType ending)
     {
         if(gameData.GetScore(12) == 0)
@@ -184,17 +212,38 @@ public class GameManager : Singleton<GameManager>
             Debug.Log("파일 불러오기");
             string loadedData = File.ReadAllText(Filepath);
             gameData = JsonUtility.FromJson<GameData>(loadedData);
+            Debug.Log($"MaxStage : {gameData.MaxStage}");
             return true;
         }
-        Debug.Log("파일이 없음");
+        Debug.Log($"{slot}번 파일이 없음");
         return false;
     }
 
-    public void SaveData(int slot)
+    public void SaveData(int slot) // 덮어 씌우기
     {
+        if(gameData == null)
+        {
+            Debug.Log("게임데이터가 null임");
+            return;
+        }
         string scordatatojson = JsonUtility.ToJson(gameData);
         string Filpath = Path.Combine(Application.dataPath + "/Data/", slot.ToString() + "slot" + json);
         File.WriteAllText(Filpath, scordatatojson);
-        Debug.Log("저장 완료");
+        Debug.Log($"{slot}번 저장 완료");
+    }
+
+    public void SaveDataOnNewSlot()
+    {
+        if(PlayerPrefs.HasKey(slotnumberkey))
+        {
+            int slot = PlayerPrefs.GetInt(slotnumberkey);
+            SaveData(slot);
+            PlayerPrefs.SetInt(slotnumberkey, slot + 1);
+        }
+        else
+        {
+            SaveData(0);
+            PlayerPrefs.SetInt(slotnumberkey, 1);
+        }
     }
 }

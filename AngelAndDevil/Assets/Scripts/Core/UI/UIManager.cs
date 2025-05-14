@@ -11,7 +11,8 @@ public enum UIState
     Main,
     SellectStage,
     Game,
-    Credit
+    Credit,
+    SaveLoad
 }
 public class UIManager : MonoBehaviour
 {

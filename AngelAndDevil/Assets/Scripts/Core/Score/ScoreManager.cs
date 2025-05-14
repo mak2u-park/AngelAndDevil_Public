@@ -45,7 +45,7 @@ public class ScoreManager : Singleton<ScoreManager>
         }
     }
 
-    public void EndStageScore(int stage)
+    public void EndStageScore()
     {
         int newscore = 1 + CheckHostage() + CheckTime();
         if (GameManager.Instance.GetStageScore(GameManager.Instance._Stage) <= newscore)
@@ -63,6 +63,11 @@ public class ScoreManager : Singleton<ScoreManager>
         if(CheckTime() == 1)
         {   
             GameManager.Instance.SaveStageIntime(GameManager.Instance._Stage, true);
+        }
+        if(GameManager.Instance.GetMaxStage() <= GameManager.Instance._Stage)
+        {
+            GameManager.Instance.SaveMaxStage(GameManager.Instance._Stage);
+            Debug.Log("MaxStage °»½Å");
         }
     }
 
