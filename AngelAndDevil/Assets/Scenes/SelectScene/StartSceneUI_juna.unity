@@ -676,6 +676,11 @@ MonoBehaviour:
       leftDevil: 3
       intime: 0
     maxStage: 0
+    LastPosition:
+    - {x: -6, y: -1, z: 0}
+    - {x: -6, y: -1, z: 0}
+    - {x: -6, y: -1, z: 0}
+    - {x: -6, y: -1, z: 0}
   tema: 0
   isClear: 0
   isGameOver: 0
@@ -1689,6 +1694,10 @@ MonoBehaviour:
   - {fileID: 8300000, guid: da30df277b41dc8448fb662d9c1933cc, type: 3}
   - {fileID: 8300000, guid: 1c9f3ffb712bf914b92678a90a459b6c, type: 3}
   - {fileID: 8300000, guid: ae79de10c67acac49a17d78ac2fc9b30, type: 3}
+  - {fileID: 8300000, guid: fa012d484cf072944b1393f840e54275, type: 3}
+  - {fileID: 8300000, guid: cc5955aeeed1e6c4ab8ff26011967246, type: 3}
+  - {fileID: 8300000, guid: b63305cfbb9ccfa41aa049402c02a744, type: 3}
+  - {fileID: 8300000, guid: f9323bd28b3165a41b8ff9bfefb1e52f, type: 3}
   SoundSourcePrefab: {fileID: 6582578445713740470, guid: 0b7acafc49c896a4980a49edce96f104, type: 3}
 --- !u!4 &737712700
 Transform:
