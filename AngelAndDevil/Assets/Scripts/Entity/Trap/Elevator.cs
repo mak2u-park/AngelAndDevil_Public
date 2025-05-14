@@ -21,6 +21,8 @@ public class Elevator : MonoBehaviour
     // Gizmos를 사용하여 시각적으로 표시하기 위한 변수(차후 삭제 예정)
     private Vector3 GizmoPosition; // Gizmo의 위치
 
+    private const float ElevatorSpeed = 2f;
+
     [ExecuteAlways]
 
     private void OnDrawGizmos()
@@ -81,8 +83,8 @@ public class Elevator : MonoBehaviour
     {
         // 현재위치에서 EndY 좌표로 이동
         Vector2 currentPosition = transform.position;
-        currentPosition.x = Mathf.MoveTowards(currentPosition.x, EndX, Time.fixedDeltaTime * 2f);
-        currentPosition.y = Mathf.MoveTowards(currentPosition.y, EndY, Time.fixedDeltaTime * 2f);
+        currentPosition.x = Mathf.MoveTowards(currentPosition.x, EndX, Time.fixedDeltaTime * ElevatorSpeed);
+        currentPosition.y = Mathf.MoveTowards(currentPosition.y, EndY, Time.fixedDeltaTime * ElevatorSpeed);
         transform.position = currentPosition;
     }
 
@@ -90,8 +92,8 @@ public class Elevator : MonoBehaviour
     {
         // 현재 위치에서 StartY 좌표로 이동
         Vector3 currentPosition = transform.position;
-        currentPosition.x = Mathf.MoveTowards(currentPosition.x, StartX, Time.fixedDeltaTime * 2f);
-        currentPosition.y = Mathf.MoveTowards(currentPosition.y, StartY, Time.fixedDeltaTime * 2f);
+        currentPosition.x = Mathf.MoveTowards(currentPosition.x, StartX, Time.fixedDeltaTime * ElevatorSpeed);
+        currentPosition.y = Mathf.MoveTowards(currentPosition.y, StartY, Time.fixedDeltaTime * ElevatorSpeed);
         transform.position = currentPosition;
     }
 

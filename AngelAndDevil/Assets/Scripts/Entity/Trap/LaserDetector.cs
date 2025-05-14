@@ -13,10 +13,10 @@ public class LaserDetector : MonoBehaviour, IEnable
     private int currentIndex = 0;
     private Coroutine changeCoroutine;
     private bool isTriggered = false;
-    private bool isEnable;
+    private bool _isEnable;
 
     // 다른 스크립트에서 사용할 수 있도록 public으로 설정
-    public bool IsEnable => isEnable;
+    public bool IsEnable => _isEnable;
 
 
     private void Start()
@@ -86,13 +86,13 @@ public class LaserDetector : MonoBehaviour, IEnable
     }
     public void Enable()
     {
-        isEnable = true;
+        _isEnable = true;
         // 추가 활성화 로직
     }
 
     public void Disable()
     {
-        isEnable = false;
+        _isEnable = false;
         // 추가 비활성화 로직
     }
 }

@@ -17,6 +17,10 @@ public class ReversePlate : MonoBehaviour, IEnable
 
     private int _contectCount = 0;
 
+    private const float ReversePlateRiseSpeed = 0.5f;
+
+    private const float ReversePlateLimitY = 1f;
+
     void Start()
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
@@ -59,7 +63,7 @@ public class ReversePlate : MonoBehaviour, IEnable
         float PosY = transform.position.y;
         if (!_isContact && PosY < _SetY)
         {
-            PosY += 0.5f * Time.fixedDeltaTime;
+            PosY += ReversePlateRiseSpeed * Time.fixedDeltaTime;
             PosY = Mathf.Min(PosY, _SetY);
 
             transform.position = new Vector2(transform.position.x, PosY);
@@ -77,7 +81,7 @@ public class ReversePlate : MonoBehaviour, IEnable
                 Enable();
 
             float PosY = transform.position.y;
-            PosY = Mathf.Clamp(PosY, _SetY - 1f, _SetY);
+            PosY = Mathf.Clamp(PosY, _SetY - ReversePlateLimitY, _SetY);
 
             transform.position = new Vector2(transform.position.x, PosY);
             }

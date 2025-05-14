@@ -7,6 +7,9 @@ public class Trap : MonoBehaviour
     [SerializeField] private GameObject _trapEffect;
     private GameObject _target;
 
+    private const float TrapEffectOffsetX = -0.1f;
+    private const float TrapEffectOffsetY = 0.3f;
+
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
@@ -16,7 +19,7 @@ public class Trap : MonoBehaviour
 
             if (_trapEffect != null)
             {
-                Vector3 trapEffectPosition = new Vector3(_target.transform.position.x -0.1f, _target.transform.position.y + 0.3f, _target.transform.position.z);
+                Vector3 trapEffectPosition = new Vector3(_target.transform.position.x + TrapEffectOffsetX, _target.transform.position.y + TrapEffectOffsetY, _target.transform.position.z);
                 StartCoroutine(CreateTrapEffect(trapEffectPosition, Quaternion.identity));
             }
 
