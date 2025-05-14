@@ -7,7 +7,7 @@ public class Elevator : MonoBehaviour
 {
     [SerializeField] Plate plateTop;
     [SerializeField] GameObject elevatorPosition; // 엘리베이터 바닥 오브젝트
-
+    BoxCollider2D colider;
     // 엘리베이터가 올라갈 높이
     [Range(-20, 20), SerializeField] float width = 0f;
     [Range(-20, 20), SerializeField] float height = 2f;
@@ -52,7 +52,7 @@ public class Elevator : MonoBehaviour
 
     // ******************************************************************
     private void Start()
-    {
+    {   colider = GetComponent<BoxCollider2D>();
         StartX = transform.position.x;
         EndX = StartX + width;
         StartY = transform.position.y;
@@ -95,7 +95,25 @@ public class Elevator : MonoBehaviour
         transform.position = currentPosition;
     }
 
-    
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            Debug.Log("엘베에 닿음");
+            collision.transform.SetParent(transform); // 발판을 부모로 설정
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            collision.transform.SetParent(null); // 부모 해제
+        }
+    }
 
     
+
+
 }

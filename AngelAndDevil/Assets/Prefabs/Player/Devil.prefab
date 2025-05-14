@@ -154,6 +154,7 @@ MonoBehaviour:
   rb: {fileID: 3995824973582707066}
   animator: {fileID: 3718841087676356527}
   _renderer: {fileID: 8627237813592318582}
+  colider: {fileID: 1463958571649870421}
 --- !u!1 &3201453401207273797
 GameObject:
   m_ObjectHideFlags: 0
