@@ -49,8 +49,6 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   AgDv: {fileID: 0}
   Percent: {fileID: 0}
   StarNum: {fileID: 0}
@@ -58,6 +56,7 @@ MonoBehaviour:
   percent: 0
   currentStarNum: 11
   maxStarNum: 15
+  indexnum: 0
 --- !u!114 &785848095711569164
 MonoBehaviour:
   m_ObjectHideFlags: 0
