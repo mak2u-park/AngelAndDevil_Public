@@ -20,15 +20,9 @@ public class Trap : MonoBehaviour
                 StartCoroutine(CreateTrapEffect(trapEffectPosition, Quaternion.identity));
             }
 
-            if(player is AngelController && _type == TrapType.Lava)
-            {
-                player.Die();
-            }
-            else if(player is DevilController && _type == TrapType.HolyWater)
-            {
-                player.Die();
-            }
-            else if(_type == TrapType.Poison)
+            if((player is AngelController && _type == TrapType.Lava)
+            || (player is DevilController && _type == TrapType.HolyWater)
+            || _type == TrapType.Poison)
             {
                 player.Die();
             }

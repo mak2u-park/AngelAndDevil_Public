@@ -72,7 +72,14 @@ public class SoundManager : Singleton<SoundManager>
     }
     public void PlaySFX(string clipName)
     {
-        SoundSource soundSource = Instantiate(SoundSourcePrefab, transform);
-        soundSource.Play(_audioDictionary[clipName], _soundEffectVolume);
+        if(_audioDictionary.ContainsKey(clipName))
+        {
+            SoundSource soundSource = Instantiate(SoundSourcePrefab, transform);
+            soundSource.Play(_audioDictionary[clipName], _soundEffectVolume);
+        }
+        else
+        {
+            Debug.LogError("SoundManager: PlaySFX - 존재하지 않는 오디오 클립입니다.");
+        }
     }
 }
