@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class LaserDetector : MonoBehaviour, IEnable
@@ -9,11 +10,23 @@ public class LaserDetector : MonoBehaviour, IEnable
     [SerializeField] private Sprite[] sprites;
     [SerializeField] private float intervalTime = 1f; // 스프라이트 변경 간격(초)
 
+    [Header("Camera Settings")]
+    [SerializeField] private Color Startcolor = Color.white; 
+    [SerializeField] private Color Endcolor = Color.blue;
+    [SerializeField] private float zoomOutSize = 10f; // 카메라 줌 아웃 크기 설정
+    [SerializeField] private float zoomInSize = 5f; // 카메라 줌 인 크기 설정
+
     private SpriteRenderer spriteRenderer;
     private int currentIndex = 0;
     private Coroutine changeCoroutine;
     private bool isTriggered = false;
     private bool _isEnable;
+    private int _gimmicCount = 0;  // 기믹 1회 제한
+    private Vector2 currentCameraPos;
+
+    public bool IsCameraStop = false;
+
+    [SerializeField] Camera mainCamera;
 
     // 다른 스크립트에서 사용할 수 있도록 public으로 설정
     public bool IsEnable => _isEnable;
@@ -26,6 +39,11 @@ public class LaserDetector : MonoBehaviour, IEnable
         {
             spriteRenderer.sprite = sprites[0]; // 첫 번째 스프라이트로 초기화
         }
+
+        if (mainCamera == null)
+        {
+            mainCamera = Camera.main;
+        }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -36,7 +54,6 @@ public class LaserDetector : MonoBehaviour, IEnable
                 StopCoroutine(changeCoroutine);
             changeCoroutine = StartCoroutine(ChangeSpriteUp());
 
-            
         }
 
     }
@@ -61,12 +78,46 @@ public class LaserDetector : MonoBehaviour, IEnable
         {
             yield return new WaitForSeconds(intervalTime);
             currentIndex++;
+
+            // 스프라이트 변경
             spriteRenderer.sprite = sprites[currentIndex];
+
+            // 배경 색 변경
+            float t = (float)currentIndex / (sprites.Length - 1);
+            mainCamera.backgroundColor = Color.Lerp(Startcolor, Endcolor, t);
+
+            if (_gimmicCount != 0)
+            {
+                break;
+            }
+
+            IsCameraStop = true;
+
+            // 카메라의 현재 위치 저장
+            currentCameraPos = mainCamera.transform.position;
+
+            mainCamera.transform.position = new Vector3(-3.71f, 13.38f, -10f);
+            mainCamera.orthographicSize = Mathf.Lerp(zoomInSize, zoomOutSize, t);
+
             if (currentIndex == sprites.Length - 1)
             {
+                if (_gimmicCount == 0)
+                {
+                    Invoke("resetCamera", 1f);
+                }
+
                 Enable();
+                _gimmicCount++;
             }
+
         }
+
+    }
+
+    private void resetCamera()
+    {
+        mainCamera.transform.position = currentCameraPos;
+        IsCameraStop = false;
     }
 
     // 충돌 해제 시 순차적으로 이전 스프라이트로 이동
@@ -76,7 +127,14 @@ public class LaserDetector : MonoBehaviour, IEnable
         {
             yield return new WaitForSeconds(intervalTime);
             currentIndex--;
+
+            // 스프라이트 변경
             spriteRenderer.sprite = sprites[currentIndex];
+
+            // 배경 색 변경
+            float t = (float)currentIndex / (sprites.Length - 1);
+            mainCamera.backgroundColor = Color.Lerp(Startcolor, Endcolor, t);
+
             if (currentIndex != sprites.Length - 1)
             {
                 Disable();
@@ -84,6 +142,8 @@ public class LaserDetector : MonoBehaviour, IEnable
         }
 
     }
+
+
     public void Enable()
     {
         _isEnable = true;

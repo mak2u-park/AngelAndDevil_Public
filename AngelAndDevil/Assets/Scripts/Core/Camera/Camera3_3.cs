@@ -6,6 +6,7 @@ public class Camera3_3 : MonoBehaviour
 {
     [SerializeField] private GameObject _angel;
     [SerializeField] private GameObject _devil;
+    [SerializeField] private LaserDetector laserDetector;
 
     private Vector3 StartCameraPos;
 
@@ -24,11 +25,15 @@ public class Camera3_3 : MonoBehaviour
             Debug.LogError("Devil 할당 오류");
             return;
         }
-        StartCameraPos = transform.position;
+        StartCameraPos = transform.position;        
     }
 
     void FixedUpdate()
     {
+        if (laserDetector.IsCameraStop)
+        {
+            return;
+        }
         float PosY = (_angel.transform.position.y + _devil.transform.position.y) * 0.5f; // 중간 위치
         if (PosY < MinPosY)
         {

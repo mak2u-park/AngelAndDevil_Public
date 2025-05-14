@@ -3471,6 +3471,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: LaserDetector
       objectReference: {fileID: 0}
+    - target: {fileID: 8652461669085746588, guid: 582b6567705eea04eb8ba80f4ef30151, type: 3}
+      propertyPath: Endcolor.b
+      value: 0.8113208
+      objectReference: {fileID: 0}
+    - target: {fileID: 8652461669085746588, guid: 582b6567705eea04eb8ba80f4ef30151, type: 3}
+      propertyPath: Endcolor.g
+      value: 0.6467604
+      objectReference: {fileID: 0}
+    - target: {fileID: 8652461669085746588, guid: 582b6567705eea04eb8ba80f4ef30151, type: 3}
+      propertyPath: Endcolor.r
+      value: 0.6467604
+      objectReference: {fileID: 0}
+    - target: {fileID: 8652461669085746588, guid: 582b6567705eea04eb8ba80f4ef30151, type: 3}
+      propertyPath: Startcolor.b
+      value: 0.62352943
+      objectReference: {fileID: 0}
+    - target: {fileID: 8652461669085746588, guid: 582b6567705eea04eb8ba80f4ef30151, type: 3}
+      propertyPath: Startcolor.g
+      value: 0.69411767
+      objectReference: {fileID: 0}
+    - target: {fileID: 8652461669085746588, guid: 582b6567705eea04eb8ba80f4ef30151, type: 3}
+      propertyPath: Startcolor.r
+      value: 0.69803923
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
