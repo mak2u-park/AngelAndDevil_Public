@@ -12,36 +12,40 @@ public class ProjectileContoroller : MonoBehaviour
 
     private Rigidbody2D _rigidbody;
 
-    private void Start()
+	private void Start()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
-        StartCoroutine(ShootProjectile());
     }
 
     public void Init(bool isRight)
     {
+        if(_rigidbody == null)
+        {
+            _rigidbody = GetComponent<Rigidbody2D>();
+        }
         transform.localRotation = Quaternion.Euler(0, isRight ? 0 : 180, 0);
-    }
+        StartCoroutine(ShootProjectile());
 
+    }
     private IEnumerator ShootProjectile()
     { 
         Vector2 direction = transform.right;
         _rigidbody.velocity = direction * _speed;
 
         yield return new WaitForSeconds(_duration);
-        Destroy(gameObject);
+        ProjectilePool.Instance.ReturnProjectile(this);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if(_levelColliderLayer.value == (_levelColliderLayer.value | (1 << other.gameObject.layer)))
         {
-            Destroy(gameObject);
+            ProjectilePool.Instance.ReturnProjectile(this);
         }
         if(_targetLayer.value == (_targetLayer.value | (1 << other.gameObject.layer)))
         {
             other.gameObject.GetComponent<PlayerController>().Die();
-            Destroy(gameObject);
+            ProjectilePool.Instance.ReturnProjectile(this);
         }
     }
 }

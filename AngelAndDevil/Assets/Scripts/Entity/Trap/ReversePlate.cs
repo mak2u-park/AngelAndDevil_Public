@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class Plate2 : MonoBehaviour, IEnable
+public class ReversePlate : MonoBehaviour, IEnable
 {
     Rigidbody2D _rigidbody2D;
     private bool _isEnable;
@@ -14,6 +14,8 @@ public class Plate2 : MonoBehaviour, IEnable
 
     public event Action OnEnable;
     public event Action OnDisable;
+
+    private int _contectCount = 0;
 
     void Start()
     {
@@ -68,14 +70,17 @@ public class Plate2 : MonoBehaviour, IEnable
     {
         if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Block"))
         {
-            _isContact = true;
-            Enable();
+            _contectCount++;
+            if(_contectCount == 1)
+            {
+                _isContact = true;
+                Enable();
 
             float PosY = transform.position.y;
             PosY = Mathf.Clamp(PosY, _SetY - 1f, _SetY);
 
             transform.position = new Vector2(transform.position.x, PosY);
-            
+            }
         }
     }
 
@@ -83,8 +88,12 @@ public class Plate2 : MonoBehaviour, IEnable
     {
         if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Block"))
         {
-            _isContact = false;
-            Disable();
+            _contectCount--;
+            if(_contectCount == 0)
+            {
+                _isContact = false;
+                Disable();
+            }
         }
     }
 }
