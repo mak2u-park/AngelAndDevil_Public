@@ -47,7 +47,8 @@ public class ProjectileTrap : MonoBehaviour
         _shootTime += Time.deltaTime;
         if(_shootTime >= _shootInterval)
         {
-            ProjectileContoroller projectileContoroller = ProjectilePool.Instance.GetProjectile(_projectileIndex, transform.position, Quaternion.identity);
+            
+            ProjectileController projectileContoroller = ProjectilePool.Instance.GetProjectile(_projectileIndex, transform.position, Quaternion.identity);
             projectileContoroller.Init(_isRight);
 
             _shootTime = 0;
