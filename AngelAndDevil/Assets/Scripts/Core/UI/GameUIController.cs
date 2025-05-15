@@ -53,10 +53,6 @@ public class GameUIController : BaseUIController
 
     private void Update()
     {
-        if (Keyboard.current != null && Keyboard.current.rKey.wasPressedThisFrame)
-        {
-            Retry();
-        }
         if (GameManager.Instance.isClear)//여기에 별 획득 추가, 코루틴
         {
             GameManager.Instance.Pause(true);
@@ -162,6 +158,7 @@ public class GameUIController : BaseUIController
         angelHostageText.text = $"{maxAngelHostage - ScoreManager.Instance.AngelHostage}/{maxAngelHostage}";
         devilHostageText.text = $"{maxDevilHostage - ScoreManager.Instance.DevilHostage}/{maxDevilHostage}";
     }
+
     public void OnRetry(InputValue input)
     {
         if (input.isPressed)
@@ -169,5 +166,4 @@ public class GameUIController : BaseUIController
             Retry();
         }
     }
-    
 }
