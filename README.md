@@ -1,76 +1,79 @@
 # AngelAndDevil
-## 1. °³¿ä
-**AngelAndDevil**Àº Unity 2022.3.17f1 ±â¹ÝÀÇ 2D  °ÔÀÓ ÇÁ·ÎÁ§Æ®ÀÔ´Ï´Ù. Ãµ»ç¿Í ¾Ç¸¶ Ä³¸¯ÅÍ¸¦ Á¶ÀÛ ¹× Çù·ÂÇÏ¿© ÆÛÁñÀ» ÇØ°áÇÏ´Â 2D ÇÃ·§Æû ÆÛÁñ °ÔÀÓÀÔ´Ï´Ù. ÆÄÀÌ¾îº¸ÀÌ¿Í ¿öÅÍ°É ½Ã¸®Áî¿¡¼­ ¿µ°¨À» ¹Þ¾Æ, µÎ »ó¹ÝµÈ Á¸Àç°¡ ÇÔ²² ¹®Á¦¸¦ ÇØ°áÇØ ³ª°¡´Â °úÁ¤À» ´ã¾Ò½À´Ï´Ù.
+## 1. ê°œìš”
+**AngelAndDevil**ì€ Unity 2022.3.17f1 ê¸°ë°˜ì˜ 2D  ê²Œìž„ í”„ë¡œì íŠ¸ìž…ë‹ˆë‹¤. ì²œì‚¬ì™€ ì•…ë§ˆ ìºë¦­í„°ë¥¼ ì¡°ìž‘ ë° í˜‘ë ¥í•˜ì—¬ í¼ì¦ì„ í•´ê²°í•˜ëŠ” 2D í”Œëž«í¼ í¼ì¦ ê²Œìž„ìž…ë‹ˆë‹¤. íŒŒì´ì–´ë³´ì´ì™€ ì›Œí„°ê±¸ ì‹œë¦¬ì¦ˆì—ì„œ ì˜ê°ì„ ë°›ì•„, ë‘ ìƒë°˜ëœ ì¡´ìž¬ê°€ í•¨ê»˜ ë¬¸ì œë¥¼ í•´ê²°í•´ ë‚˜ê°€ëŠ” ê³¼ì •ì„ ë‹´ì•˜ìŠµë‹ˆë‹¤.
 
-## 2. ÆÀ¿ø ¼Ò°³
-- ¹ÚÁ¤Çö (ÆÀÀå) - »óÈ£ÀÛ¿ë ¿ÀºêÁ§Æ®, State3(Ãµ±¹Å×¸¶ ½ºÅ×ÀÌÁö) ¼³°è ¹× ±¸Çö
-- ¿À¼öÈ£ - ÇÃ·¹ÀÌ¾î, Stage2(Áö¿ÁÅ×¸¶ ½ºÅ×ÀÌÁö), State1-1 (Æ©Åä¸®¾ó ½ºÅ×ÀÌÁö) ¼³°è ¹× ±¸Çö, Àü¹ÝÀûÀÎ µð¹ö±ë ÀÛ¾÷
-- ¹ÚÁØ¾Æ - Àü¹ÝÀûÀÎ °ÔÀÓ UI ¼³°è ¹× ±¸Çö, Stage2
-- ÃÖ°Ç¿ì - Á¡¼ö ±â´É °ü·Ã, Stage1-2 ¼³°è ¹× ±¸Çö, 
-- ¹ÚµµÇö - ÇÔÁ¤, Stage4(¿ìÁÖÅ×¸¶ ½ºÅ×ÀÌÁö) ¼³°è ¹× ±¸Çö
+ê²Œìž„ í”Œë ˆì´ ë§í¬: https://play.unity.com/en/games/a85ed7e2-24ea-4360-ac84-337209712cd3/angelanddevil
+
+
+## 2. íŒ€ì› ì†Œê°œ
+- ë°•ì •í˜„ (íŒ€ìž¥) - ìƒí˜¸ìž‘ìš© ì˜¤ë¸Œì íŠ¸, State3(ì²œêµ­í…Œë§ˆ ìŠ¤í…Œì´ì§€) ì„¤ê³„ ë° êµ¬í˜„
+- ì˜¤ìˆ˜í˜¸ - í”Œë ˆì´ì–´, Stage2(ì§€ì˜¥í…Œë§ˆ ìŠ¤í…Œì´ì§€), State1-1 (íŠœí† ë¦¬ì–¼ ìŠ¤í…Œì´ì§€) ì„¤ê³„ ë° êµ¬í˜„, ì „ë°˜ì ì¸ ë””ë²„ê¹… ìž‘ì—…
+- ë°•ì¤€ì•„ - ì „ë°˜ì ì¸ ê²Œìž„ UI ì„¤ê³„ ë° êµ¬í˜„, Stage2
+- ìµœê±´ìš° - ì ìˆ˜ ê¸°ëŠ¥ ê´€ë ¨, Stage1-2 ì„¤ê³„ ë° êµ¬í˜„, 
+- ë°•ë„í˜„ - í•¨ì •, Stage4(ìš°ì£¼í…Œë§ˆ ìŠ¤í…Œì´ì§€) ì„¤ê³„ ë° êµ¬í˜„
 
 ---
-## 3. À¯´ÏÆ¼ ¹öÀü
+## 3. ìœ ë‹ˆí‹° ë²„ì „
 - **Unity 2022.3.17f1**
 
-## 4. Ãß°¡ ÆÐÅ°Áö
+## 4. ì¶”ê°€ íŒ¨í‚¤ì§€
 - **TextMesh Pro**
 ---
 
-## 5. ºôµå ¹× ½ÇÇà ¹æ¹ý
-1. **Unity Hub**¿¡¼­ Unity 2022.3.17f1 ¹öÀüÀ¸·Î ÇÁ·ÎÁ§Æ®¸¦ ¿±´Ï´Ù
-2. `Assets/Scenes` Æú´õ¿¡¼­ ¸ÞÀÎ ¾À `StartScene`À» ¿­¾î ½ÇÇàÇÕ´Ï´Ù
+## 5. ë¹Œë“œ ë° ì‹¤í–‰ ë°©ë²•
+1. **Unity Hub**ì—ì„œ Unity 2022.3.17f1 ë²„ì „ìœ¼ë¡œ í”„ë¡œì íŠ¸ë¥¼ ì—½ë‹ˆë‹¤
+2. `Assets/Scenes` í´ë”ì—ì„œ ë©”ì¸ ì”¬ `StartScene`ì„ ì—´ì–´ ì‹¤í–‰í•©ë‹ˆë‹¤
 
-## 6. Æú´õ ±¸Á¶
+## 6. í´ë” êµ¬ì¡°
 ```
 Assets/
-  ¦§¦¡¦¡ Animations/         # Ä³¸¯ÅÍ, Æ®·¦, UI µî ¾Ö´Ï¸ÞÀÌ¼Ç Å¬¸³ ¹× ÄÁÆ®·Ñ·¯
-  ¦§¦¡¦¡ ArtWork/            # ¾ÆÆ® ¸®¼Ò½º
-  ¦§¦¡¦¡ Data/               # µ¥ÀÌÅÍ ¿¡¼Â ¹× ScriptableObject
-  ¦§¦¡¦¡ Grid/               # Å¸ÀÏ¸Ê ¹× ±×¸®µå °ü·Ã ¸®¼Ò½º
-  ¦§¦¡¦¡ Input/              # ÀÔ·Â ½Ã½ºÅÛ °ü·Ã ¼³Á¤
-  ¦§¦¡¦¡ Prefabs/            # Àç»ç¿ë °¡´ÉÇÑ ÇÁ¸®ÆÕ(ÇÃ·¹ÀÌ¾î, Æ®·¦, UI µî)
-  ¦§¦¡¦¡ Resources/          # ·±Å¸ÀÓ ¸®¼Ò½º ·Îµù¿ë ¿¡¼Â
-  ¦§¦¡¦¡ Scenes/             # °ÔÀÓ ¾À(½ºÅ×ÀÌÁö, Å×½ºÆ®, ¼±ÅÃ µî)
-  ¦§¦¡¦¡ Scripts/            # C# ½ºÅ©¸³Æ®
-  ¦¢   ¦§¦¡¦¡ Core/           # °ÔÀÓ ¸Å´ÏÀú, µ¥ÀÌÅÍ, »ç¿îµå, UI µî ÇÙ½É ½Ã½ºÅÛ
-  ¦¢   ¦§¦¡¦¡ Entity/         # ÇÃ·¹ÀÌ¾î, Æ®·¦, ¿ÀºêÁ§Æ®, ÀÎÅÍÆäÀÌ½º µî ¿£Æ¼Æ¼
-  ¦¢   ¦§¦¡¦¡ HellStage/      # Æ¯Á¤ ½ºÅ×ÀÌÁö(Áö¿Á) °ü·Ã ½ºÅ©¸³Æ®
-  ¦¢   ¦¦¦¡¦¡ Tutorial/       # Æ©Åä¸®¾ó °ü·Ã ½ºÅ©¸³Æ®
-  ¦§¦¡¦¡ Sounds/             # È¿°úÀ½, ¹è°æÀ½¾Ç µî ¿Àµð¿À ¸®¼Ò½º
-  ¦§¦¡¦¡ Sprites/            # 2D ½ºÇÁ¶óÀÌÆ® ÀÌ¹ÌÁö
-  ¦¦¦¡¦¡ TextMesh Pro/       # ÅØ½ºÆ® ·»´õ¸µ¿ë ¿¡¼Â
+  â”œâ”€â”€ Animations/         # ìºë¦­í„°, íŠ¸ëž©, UI ë“± ì• ë‹ˆë©”ì´ì…˜ í´ë¦½ ë° ì»¨íŠ¸ë¡¤ëŸ¬
+  â”œâ”€â”€ ArtWork/            # ì•„íŠ¸ ë¦¬ì†ŒìŠ¤
+  â”œâ”€â”€ Data/               # ë°ì´í„° ì—ì…‹ ë° ScriptableObject
+  â”œâ”€â”€ Grid/               # íƒ€ì¼ë§µ ë° ê·¸ë¦¬ë“œ ê´€ë ¨ ë¦¬ì†ŒìŠ¤
+  â”œâ”€â”€ Input/              # ìž…ë ¥ ì‹œìŠ¤í…œ ê´€ë ¨ ì„¤ì •
+  â”œâ”€â”€ Prefabs/            # ìž¬ì‚¬ìš© ê°€ëŠ¥í•œ í”„ë¦¬íŒ¹(í”Œë ˆì´ì–´, íŠ¸ëž©, UI ë“±)
+  â”œâ”€â”€ Resources/          # ëŸ°íƒ€ìž„ ë¦¬ì†ŒìŠ¤ ë¡œë”©ìš© ì—ì…‹
+  â”œâ”€â”€ Scenes/             # ê²Œìž„ ì”¬(ìŠ¤í…Œì´ì§€, í…ŒìŠ¤íŠ¸, ì„ íƒ ë“±)
+  â”œâ”€â”€ Scripts/            # C# ìŠ¤í¬ë¦½íŠ¸
+  â”‚   â”œâ”€â”€ Core/           # ê²Œìž„ ë§¤ë‹ˆì €, ë°ì´í„°, ì‚¬ìš´ë“œ, UI ë“± í•µì‹¬ ì‹œìŠ¤í…œ
+  â”‚   â”œâ”€â”€ Entity/         # í”Œë ˆì´ì–´, íŠ¸ëž©, ì˜¤ë¸Œì íŠ¸, ì¸í„°íŽ˜ì´ìŠ¤ ë“± ì—”í‹°í‹°
+  â”‚   â”œâ”€â”€ HellStage/      # íŠ¹ì • ìŠ¤í…Œì´ì§€(ì§€ì˜¥) ê´€ë ¨ ìŠ¤í¬ë¦½íŠ¸
+  â”‚   â””â”€â”€ Tutorial/       # íŠœí† ë¦¬ì–¼ ê´€ë ¨ ìŠ¤í¬ë¦½íŠ¸
+  â”œâ”€â”€ Sounds/             # íš¨ê³¼ìŒ, ë°°ê²½ìŒì•… ë“± ì˜¤ë””ì˜¤ ë¦¬ì†ŒìŠ¤
+  â”œâ”€â”€ Sprites/            # 2D ìŠ¤í”„ë¼ì´íŠ¸ ì´ë¯¸ì§€
+  â””â”€â”€ TextMesh Pro/       # í…ìŠ¤íŠ¸ ë Œë”ë§ìš© ì—ì…‹
 ```
 
-## 7. ÁÖ¿ä ±â´É ¹× ½Ã½ºÅÛ
+## 7. ì£¼ìš” ê¸°ëŠ¥ ë° ì‹œìŠ¤í…œ
 
-### 7.1. °ÔÀÓ ¸Å´ÏÀú ¹× µ¥ÀÌÅÍ °ü¸®
-- `GameManager`: °ÔÀÓÀÇ Àü¹ÝÀûÀÎ Èå¸§°ú »óÅÂ¸¦ °ü¸®ÇÏ´Â ½Ì±ÛÅÏ Å¬·¡½º
-- `GameData`: ÀúÀåµÇ´Â °ÔÀÓ µ¥ÀÌÅÍ Á¤ÀÇ
+### 7.1. ê²Œìž„ ë§¤ë‹ˆì € ë° ë°ì´í„° ê´€ë¦¬
+- `GameManager`: ê²Œìž„ì˜ ì „ë°˜ì ì¸ íë¦„ê³¼ ìƒíƒœë¥¼ ê´€ë¦¬í•˜ëŠ” ì‹±ê¸€í„´ í´ëž˜ìŠ¤
+- `GameData`: ì €ìž¥ë˜ëŠ” ê²Œìž„ ë°ì´í„° ì •ì˜
 
-### 7.2. ÇÃ·¹ÀÌ¾î ¹× ¿£Æ¼Æ¼
-- `PlayerController`, `AngelController`, `DevilController` µîÀ¸·Î ´Ù¾çÇÑ ÇÃ·¹ÀÌ¾î Ä³¸¯ÅÍ ±¸Çö
-- `Entity/Trap` ¹®, ·¹¹ö, ÇÃ·¹ÀÌÆ®, ·¹ÀÌÀú, ¹Ì·¯, ¿¤¸®º£ÀÌÅÍ, º¥Æ® µî ´Ù¾çÇÑ Æ®·¦°ú »óÈ£ÀÛ¿ë ¿ÀºêÁ§Æ® ±¸Çö
-- `Hostage` ±¸ÃâÇØ¾ß ÇÒ ÀÎÁú ¿ÀºêÁ§Æ®·Î, Å¬¸®¾î ½ºÄÚ¾î¿¡ ¹Ý¿µ
+### 7.2. í”Œë ˆì´ì–´ ë° ì—”í‹°í‹°
+- `PlayerController`, `AngelController`, `DevilController` ë“±ìœ¼ë¡œ ë‹¤ì–‘í•œ í”Œë ˆì´ì–´ ìºë¦­í„° êµ¬í˜„
+- `Entity/Trap` ë¬¸, ë ˆë²„, í”Œë ˆì´íŠ¸, ë ˆì´ì €, ë¯¸ëŸ¬, ì—˜ë¦¬ë² ì´í„°, ë²¤íŠ¸ ë“± ë‹¤ì–‘í•œ íŠ¸ëž©ê³¼ ìƒí˜¸ìž‘ìš© ì˜¤ë¸Œì íŠ¸ êµ¬í˜„
+- `Hostage` êµ¬ì¶œí•´ì•¼ í•  ì¸ì§ˆ ì˜¤ë¸Œì íŠ¸ë¡œ, í´ë¦¬ì–´ ìŠ¤ì½”ì–´ì— ë°˜ì˜
 
-### 7.3. UI ½Ã½ºÅÛ
-- `Core/UI` ³»¿¡ ¸ÞÀÎ UI, °ÔÀÓ UI, ½ºÅ×ÀÌÁö ¼±ÅÃ, ¼¼ÀÌºê/·Îµå µî ´Ù¾çÇÑ UI ÄÁÆ®·Ñ·¯ Á¸Àç
+### 7.3. UI ì‹œìŠ¤í…œ
+- `Core/UI` ë‚´ì— ë©”ì¸ UI, ê²Œìž„ UI, ìŠ¤í…Œì´ì§€ ì„ íƒ, ì„¸ì´ë¸Œ/ë¡œë“œ ë“± ë‹¤ì–‘í•œ UI ì»¨íŠ¸ë¡¤ëŸ¬ ì¡´ìž¬
 
-### 7.4. »ç¿îµå ½Ã½ºÅÛ
-- `SoundManager`, `SoundSource` µîÀ¸·Î È¿°úÀ½ ¹× ¹è°æÀ½¾Ç °ü¸®.
-- `VolumeSliderController` º¼·ý Á¶Àý ±â´É Á¦°ø
+### 7.4. ì‚¬ìš´ë“œ ì‹œìŠ¤í…œ
+- `SoundManager`, `SoundSource` ë“±ìœ¼ë¡œ íš¨ê³¼ìŒ ë° ë°°ê²½ìŒì•… ê´€ë¦¬.
+- `VolumeSliderController` ë³¼ë¥¨ ì¡°ì ˆ ê¸°ëŠ¥ ì œê³µ
 
-### 7.5. ¾Ö´Ï¸ÞÀÌ¼Ç
-- `Animations` Ä³¸¯ÅÍ, Æ®·¦, UI µî ´Ù¾çÇÑ ¾Ö´Ï¸ÞÀÌ¼Ç Å¬¸³ ¹× ÄÁÆ®·Ñ·¯ °ü¸®
+### 7.5. ì• ë‹ˆë©”ì´ì…˜
+- `Animations` ìºë¦­í„°, íŠ¸ëž©, UI ë“± ë‹¤ì–‘í•œ ì• ë‹ˆë©”ì´ì…˜ í´ë¦½ ë° ì»¨íŠ¸ë¡¤ëŸ¬ ê´€ë¦¬
 
-### 7.6. ½ºÅ×ÀÌÁö ¹× ¾À °ü¸®
-- `Scenes` Å×½ºÆ® ¹× ½ÇÁ¦ °ÔÀÓ ½ºÅ×ÀÌÁö Æ÷ÇÔ
-- `SelectStageController` ½ºÅ×ÀÌÁö ¼±ÅÃ ±â´É Á¦°ø 
+### 7.6. ìŠ¤í…Œì´ì§€ ë° ì”¬ ê´€ë¦¬
+- `Scenes` í…ŒìŠ¤íŠ¸ ë° ì‹¤ì œ ê²Œìž„ ìŠ¤í…Œì´ì§€ í¬í•¨
+- `SelectStageController` ìŠ¤í…Œì´ì§€ ì„ íƒ ê¸°ëŠ¥ ì œê³µ 
 
-### 7.7. ÇÁ¸®ÆÕ ¹× ¸®¼Ò½º °ü¸®
-- `Prefabs` Æú´õ ³»¿¡ ÇÃ·¹ÀÌ¾î, Æ®·¦, UI, ¸Ê ÄÄÆ÷³ÍÆ® µî Àç»ç¿ë °¡´ÉÇÑ ÇÁ¸®ÆÕ
+### 7.7. í”„ë¦¬íŒ¹ ë° ë¦¬ì†ŒìŠ¤ ê´€ë¦¬
+- `Prefabs` í´ë” ë‚´ì— í”Œë ˆì´ì–´, íŠ¸ëž©, UI, ë§µ ì»´í¬ë„ŒíŠ¸ ë“± ìž¬ì‚¬ìš© ê°€ëŠ¥í•œ í”„ë¦¬íŒ¹
 
 ## 8. Project Timeline
-- **±âÈ¹ ¹× ¼³°è:** 2024.05.08 ~ 2024.05.08
-- **ÇÊ¼ö ±â´É ±¸Çö:** 2024.05.09 ~ 2024.05.12
-- **µµÀü ±â´É ±¸Çö ¹× µð¹ö±ë:** 2024.05.13 ~ 2024.05.15
+- **ê¸°íš ë° ì„¤ê³„:** 2024.05.08 ~ 2024.05.08
+- **í•„ìˆ˜ ê¸°ëŠ¥ êµ¬í˜„:** 2024.05.09 ~ 2024.05.12
+- **ë„ì „ ê¸°ëŠ¥ êµ¬í˜„ ë° ë””ë²„ê¹…:** 2024.05.13 ~ 2024.05.15
