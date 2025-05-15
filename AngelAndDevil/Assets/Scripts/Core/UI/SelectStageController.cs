@@ -28,9 +28,9 @@ public class SelectStageController : BaseUIController
     {
         base.Start();
         AgDv.transform.position = GameManager.Instance.AgDvPosition[GameManager.Instance.tema];
-        currentStarNum = GameManager.Instance.GetStageScore(GameManager.Instance.tema + 1)
-                + GameManager.Instance.GetStageScore(GameManager.Instance.tema + 2)
-                + GameManager.Instance.GetStageScore(GameManager.Instance.tema + 3);
+        currentStarNum = GameManager.Instance.GetStageScore(GameManager.Instance.tema * 3 + 1)
+                + GameManager.Instance.GetStageScore(GameManager.Instance.tema * 3 + 2)
+                + GameManager.Instance.GetStageScore(GameManager.Instance.tema * 3 + 3);
 
 
         for (int i = 0; i < roomButtons.Length; i++)

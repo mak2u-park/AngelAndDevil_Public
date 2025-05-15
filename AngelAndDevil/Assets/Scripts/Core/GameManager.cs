@@ -34,7 +34,7 @@ public class GameManager : Singleton<GameManager>
         "Stage1-1","Stage1-2","Stage1-3",
         "Stage2-1", "Stage2-2", "Stage2-3",
         "Stage3-1", "Stage3-2", "Stage3-3",
-        "Stage4-1", "Stage4-1", "Stage4-1"
+        "Stage4-1", "Stage4-2", "Stage4-3"
     };
 
 

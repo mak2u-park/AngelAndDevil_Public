@@ -2627,6 +2627,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: SelectStageMainCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 2613383077390550601, guid: 6e9749f7ca0e1d5489f3d493c2a96f0a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2613383077390550601, guid: 6e9749f7ca0e1d5489f3d493c2a96f0a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2090050756}
+    - target: {fileID: 2613383077390550601, guid: 6e9749f7ca0e1d5489f3d493c2a96f0a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: GoMainScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 2613383077390550601, guid: 6e9749f7ca0e1d5489f3d493c2a96f0a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 4889450800504561928, guid: 6e9749f7ca0e1d5489f3d493c2a96f0a, type: 3}
       propertyPath: m_Pivot.x
       value: 0
