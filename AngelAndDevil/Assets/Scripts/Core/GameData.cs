@@ -1,5 +1,8 @@
 using System.Runtime.CompilerServices;
+#if UNITY_EDITOR
 using UnityEditor.Build.Player;
+#endif
+
 using UnityEngine;
 public class SettingData
 {
