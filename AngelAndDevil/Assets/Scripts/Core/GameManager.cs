@@ -222,6 +222,15 @@ public class GameManager : Singleton<GameManager>
         return true;
     }
 
+    public void ExitGame()
+    {
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+        Application.Quit();
+#endif
+    }
+
     public bool LoadData(int slot)
     {
         string Filepath = Path.Combine(Application.dataPath + "/Data/", slot.ToString() + "slot" + json);
