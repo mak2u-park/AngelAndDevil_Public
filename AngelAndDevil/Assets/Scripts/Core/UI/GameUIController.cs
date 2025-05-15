@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 
 public class GameUIController : BaseUIController
 {
@@ -156,5 +157,13 @@ public class GameUIController : BaseUIController
     {
         angelHostageText.text = $"{maxAngelHostage - ScoreManager.Instance.AngelHostage}/{maxAngelHostage}";
         devilHostageText.text = $"{maxDevilHostage - ScoreManager.Instance.DevilHostage}/{maxDevilHostage}";
+    }
+
+    public void OnRetry(InputValue input)
+    {
+        if (input.isPressed)
+        {
+            Retry();
+        }
     }
 }
